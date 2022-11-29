@@ -17,6 +17,7 @@
 		17D330052936594E00A2403A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D330042936594E00A2403A /* Manager.swift */; };
 		17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3300629365E0C00A2403A /* DetailRecipeView.swift */; };
 		7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923929365D9100C57CCD /* UserViewModel.swift */; };
+		7B0C923C293660B700C57CCD /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923B293660B700C57CCD /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		17D330042936594E00A2403A /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		17D3300629365E0C00A2403A /* DetailRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeView.swift; sourceTree = "<group>"; };
 		7B0C923929365D9100C57CCD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		7B0C923B293660B700C57CCD /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				17D3300629365E0C00A2403A /* DetailRecipeView.swift */,
+				7B0C923B293660B700C57CCD /* SwiftUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				17D33001293658B600A2403A /* Restaurant.swift in Sources */,
 				7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */,
+				7B0C923C293660B700C57CCD /* SwiftUIView.swift in Sources */,
 				17D330052936594E00A2403A /* Manager.swift in Sources */,
 				178E22152936377E00509AA2 /* ContentView.swift in Sources */,
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
@@ -323,6 +327,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -352,6 +357,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
