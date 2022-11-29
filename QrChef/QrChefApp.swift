@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct QrChefApp: App {
+    @StateObject private var vm = RestaurantViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(vm)
         }
     }
 }
