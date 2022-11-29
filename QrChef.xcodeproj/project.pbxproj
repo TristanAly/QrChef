@@ -16,6 +16,7 @@
 		17D330032936592800A2403A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D330022936592800A2403A /* Ingredient.swift */; };
 		17D330052936594E00A2403A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D330042936594E00A2403A /* Manager.swift */; };
 		7B0C923829365D4200C57CCD /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923729365D4200C57CCD /* RestaurantView.swift */; };
+		7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923929365D9100C57CCD /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		17D330022936592800A2403A /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		17D330042936594E00A2403A /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		7B0C923729365D4200C57CCD /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantView.swift; path = ../../../../RestaurantView.swift; sourceTree = "<group>"; };
+		7B0C923929365D9100C57CCD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				1722340C29364EB500FB6CAA /* RestaurationViewModel.swift */,
+				7B0C923929365D9100C57CCD /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D33001293658B600A2403A /* Restaurant.swift in Sources */,
+				7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */,
 				17D330052936594E00A2403A /* Manager.swift in Sources */,
 				178E22152936377E00509AA2 /* ContentView.swift in Sources */,
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
