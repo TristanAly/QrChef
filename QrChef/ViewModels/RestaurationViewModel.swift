@@ -10,6 +10,6 @@ import SwiftUI
 
 class RestaurantViewModel: ObservableObject {
     
-    
+    let url = "http//localhost//8080"
     
 }
