@@ -12,10 +12,11 @@
 		178E22152936377E00509AA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E22142936377E00509AA2 /* ContentView.swift */; };
 		178E22172936378000509AA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 178E22162936378000509AA2 /* Assets.xcassets */; };
 		178E221A2936378000509AA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 178E22192936378000509AA2 /* Preview Assets.xcassets */; };
-		17D33001293658B600A2403A /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D33000293658B600A2403A /* Restaurant.swift */; };
+		17D33001293658B600A2403A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D33000293658B600A2403A /* Recipe.swift */; };
 		17D330032936592800A2403A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D330022936592800A2403A /* Ingredient.swift */; };
 		17D330052936594E00A2403A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D330042936594E00A2403A /* Manager.swift */; };
 		17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3300629365E0C00A2403A /* DetailRecipeView.swift */; };
+		17D33009293661D700A2403A /* ListRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D33008293661D700A2403A /* ListRecipeView.swift */; };
 		7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923929365D9100C57CCD /* UserViewModel.swift */; };
 		7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923B293660B700C57CCD /* ButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -27,10 +28,11 @@
 		178E22142936377E00509AA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		178E22162936378000509AA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		178E22192936378000509AA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		17D33000293658B600A2403A /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		17D33000293658B600A2403A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		17D330022936592800A2403A /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		17D330042936594E00A2403A /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		17D3300629365E0C00A2403A /* DetailRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeView.swift; sourceTree = "<group>"; };
+		17D33008293661D700A2403A /* ListRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipeView.swift; sourceTree = "<group>"; };
 		7B0C923929365D9100C57CCD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		7B0C923B293660B700C57CCD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +106,7 @@
 		178E222629364DE100509AA2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				17D33000293658B600A2403A /* Restaurant.swift */,
+				17D33000293658B600A2403A /* Recipe.swift */,
 				17D330042936594E00A2403A /* Manager.swift */,
 				17D330022936592800A2403A /* Ingredient.swift */,
 			);
@@ -190,7 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17D33001293658B600A2403A /* Restaurant.swift in Sources */,
+				17D33001293658B600A2403A /* Recipe.swift in Sources */,
 				7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */,
 				7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */,
 				17D330052936594E00A2403A /* Manager.swift in Sources */,
@@ -199,6 +201,7 @@
 				178E22132936377E00509AA2 /* QrChefApp.swift in Sources */,
 				17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */,
 				1722340D29364EB500FB6CAA /* RestaurationViewModel.swift in Sources */,
+				17D33009293661D700A2403A /* ListRecipeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
