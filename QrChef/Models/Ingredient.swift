@@ -7,24 +7,23 @@
 
 import Foundation
 
-struct Ingredient: Codable {
+struct Ingredient: Identifiable, Codable {
     let id: Int
-    let name, createdAt, updatedAt: String
-    let ingredientRecipe: IngredientRecipe
+    let name: String?
+    let ingredientRecipe: IngredientRecipe?
 
-    enum CodingKeys: String, CodingKey {
-        case id, name, createdAt, updatedAt
+    enum CodingKeys: String, CodingKey, Codable {
+        case id, name
         case ingredientRecipe = "ingredient_recipe"
     }
 }
 
 // MARK: - IngredientRecipe
 struct IngredientRecipe: Codable {
-    let createdAt, updatedAt: String
-    let ingredientID, recipeID: Int
+    let ingredientID: Int
+    let recipeID: Int
 
-    enum CodingKeys: String, CodingKey {
-        case createdAt, updatedAt
+    enum CodingKeys: String, CodingKey , Codable {
         case ingredientID = "ingredientId"
         case recipeID = "recipeId"
     }
