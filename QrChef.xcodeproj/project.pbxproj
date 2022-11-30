@@ -18,6 +18,7 @@
 		17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3300629365E0C00A2403A /* DetailRecipeView.swift */; };
 		7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923929365D9100C57CCD /* UserViewModel.swift */; };
 		7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923B293660B700C57CCD /* ButtonView.swift */; };
+		7B0C92402936888500C57CCD /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923F2936888500C57CCD /* RowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		17D3300629365E0C00A2403A /* DetailRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeView.swift; sourceTree = "<group>"; };
 		7B0C923929365D9100C57CCD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		7B0C923B293660B700C57CCD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		7B0C923F2936888500C57CCD /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				7B0C923B293660B700C57CCD /* ButtonView.swift */,
 				17D3300629365E0C00A2403A /* DetailRecipeView.swift */,
+				7B0C923F2936888500C57CCD /* RowView.swift */,
 			);
 			path = "DetailV iew";
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17D33001293658B600A2403A /* Recipe.swift in Sources */,
+				7B0C92402936888500C57CCD /* RowView.swift in Sources */,
 				7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */,
 				7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */,
 				17D330052936594E00A2403A /* Manager.swift in Sources */,

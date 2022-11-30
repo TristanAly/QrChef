@@ -9,7 +9,20 @@ import SwiftUI
 
 struct ButtonView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button{
+            //some action
+            print("Image tapped!")
+        } label: {
+            Text("Ajouter pour 7,50€")
+                .fontWeight(.bold)
+                .font(.system(size: 20))
+        }
+            .frame(height: 51)
+            .frame(width: 358)
+            .background(Color("Red"))
+            .foregroundColor(.white)
+            .cornerRadius(12)
+        
     }
 }
 
