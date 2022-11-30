@@ -32,7 +32,7 @@ struct Recipe: Identifiable, Codable {
 
 extension Recipe {
     static var example: Recipe {
-        Recipe(id: 1, name: "", image: "", category: "", priceRange: "", welcomeDescription: "", createdAt: "", updatedAt: "", managerID: 1, manager: Manager(id: 1, name: "", email: "", restaurant: "", address: "", createdAt: "", updatedAt: ""), ingredients: [Ingredient(id: 1, name: "", ingredientRecipe: IngredientRecipe(ingredientID: 1, recipeID: 1))])
+        Recipe(id: 1, name: "", image: "", category: "", priceRange: "", welcomeDescription: "", createdAt: "", updatedAt: "", managerID: 1, manager: Manager(id: 1, name: "", email: "", restaurant: "", address: "", createdAt: "", updatedAt: "", recipe: []), ingredients: [Ingredient(id: 1, name: "", ingredientRecipe: IngredientRecipe(ingredientID: 1, recipeID: 1))])
     }
 }
 
