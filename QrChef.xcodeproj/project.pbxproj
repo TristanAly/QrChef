@@ -21,6 +21,10 @@
 		7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923929365D9100C57CCD /* UserViewModel.swift */; };
 		7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923B293660B700C57CCD /* ButtonView.swift */; };
 		7B0C92402936888500C57CCD /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923F2936888500C57CCD /* RowView.swift */; };
+		D94851732937566300886DD1 /* PreparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94851722937566300886DD1 /* PreparationView.swift */; };
+		D94851772937567A00886DD1 /* ButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94851762937567A00886DD1 /* ButtonColor.swift */; };
+		D9485179293759E500886DD1 /* CommandesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9485178293759E500886DD1 /* CommandesView.swift */; };
+		D948517B293762C500886DD1 /* ButtonServView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D948517A293762C500886DD1 /* ButtonServView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		7B0C923929365D9100C57CCD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		7B0C923B293660B700C57CCD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		7B0C923F2936888500C57CCD /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		D94851722937566300886DD1 /* PreparationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationView.swift; sourceTree = "<group>"; };
+		D94851762937567A00886DD1 /* ButtonColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonColor.swift; sourceTree = "<group>"; };
+		D9485178293759E500886DD1 /* CommandesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandesView.swift; sourceTree = "<group>"; };
+		D948517A293762C500886DD1 /* ButtonServView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonServView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +101,8 @@
 		178E222429364DCE00509AA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7B0C923D293660FB00C57CCD /* DetailV iew */,
+				D94851712937564C00886DD1 /* PreparationView */,
+				7B0C923D293660FB00C57CCD /* DetailView */,
 				17D3300C2936647500A2403A /* RecipeListView.swift */,
 				17379CFB2937581C005107A1 /* ManagerListView.swift */,
 			);
@@ -119,14 +128,33 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		7B0C923D293660FB00C57CCD /* DetailV iew */ = {
+		7B0C923D293660FB00C57CCD /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
 				7B0C923B293660B700C57CCD /* ButtonView.swift */,
 				17D3300629365E0C00A2403A /* DetailRecipeView.swift */,
 				7B0C923F2936888500C57CCD /* RowView.swift */,
 			);
-			path = "DetailV iew";
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		D94851712937564C00886DD1 /* PreparationView */ = {
+			isa = PBXGroup;
+			children = (
+				D94851722937566300886DD1 /* PreparationView.swift */,
+				D9485178293759E500886DD1 /* CommandesView.swift */,
+				D948517A293762C500886DD1 /* ButtonServView.swift */,
+				D94851742937566600886DD1 /* Extensions */,
+			);
+			path = PreparationView;
+			sourceTree = "<group>";
+		};
+		D94851742937566600886DD1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D94851762937567A00886DD1 /* ButtonColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,13 +227,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D94851732937566300886DD1 /* PreparationView.swift in Sources */,
 				17D33001293658B600A2403A /* Recipe.swift in Sources */,
+				D9485179293759E500886DD1 /* CommandesView.swift in Sources */,
 				7B0C92402936888500C57CCD /* RowView.swift in Sources */,
 				7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */,
 				17D3300D2936647500A2403A /* RecipeListView.swift in Sources */,
+				D948517B293762C500886DD1 /* ButtonServView.swift in Sources */,
 				7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */,
 				17D330052936594E00A2403A /* Manager.swift in Sources */,
 				178E22152936377E00509AA2 /* ContentView.swift in Sources */,
+				D94851772937567A00886DD1 /* ButtonColor.swift in Sources */,
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
 				178E22132936377E00509AA2 /* QrChefApp.swift in Sources */,
 				17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */,
