@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Manager: Codable {
+struct Manager: Identifiable, Codable {
     let id: Int
-    let name, email, restaurant, address: String
+    let name, email, restaurant, address: String?
     let createdAt, updatedAt: String
 }
