@@ -15,7 +15,16 @@ struct RecipeListView: View {
         VStack{
             List{
                 ForEach(recipeVM.recipes) { recipe in
-                    Text(recipe.name ?? "test")
+                    HStack{
+                        AsyncImage(url: URL(string: recipe.image ?? "")) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 70 , height: 70)
+                        } placeholder: {
+                            ProgressView()
+                        }
+                    }
                 }
             }
             .onAppear{

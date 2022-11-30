@@ -32,7 +32,7 @@ struct Recipe: Identifiable, Codable {
 
 extension Recipe {
     static var example: Recipe {
-        Recipe(id: 1, name: "Omlette", image: "https://images-ext-2.discordapp.net/external/nvBhuSSTW6HyBihdCwSGVJIehn3ice2NA1X-VCn7JTE/%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D774%26q%3D80/https/images.unsplash.com/photo-1588580261949-f17eacb905c9", category: "Plats", priceRange: "20€", welcomeDescription: "Pulled beef aux épices omlette", createdAt: "", updatedAt: "", managerID: 1, manager: Manager(id: 1, name: "Greg", email: "greg@", restaurant: "Cozy", address: "15 rue Lafaette", createdAt: "", updatedAt: ""), ingredients: [Ingredient(id: 1, name: "eggs", ingredientRecipe: IngredientRecipe(ingredientID: 1, recipeID: 1))])
+        Recipe(id: 1, name: "Omlette", image: "https://images-ext-2.discordapp.net/external/nvBhuSSTW6HyBihdCwSGVJIehn3ice2NA1X-VCn7JTE/%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D774%26q%3D80/https/images.unsplash.com/photo-1588580261949-f17eacb905c9", category: "Plats", priceRange: "20€", welcomeDescription: "Pulled beef aux épices omlette", createdAt: "", updatedAt: "", managerID: 1, manager: Manager(id: 1, name: "Greg", email: "greg@", restaurant: "Cozy", address: "15 rue Lafaette", createdAt: "", updatedAt: "", recipe: []), ingredients: [Ingredient(id: 1, name: "eggs", ingredientRecipe: IngredientRecipe(ingredientID: 1, recipeID: 1))])
     }
 }
 
