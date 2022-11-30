@@ -11,7 +11,7 @@ struct Ingredient: Identifiable, Codable {
     let id: Int
     let name: String?
     let ingredientRecipe: IngredientRecipe?
-
+    
     enum CodingKeys: String, CodingKey, Codable {
         case id, name
         case ingredientRecipe = "ingredient_recipe"
@@ -22,9 +22,15 @@ struct Ingredient: Identifiable, Codable {
 struct IngredientRecipe: Codable {
     let ingredientID: Int
     let recipeID: Int
-
+    
     enum CodingKeys: String, CodingKey , Codable {
         case ingredientID = "ingredientId"
         case recipeID = "recipeId"
+    }
+}
+
+extension Ingredient {
+    static var example: Ingredient {
+        Ingredient(id: 1, name: "Carrot", ingredientRecipe: IngredientRecipe(ingredientID: 1, recipeID: 1))
     }
 }

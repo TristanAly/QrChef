@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct RowView: View {
+    var ingredient: Ingredient
     var body: some View {
-        HStack (spacing: 50) {
+        
+        HStack {
             Image("food")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 67)
                 .clipShape(RoundedRectangle(cornerRadius: 12.0))
-            
-            Text("persil")
+            Spacer()
+            Text(ingredient.name ?? "")
                 .fontWeight(.regular)
                 .font(.system(size: 24))
-           
+            Spacer()
+
             Button{
                 //some action
                 print("Image tapped!")
@@ -31,7 +34,7 @@ struct RowView: View {
                     .frame(width: 35, height: 35)
                     .overlay(
                         RoundedRectangle(cornerRadius: 25)
-                            .stroke(Color.black, lineWidth: 2))
+                            .stroke(Color.black, lineWidth: 5))
                     .foregroundColor(.white)
                     .clipShape(Circle())
             }
@@ -41,6 +44,6 @@ struct RowView: View {
 
 struct RowView_Previews: PreviewProvider {
     static var previews: some View {
-        RowView()
+        RowView(ingredient: Ingredient.example)
     }
 }

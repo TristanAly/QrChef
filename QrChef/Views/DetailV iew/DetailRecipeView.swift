@@ -10,10 +10,46 @@ import SwiftUI
 struct DetailRecipeView: View {
     var recipe: Recipe
     var body: some View {
-        VStack{
-            Text(recipe.name ?? "")
+        
+        VStack(alignment: .leading){
+            HStack {
+                AsyncImage(url: URL(string: recipe.image ?? "")) {
+                    image in image
+                        .resizable()
+                        .scaledToFit()
+                        .aspectRatio( contentMode: .fit)
+                        .frame(height: 100)
+                        .cornerRadius(8)
+
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(height: 150)
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(recipe.name ?? "")
+                        .font(.title2)
+                        .fontWeight(.medium)
+                    Text(recipe.welcomeDescription ?? "")
+                        .font(.title3)
+                        .fontWeight(.light)
+
+                }
+            }
+            Text("Ingredients:")
+                .font(.title2)
             
+         //   List {
+                if let ingredient = recipe.ingredients {
+                    ForEach(ingredient, id: \.id) { item in
+                        RowView(ingredient: item)
+                        
+                    }
+                }
+           // }
+            
+            ButtonView()
         }
+        .padding()
     }
 }
 
