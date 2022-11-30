@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct DetailRecipeView: View {
+    var recipe: Recipe
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text(recipe.name ?? "")
+            
+        }
     }
 }
 
 struct DetailRecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailRecipeView()
+        DetailRecipeView(recipe: Recipe.example)
     }
 }

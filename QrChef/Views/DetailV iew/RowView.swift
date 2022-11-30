@@ -9,13 +9,32 @@ import SwiftUI
 
 struct RowView: View {
     var body: some View {
-        HStack{
-            Image("Restaurant")
+        HStack (spacing: 50) {
+            Image("food")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .cornerRadius(12.0)
-                .padding(.all, 100)
+                .frame(width: 67)
+                .clipShape(RoundedRectangle(cornerRadius: 12.0))
             
+            Text("persil")
+                .fontWeight(.regular)
+                .font(.system(size: 24))
+           
+            Button{
+                //some action
+                print("Image tapped!")
+            } label: {
+                Text("-")
+                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                    .font(.system(size: 20))
+                    .frame(width: 35, height: 35)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 25)
+                            .stroke(Color.black, lineWidth: 2))
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
+            }
         }
     }
 }
