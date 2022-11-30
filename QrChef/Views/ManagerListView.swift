@@ -19,18 +19,22 @@ struct ManagerListView: View {
                 List{
                     if let recipes = recipeVM.manager.recipe {
                         ForEach(recipes, id: \.id) { recipe in
-                            HStack{
-                                AsyncImage(url: URL(string: recipe.image ?? "")) { image in
-                                    image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 70 , height: 70)
-                                } placeholder: {
-                                    ProgressView()
-                                }
-                                VStack{
-                                    Text(recipe.name ?? "test")
-                                    Text(recipe.category)
+                            NavigationLink{
+                                DetailRecipeView(recipe: recipe)
+                            } label: {
+                                HStack{
+                                    AsyncImage(url: URL(string: recipe.image ?? "")) { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 70 , height: 70)
+                                    } placeholder: {
+                                        ProgressView()
+                                    }
+                                    VStack{
+                                        Text(recipe.name ?? "test")
+                                        Text(recipe.category)
+                                    }
                                 }
                             }
                         }

@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct ButtonView: View {
-    @State var count: Int = 0
+    @State var count: Int = 1
+    @State var price: Int = 7
     var body: some View {
         VStack {
             HStack(spacing: 20){
                 Button{
-                    if count != 0 {
+                   if count != 1 {
                         self.count -= 1
-                    }
+                        self.price -= price
+                  }
+//                    if count == 1 {
+//                         self.price
+//                    }
                 } label: {
                     Text("-")
-                        .foregroundColor(Color("Red"))
+                        .foregroundColor(Color.redBurgundy)
                         .fontWeight(.bold)
                         .font(.system(size: 20))
                         .frame(width: 35, height: 35)
@@ -31,10 +36,12 @@ struct ButtonView: View {
                 Text("\(count)")
                 
                 Button{
-                    self.count += 1
+                        self.count += 1
+                        self.price += price
+                    
                 } label: {
                     Text("+")
-                        .foregroundColor(Color("Red"))
+                        .foregroundColor(Color.redBurgundy)
                         .fontWeight(.bold)
                         .font(.system(size: 20))
                         .frame(width: 35, height: 35)
@@ -47,16 +54,15 @@ struct ButtonView: View {
             }
             
             Button{
-                //some action
-                print("Image tapped!")
+               
             } label: {
-                Text("Ajouter pour 7,50€")
+                Text("Ajouter pour \(price) €")
                     .fontWeight(.bold)
                     .font(.system(size: 20))
             }
             .frame(height: 51)
             .frame(width: 358)
-            .background(Color("Red"))
+            .background(Color.redBurgundy)
             .foregroundColor(.white)
             .cornerRadius(12)
         }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RowView: View {
+    @State private var didTap: Bool = false
+
     var ingredient: Ingredient
     var body: some View {
         
@@ -18,25 +20,42 @@ struct RowView: View {
                 .frame(width: 67)
                 .clipShape(RoundedRectangle(cornerRadius: 12.0))
             Spacer()
-            Text(ingredient.name ?? "")
-                .fontWeight(.regular)
+            HStack{
+                Text("aaaa")
+                    .offset(x: 50)
+                    .foregroundColor(.clear)
+                    .strikethrough(didTap ? true : false, color: Color.redBurgundy)
+                    .fontWeight(.regular)
+                   .font(.system(size: 24))
+                Text(ingredient.name ?? "")
+                   .frame(width: 100)
+                   .foregroundColor(didTap ? Color.redBurgundy : Color.black )
+                   .strikethrough(didTap ? true : false, color: Color.redBurgundy)
+                    .fontWeight(.regular)
                 .font(.system(size: 24))
-            Spacer()
+                Text("aaaa")
+                   .offset(x: -50)
+                    .foregroundColor(.clear)
+                    .strikethrough(didTap ? true : false, color: Color.redBurgundy)
+                    .fontWeight(.regular)
+                   .font(.system(size: 24))
 
+            }
+            Spacer()
+            
             Button{
-                //some action
-                print("Image tapped!")
+                didTap.toggle()
+                
+
             } label: {
                 Text("-")
-                    .foregroundColor(.black)
-                    .fontWeight(.bold)
-                    .font(.system(size: 20))
-                    .frame(width: 35, height: 35)
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(Color.black)
+                    .background(didTap ? Color.redBurgundy : Color.clear)
+                    .clipShape(Circle())
                     .overlay(
                         RoundedRectangle(cornerRadius: 25)
-                            .stroke(Color.black, lineWidth: 5))
-                    .foregroundColor(.white)
-                    .clipShape(Circle())
+                            .stroke(Color.black, lineWidth: 1))
             }
         }
     }

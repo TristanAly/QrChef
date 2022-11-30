@@ -10,11 +10,11 @@ import Foundation
 struct Ingredient: Identifiable, Codable {
     let id: Int
     let name: String?
-    let ingredientRecipe: IngredientRecipe?
+//    let ingredientRecipe: IngredientRecipe?
     
     enum CodingKeys: String, CodingKey, Codable {
         case id, name
-        case ingredientRecipe = "ingredient_recipe"
+//        case ingredientRecipe = "ingredient_recipe"
     }
 }
 
@@ -31,6 +31,6 @@ struct IngredientRecipe: Codable {
 
 extension Ingredient {
     static var example: Ingredient {
-        Ingredient(id: 1, name: "Carrot", ingredientRecipe: IngredientRecipe(ingredientID: 1, recipeID: 1))
+        Ingredient(id: 1, name: "Milk")
     }
 }
