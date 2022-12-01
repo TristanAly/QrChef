@@ -18,7 +18,7 @@ struct ListCategorieView: View {
                         NavigationLink{
                             DetailRecipeView(recipe: recipe, recipeVM: RestaurantViewModel())
                         } label: {
-                            RowRecipeView(recipe: recipe)
+                            RowRecipesView(recipe: recipe)
                         }
                     }
                 }
