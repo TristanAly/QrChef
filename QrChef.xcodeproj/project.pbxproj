@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		1710EB9B2938B36C0001E107 /* RestaurantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EB9A2938B36C0001E107 /* RestaurantList.swift */; };
 		1710EB9D2938B6DF0001E107 /* RowRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EB9C2938B6DF0001E107 /* RowRestaurantView.swift */; };
-		1710EB9F2938B8850001E107 /* RowRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EB9E2938B8850001E107 /* RowRecipeView.swift */; };
 		1710EBA72938F1880001E107 /* ListCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBA62938F1880001E107 /* ListCategorieView.swift */; };
 		1710EBAA2938FB8A0001E107 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBA92938FB8A0001E107 /* TabBarView.swift */; };
 		1710EBAC2938FDB60001E107 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBAB2938FDB60001E107 /* ProfilView.swift */; };
 		1710EBB02938FE610001E107 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBAF2938FE610001E107 /* BookingView.swift */; };
 		1710EBB32938FEA90001E107 /* FavoriteRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBB22938FEA90001E107 /* FavoriteRestaurantView.swift */; };
+		1710EBB7293906250001E107 /* RowRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBB6293906250001E107 /* RowRecipeView.swift */; };
 		1722340D29364EB500FB6CAA /* RestaurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722340C29364EB500FB6CAA /* RestaurationViewModel.swift */; };
 		17379CFC2937581C005107A1 /* ManagerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17379CFB2937581C005107A1 /* ManagerListView.swift */; };
 		178E22132936377E00509AA2 /* QrChefApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E22122936377E00509AA2 /* QrChefApp.swift */; };
@@ -44,12 +44,12 @@
 /* Begin PBXFileReference section */
 		1710EB9A2938B36C0001E107 /* RestaurantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantList.swift; sourceTree = "<group>"; };
 		1710EB9C2938B6DF0001E107 /* RowRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowRestaurantView.swift; sourceTree = "<group>"; };
-		1710EB9E2938B8850001E107 /* RowRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowRecipeView.swift; sourceTree = "<group>"; };
 		1710EBA62938F1880001E107 /* ListCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategorieView.swift; sourceTree = "<group>"; };
 		1710EBA92938FB8A0001E107 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		1710EBAB2938FDB60001E107 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		1710EBAF2938FE610001E107 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		1710EBB22938FEA90001E107 /* FavoriteRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurantView.swift; sourceTree = "<group>"; };
+		1710EBB6293906250001E107 /* RowRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowRecipeView.swift; sourceTree = "<group>"; };
 		1722340C29364EB500FB6CAA /* RestaurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurationViewModel.swift; sourceTree = "<group>"; };
 		17379CFB2937581C005107A1 /* ManagerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerListView.swift; sourceTree = "<group>"; };
 		178E220F2936377E00509AA2 /* QrChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +94,7 @@
 				1710EBA62938F1880001E107 /* ListCategorieView.swift */,
 				17379CFB2937581C005107A1 /* ManagerListView.swift */,
 				1710EB9A2938B36C0001E107 /* RestaurantList.swift */,
-				1710EB9E2938B8850001E107 /* RowRecipeView.swift */,
+				1710EBB6293906250001E107 /* RowRecipeView.swift */,
 				1710EB9C2938B6DF0001E107 /* RowRestaurantView.swift */,
 			);
 			path = ListView;
@@ -343,6 +343,7 @@
 				7BF74C982938F9D300E442A3 /* SignUpView.swift in Sources */,
 				178E22132936377E00509AA2 /* QrChefApp.swift in Sources */,
 				17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */,
+				1710EBB7293906250001E107 /* RowRecipeView.swift in Sources */,
 				7BF74C962938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift in Sources */,
 				17379CFC2937581C005107A1 /* ManagerListView.swift in Sources */,
 				1722340D29364EB500FB6CAA /* RestaurationViewModel.swift in Sources */,

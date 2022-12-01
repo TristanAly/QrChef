@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RowRecipeView: View {
+struct RowRecipesView: View {
     var recipe: Recipe
     var body: some View {
         HStack{
@@ -38,7 +38,7 @@ struct RowRecipeView: View {
     }
 }
 
-struct RowRecipeView_Previews: PreviewProvider {
+struct RowRecipesView_Previews: PreviewProvider {
     static var previews: some View {
         RowRecipeView(recipe: Recipe.example)
     }
