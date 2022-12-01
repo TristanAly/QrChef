@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1710EB9B2938B36C0001E107 /* RestaurantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EB9A2938B36C0001E107 /* RestaurantList.swift */; };
+		1710EB9D2938B6DF0001E107 /* RowRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EB9C2938B6DF0001E107 /* RowRestaurantView.swift */; };
+		1710EB9F2938B8850001E107 /* RowRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EB9E2938B8850001E107 /* RowRecipeView.swift */; };
+		1710EBA72938F1880001E107 /* ListCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBA62938F1880001E107 /* ListCategorieView.swift */; };
 		1722340D29364EB500FB6CAA /* RestaurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722340C29364EB500FB6CAA /* RestaurationViewModel.swift */; };
 		17379CFC2937581C005107A1 /* ManagerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17379CFB2937581C005107A1 /* ManagerListView.swift */; };
 		178E22132936377E00509AA2 /* QrChefApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E22122936377E00509AA2 /* QrChefApp.swift */; };
@@ -31,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1710EB9A2938B36C0001E107 /* RestaurantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantList.swift; sourceTree = "<group>"; };
+		1710EB9C2938B6DF0001E107 /* RowRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowRestaurantView.swift; sourceTree = "<group>"; };
+		1710EB9E2938B8850001E107 /* RowRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowRecipeView.swift; sourceTree = "<group>"; };
+		1710EBA62938F1880001E107 /* ListCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategorieView.swift; sourceTree = "<group>"; };
 		1722340C29364EB500FB6CAA /* RestaurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurationViewModel.swift; sourceTree = "<group>"; };
 		17379CFB2937581C005107A1 /* ManagerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerListView.swift; sourceTree = "<group>"; };
 		178E220F2936377E00509AA2 /* QrChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +120,10 @@
 				7B0C923D293660FB00C57CCD /* DetailView */,
 				17D3300C2936647500A2403A /* RecipeListView.swift */,
 				17379CFB2937581C005107A1 /* ManagerListView.swift */,
+				1710EBA62938F1880001E107 /* ListCategorieView.swift */,
+				1710EB9A2938B36C0001E107 /* RestaurantList.swift */,
+				1710EB9E2938B8850001E107 /* RowRecipeView.swift */,
+				1710EB9C2938B6DF0001E107 /* RowRestaurantView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1710EB9B2938B36C0001E107 /* RestaurantList.swift in Sources */,
 				D94851732937566300886DD1 /* PreparationView.swift in Sources */,
 				17D33001293658B600A2403A /* Recipe.swift in Sources */,
 				D94851822937B0A400886DD1 /* ButtonOrderView.swift in Sources */,
@@ -252,6 +265,8 @@
 				7B0C92402936888500C57CCD /* RowView.swift in Sources */,
 				7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */,
 				17D3300D2936647500A2403A /* RecipeListView.swift in Sources */,
+				1710EB9D2938B6DF0001E107 /* RowRestaurantView.swift in Sources */,
+				1710EBA72938F1880001E107 /* ListCategorieView.swift in Sources */,
 				D948517B293762C500886DD1 /* ButtonServView.swift in Sources */,
 				7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */,
 				17D330052936594E00A2403A /* Manager.swift in Sources */,
@@ -259,6 +274,7 @@
 				D9485180293792E500886DD1 /* RecipeOrderView.swift in Sources */,
 				D94851772937567A00886DD1 /* ButtonColor.swift in Sources */,
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
+				1710EB9F2938B8850001E107 /* RowRecipeView.swift in Sources */,
 				178E22132936377E00509AA2 /* QrChefApp.swift in Sources */,
 				17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */,
 				17379CFC2937581C005107A1 /* ManagerListView.swift in Sources */,
