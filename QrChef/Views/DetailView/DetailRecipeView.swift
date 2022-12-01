@@ -37,7 +37,7 @@ struct DetailRecipeView: View {
                     Text(recipe.name ?? "")
                         .font(.title2)
                         .fontWeight(.medium)
-                    Text(recipe.welcomeDescription ?? "")
+                    Text(recipe.description ?? "")
                         .font(.title3)
                         .fontWeight(.light)
                     
