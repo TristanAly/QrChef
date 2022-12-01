@@ -9,9 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-//       RecipeListView(recipeVM: RestaurantViewModel())
-//        ManagerListView(recipeVM: RestaurantViewModel())
-        RestaurantList(recipeVM: RestaurantViewModel())
+        TabBarView()
     }
 }
 
