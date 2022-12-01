@@ -16,6 +16,6 @@ struct Manager: Identifiable, Codable {
 
 extension Manager {
     static var example: Manager {
-        Manager(id: 1, name: "", email: "", restaurant: "", address: "", createdAt: "", updatedAt: "", recipe: [Recipe(id: 1, name: "", image: "", category: "", priceRange: "", welcomeDescription: "", createdAt: "", updatedAt: "", managerID: 1)])
+        Manager(id: 1, name: "richie", email: "ritz@mail.com", restaurant: "ritz", address: "7 rue des feiyeur", createdAt: "", updatedAt: "", recipe: [Recipe(id: 1, name: "", image: "", category: .mainCourse, priceRange: "", description: "", createdAt: "", updatedAt: "", managerID: 1)])
     }
 }

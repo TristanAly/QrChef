@@ -39,9 +39,10 @@ struct DetailRecipeView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text(recipe.name ?? "")
                         .fontWeight(.medium)
-                        .font(.system(size: 25))
-                    Text(recipe.welcomeDescription ?? "")
-                        .font(.system(size: 20))
+
+                    Text(recipe.description ?? "")
+                        .font(.title3)
+
                         .fontWeight(.light)
                     
                 }
