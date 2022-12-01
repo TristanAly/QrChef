@@ -25,6 +25,9 @@
 		D94851772937567A00886DD1 /* ButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94851762937567A00886DD1 /* ButtonColor.swift */; };
 		D9485179293759E500886DD1 /* CommandesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9485178293759E500886DD1 /* CommandesView.swift */; };
 		D948517B293762C500886DD1 /* ButtonServView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D948517A293762C500886DD1 /* ButtonServView.swift */; };
+		D948517E29378B1400886DD1 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D948517D29378B1400886DD1 /* OrderView.swift */; };
+		D9485180293792E500886DD1 /* RecipeOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D948517F293792E500886DD1 /* RecipeOrderView.swift */; };
+		D94851822937B0A400886DD1 /* ButtonOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94851812937B0A400886DD1 /* ButtonOrderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		D94851762937567A00886DD1 /* ButtonColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonColor.swift; sourceTree = "<group>"; };
 		D9485178293759E500886DD1 /* CommandesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandesView.swift; sourceTree = "<group>"; };
 		D948517A293762C500886DD1 /* ButtonServView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonServView.swift; sourceTree = "<group>"; };
+		D948517D29378B1400886DD1 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		D948517F293792E500886DD1 /* RecipeOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeOrderView.swift; sourceTree = "<group>"; };
+		D94851812937B0A400886DD1 /* ButtonOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOrderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		178E222429364DCE00509AA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D948517C29378AFF00886DD1 /* OrderView */,
 				D94851712937564C00886DD1 /* PreparationView */,
 				7B0C923D293660FB00C57CCD /* DetailView */,
 				17D3300C2936647500A2403A /* RecipeListView.swift */,
@@ -155,6 +162,16 @@
 				D94851762937567A00886DD1 /* ButtonColor.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D948517C29378AFF00886DD1 /* OrderView */ = {
+			isa = PBXGroup;
+			children = (
+				D948517D29378B1400886DD1 /* OrderView.swift */,
+				D948517F293792E500886DD1 /* RecipeOrderView.swift */,
+				D94851812937B0A400886DD1 /* ButtonOrderView.swift */,
+			);
+			path = OrderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +246,9 @@
 			files = (
 				D94851732937566300886DD1 /* PreparationView.swift in Sources */,
 				17D33001293658B600A2403A /* Recipe.swift in Sources */,
+				D94851822937B0A400886DD1 /* ButtonOrderView.swift in Sources */,
 				D9485179293759E500886DD1 /* CommandesView.swift in Sources */,
+				D948517E29378B1400886DD1 /* OrderView.swift in Sources */,
 				7B0C92402936888500C57CCD /* RowView.swift in Sources */,
 				7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */,
 				17D3300D2936647500A2403A /* RecipeListView.swift in Sources */,
@@ -237,6 +256,7 @@
 				7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */,
 				17D330052936594E00A2403A /* Manager.swift in Sources */,
 				178E22152936377E00509AA2 /* ContentView.swift in Sources */,
+				D9485180293792E500886DD1 /* RecipeOrderView.swift in Sources */,
 				D94851772937567A00886DD1 /* ButtonColor.swift in Sources */,
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
 				178E22132936377E00509AA2 /* QrChefApp.swift in Sources */,

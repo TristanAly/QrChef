@@ -16,11 +16,8 @@ struct ButtonView: View {
                 Button{
                    if count != 1 {
                         self.count -= 1
-                        self.price -= price
+                        self.price -= 7
                   }
-//                    if count == 1 {
-//                         self.price
-//                    }
                 } label: {
                     Text("-")
                         .foregroundColor(Color.redBurgundy)
@@ -37,7 +34,7 @@ struct ButtonView: View {
                 
                 Button{
                         self.count += 1
-                        self.price += price
+                        self.price += 7
                     
                 } label: {
                     Text("+")
@@ -66,6 +63,19 @@ struct ButtonView: View {
             .foregroundColor(.white)
             .cornerRadius(12)
         }
+//        .accessibilityElement()
+//        .accessibilityLabel("Value")
+//        .accessibilityValue(String(price))
+//        .accessibilityAdjustableAction { direction in
+//            switch direction {
+//            case .increment:
+//                price += 1
+//            case .decrement:
+//                price -= 1
+//            default:
+//                print("Not handled.")
+//            }
+//        }
         
     }
 }

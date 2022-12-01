@@ -16,6 +16,7 @@ struct PreparationView: View {
                     .scaledToFit()
                     .frame(width: 400)
                     .ignoresSafeArea()
+                
                 ScrollView {
                     CommandesView(recipe: Recipe.example)
                         
@@ -27,11 +28,11 @@ struct PreparationView: View {
                         
                     CommandesView(recipe: Recipe.example)
                         
-                    
                 }
+                
                 .padding(.top, -50)
                 ButtonServView()
-        }
+            } 
     }
 }
 
