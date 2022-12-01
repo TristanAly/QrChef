@@ -14,11 +14,11 @@ struct RowView: View {
     var body: some View {
         
         HStack {
-            Image("food")
+            Image(systemName: "fork.knife")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 67)
-                .clipShape(RoundedRectangle(cornerRadius: 12.0))
+//                .aspectRatio(contentMode: .fit)
+                .frame(width: 30, height: 50)
+                .foregroundColor(.redBurgundy)
             Spacer()
             HStack{
                 Text("aaaa")
@@ -38,7 +38,7 @@ struct RowView: View {
                     .foregroundColor(.clear)
                     .strikethrough(didTap ? true : false, color: Color.redBurgundy)
                     .fontWeight(.regular)
-                   .font(.system(size: 24))
+                   .font(.system(size: 20))
 
             }
             Spacer()
@@ -49,7 +49,7 @@ struct RowView: View {
 
             } label: {
                 Text("-")
-                    .frame(width: 50, height: 50)
+                    .frame(width: 40, height: 40)
                     .foregroundColor(Color.black)
                     .background(didTap ? Color.redBurgundy : Color.clear)
                     .clipShape(Circle())

@@ -21,6 +21,9 @@
 		7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923929365D9100C57CCD /* UserViewModel.swift */; };
 		7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923B293660B700C57CCD /* ButtonView.swift */; };
 		7B0C92402936888500C57CCD /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923F2936888500C57CCD /* RowView.swift */; };
+		7B202C2A2938E2F5000092EF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B202C292938E2F5000092EF /* SignInView.swift */; };
+		7BF74C962938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF74C952938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift */; };
+		7BF74C982938F9D300E442A3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF74C972938F9D300E442A3 /* SignUpView.swift */; };
 		D94851732937566300886DD1 /* PreparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94851722937566300886DD1 /* PreparationView.swift */; };
 		D94851772937567A00886DD1 /* ButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94851762937567A00886DD1 /* ButtonColor.swift */; };
 		D9485179293759E500886DD1 /* CommandesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9485178293759E500886DD1 /* CommandesView.swift */; };
@@ -46,6 +49,9 @@
 		7B0C923929365D9100C57CCD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		7B0C923B293660B700C57CCD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		7B0C923F2936888500C57CCD /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		7B202C292938E2F5000092EF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		7BF74C952938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBurgundiViewModifier.swift; sourceTree = "<group>"; };
+		7BF74C972938F9D300E442A3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D94851722937566300886DD1 /* PreparationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationView.swift; sourceTree = "<group>"; };
 		D94851762937567A00886DD1 /* ButtonColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonColor.swift; sourceTree = "<group>"; };
 		D9485178293759E500886DD1 /* CommandesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandesView.swift; sourceTree = "<group>"; };
@@ -138,11 +144,22 @@
 		7B0C923D293660FB00C57CCD /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				7BF74C942938F20100E442A3 /* ViewModifier */,
 				7B0C923B293660B700C57CCD /* ButtonView.swift */,
 				17D3300629365E0C00A2403A /* DetailRecipeView.swift */,
 				7B0C923F2936888500C57CCD /* RowView.swift */,
+				7B202C292938E2F5000092EF /* SignInView.swift */,
+				7BF74C972938F9D300E442A3 /* SignUpView.swift */,
 			);
 			path = DetailView;
+			sourceTree = "<group>";
+		};
+		7BF74C942938F20100E442A3 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				7BF74C952938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift */,
+			);
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 		D94851712937564C00886DD1 /* PreparationView */ = {
@@ -258,9 +275,12 @@
 				178E22152936377E00509AA2 /* ContentView.swift in Sources */,
 				D9485180293792E500886DD1 /* RecipeOrderView.swift in Sources */,
 				D94851772937567A00886DD1 /* ButtonColor.swift in Sources */,
+				7B202C2A2938E2F5000092EF /* SignInView.swift in Sources */,
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
+				7BF74C982938F9D300E442A3 /* SignUpView.swift in Sources */,
 				178E22132936377E00509AA2 /* QrChefApp.swift in Sources */,
 				17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */,
+				7BF74C962938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift in Sources */,
 				17379CFC2937581C005107A1 /* ManagerListView.swift in Sources */,
 				1722340D29364EB500FB6CAA /* RestaurationViewModel.swift in Sources */,
 			);
