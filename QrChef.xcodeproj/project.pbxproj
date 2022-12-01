@@ -74,6 +74,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1710EBA82938FA430001E107 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				1710EBA62938F1880001E107 /* ListCategorieView.swift */,
+				17379CFB2937581C005107A1 /* ManagerListView.swift */,
+				1710EB9A2938B36C0001E107 /* RestaurantList.swift */,
+				1710EB9E2938B8850001E107 /* RowRecipeView.swift */,
+				1710EB9C2938B6DF0001E107 /* RowRestaurantView.swift */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
 		178E22062936377E00509AA2 = {
 			isa = PBXGroup;
 			children = (
@@ -119,11 +131,7 @@
 				D94851712937564C00886DD1 /* PreparationView */,
 				7B0C923D293660FB00C57CCD /* DetailView */,
 				17D3300C2936647500A2403A /* RecipeListView.swift */,
-				17379CFB2937581C005107A1 /* ManagerListView.swift */,
-				1710EBA62938F1880001E107 /* ListCategorieView.swift */,
-				1710EB9A2938B36C0001E107 /* RestaurantList.swift */,
-				1710EB9E2938B8850001E107 /* RowRecipeView.swift */,
-				1710EB9C2938B6DF0001E107 /* RowRestaurantView.swift */,
+				1710EBA82938FA430001E107 /* ListView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
