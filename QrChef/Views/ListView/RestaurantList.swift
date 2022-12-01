@@ -15,7 +15,8 @@ struct RestaurantList: View {
         NavigationView {
             VStack(alignment: .leading){
                 Text("Restaurants")
-                    .font(.title2)
+                    .font(.title)
+                    .bold()
                     .padding()
                 ScrollView{
 //                    if let recipes = recipeVM.manager {
@@ -41,7 +42,17 @@ struct RestaurantList: View {
                     }
                 }
             }
-            .navigationTitle("Liste des restaurants")
+//            .navigationTitle("Liste des restaurants")
+            .toolbar {
+                NavigationLink{
+                    ProfilView()
+                } label: {
+                    Image(systemName: "person.circle.fill")
+                        .font(.title)
+                }
+                .padding(8)
+                .padding(.top, 30)
+            }
         }
     }
 }

@@ -11,6 +11,10 @@
 		1710EB9D2938B6DF0001E107 /* RowRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EB9C2938B6DF0001E107 /* RowRestaurantView.swift */; };
 		1710EB9F2938B8850001E107 /* RowRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EB9E2938B8850001E107 /* RowRecipeView.swift */; };
 		1710EBA72938F1880001E107 /* ListCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBA62938F1880001E107 /* ListCategorieView.swift */; };
+		1710EBAA2938FB8A0001E107 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBA92938FB8A0001E107 /* TabBarView.swift */; };
+		1710EBAC2938FDB60001E107 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBAB2938FDB60001E107 /* ProfilView.swift */; };
+		1710EBB02938FE610001E107 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBAF2938FE610001E107 /* BookingView.swift */; };
+		1710EBB32938FEA90001E107 /* FavoriteRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBB22938FEA90001E107 /* FavoriteRestaurantView.swift */; };
 		1722340D29364EB500FB6CAA /* RestaurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722340C29364EB500FB6CAA /* RestaurationViewModel.swift */; };
 		17379CFC2937581C005107A1 /* ManagerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17379CFB2937581C005107A1 /* ManagerListView.swift */; };
 		178E22132936377E00509AA2 /* QrChefApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E22122936377E00509AA2 /* QrChefApp.swift */; };
@@ -42,6 +46,10 @@
 		1710EB9C2938B6DF0001E107 /* RowRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowRestaurantView.swift; sourceTree = "<group>"; };
 		1710EB9E2938B8850001E107 /* RowRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowRecipeView.swift; sourceTree = "<group>"; };
 		1710EBA62938F1880001E107 /* ListCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategorieView.swift; sourceTree = "<group>"; };
+		1710EBA92938FB8A0001E107 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		1710EBAB2938FDB60001E107 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
+		1710EBAF2938FE610001E107 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
+		1710EBB22938FEA90001E107 /* FavoriteRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRestaurantView.swift; sourceTree = "<group>"; };
 		1722340C29364EB500FB6CAA /* RestaurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurationViewModel.swift; sourceTree = "<group>"; };
 		17379CFB2937581C005107A1 /* ManagerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerListView.swift; sourceTree = "<group>"; };
 		178E220F2936377E00509AA2 /* QrChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +100,30 @@
 			path = ListView;
 			sourceTree = "<group>";
 		};
+		1710EBAD2938FDC10001E107 /* Profil */ = {
+			isa = PBXGroup;
+			children = (
+				1710EBAB2938FDB60001E107 /* ProfilView.swift */,
+			);
+			path = Profil;
+			sourceTree = "<group>";
+		};
+		1710EBAE2938FE4C0001E107 /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				1710EBAF2938FE610001E107 /* BookingView.swift */,
+			);
+			path = Booking;
+			sourceTree = "<group>";
+		};
+		1710EBB12938FE910001E107 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				1710EBB22938FEA90001E107 /* FavoriteRestaurantView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		178E22062936377E00509AA2 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +145,7 @@
 			children = (
 				178E22122936377E00509AA2 /* QrChefApp.swift */,
 				178E22142936377E00509AA2 /* ContentView.swift */,
+				1710EBA92938FB8A0001E107 /* TabBarView.swift */,
 				178E222629364DE100509AA2 /* Models */,
 				178E222529364DD900509AA2 /* ViewModels */,
 				178E222429364DCE00509AA2 /* Views */,
@@ -133,6 +166,9 @@
 		178E222429364DCE00509AA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1710EBB12938FE910001E107 /* Favorites */,
+				1710EBAE2938FE4C0001E107 /* Booking */,
+				1710EBAD2938FDC10001E107 /* Profil */,
 				D948517C29378AFF00886DD1 /* OrderView */,
 				D94851712937564C00886DD1 /* PreparationView */,
 				7B0C923D293660FB00C57CCD /* DetailView */,
@@ -291,12 +327,16 @@
 				7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */,
 				17D3300D2936647500A2403A /* RecipeListView.swift in Sources */,
 				1710EB9D2938B6DF0001E107 /* RowRestaurantView.swift in Sources */,
+				1710EBAA2938FB8A0001E107 /* TabBarView.swift in Sources */,
+				1710EBAC2938FDB60001E107 /* ProfilView.swift in Sources */,
 				1710EBA72938F1880001E107 /* ListCategorieView.swift in Sources */,
 				D948517B293762C500886DD1 /* ButtonServView.swift in Sources */,
 				7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */,
 				17D330052936594E00A2403A /* Manager.swift in Sources */,
 				178E22152936377E00509AA2 /* ContentView.swift in Sources */,
 				D9485180293792E500886DD1 /* RecipeOrderView.swift in Sources */,
+				1710EBB02938FE610001E107 /* BookingView.swift in Sources */,
+				1710EBB32938FEA90001E107 /* FavoriteRestaurantView.swift in Sources */,
 				D94851772937567A00886DD1 /* ButtonColor.swift in Sources */,
 				7B202C2A2938E2F5000092EF /* SignInView.swift in Sources */,
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
