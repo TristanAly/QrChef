@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct DetailRecipeView: View {
-    var recipe: Recipe
+    @State var recipe: Recipe
+    @ObservedObject var recipeVM: RestaurantViewModel
+
     var body: some View {
         
         VStack(alignment: .center){
@@ -17,8 +19,7 @@ struct DetailRecipeView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 500)
-//                .edgesIgnoringSafeArea(.top)
-                
+            
             HStack {
                 AsyncImage(url: URL(string: recipe.image ?? "")) {
                     image in image
@@ -32,7 +33,6 @@ struct DetailRecipeView: View {
                     ProgressView()
                 }
                 
-//                                .frame(height: 150)
                 VStack(alignment: .leading, spacing: 10) {
                     Text(recipe.name ?? "")
                         .font(.title2)
@@ -43,7 +43,7 @@ struct DetailRecipeView: View {
                     
                 }
             }
-           
+            
             VStack(alignment: .leading){
                 Text("Ingrédients:")
                     .font(.title2)
@@ -51,7 +51,7 @@ struct DetailRecipeView: View {
                     .padding()
                 ScrollView{
                     //            List {
-                    if let ingredient = recipe.ingredient {
+                    if let ingredient = recipe.ingredients {
                         ForEach(ingredient, id: \.id) { item in
                             RowView(ingredient: item)
                                 .padding()
@@ -61,17 +61,24 @@ struct DetailRecipeView: View {
                 }
                 
             }
-//            Spacer()
-                ButtonView()
-                
-//            }
+            
+            ButtonView()
         }
-//        .padding()
+        .onAppear{
+            Task {
+                do {
+                    recipe = try await recipeVM.getRecipe(id: recipe.id)
+                    print(recipe)
+                } catch let error {
+                    print("CAUGHT ON MESSAGES : \(error)")
+                }
+            }
+        }
     }
 }
 
 struct DetailRecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailRecipeView(recipe: Recipe.example)
+        DetailRecipeView(recipe: Recipe.example, recipeVM: RestaurantViewModel())
     }
 }

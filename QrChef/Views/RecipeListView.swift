@@ -30,7 +30,7 @@ struct RecipeListView: View {
             .onAppear{
                 Task {
                     do {
-                    recipeVM.recipes = try await recipeVM.getRecipe()
+                    recipeVM.recipes = try await recipeVM.getRecipes()
                 } catch let error {
                     print("CAUGHT ON MESSAGES : \(error)")
                 }

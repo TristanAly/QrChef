@@ -16,8 +16,29 @@ class RestaurantViewModel: ObservableObject {
     
     let baseUrl = "http://localhost:3000/api"
     
+    // To GET Recipe information given its ID
+    func getRecipe(id: Int) async throws -> Recipe {
+        
+        guard let url = URL(string: "\(baseUrl)/recipes/\(id)")
+        else { fatalError("Couldn't not find URL") }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+      
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+      
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
+       
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+       
+        let recipe = try decoder.decode(Recipe.self, from: data)
+       
+        return recipe
+    }
     
-    func getRecipe() async throws -> [Recipe] {
+    // To GET an array with all Recipes
+    func getRecipes() async throws -> [Recipe] {
         
         guard let url = URL(string: "\(baseUrl)/recipes")
         else { fatalError("Couldn't not find URL") }

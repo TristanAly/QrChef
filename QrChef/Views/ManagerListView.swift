@@ -20,7 +20,7 @@ struct ManagerListView: View {
                     if let recipes = recipeVM.manager.recipe {
                         ForEach(recipes, id: \.id) { recipe in
                             NavigationLink{
-                                DetailRecipeView(recipe: recipe)
+                                DetailRecipeView(recipe: recipe, recipeVM: RestaurantViewModel())
                             } label: {
                                 HStack{
                                     AsyncImage(url: URL(string: recipe.image ?? "")) { image in
