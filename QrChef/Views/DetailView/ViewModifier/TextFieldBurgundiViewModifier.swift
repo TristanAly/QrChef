@@ -27,3 +27,13 @@ extension View {
         self.modifier(TextFieldBurgundiViewModifier())
     }
 }
+
+extension View {
+    func underlineTextField() -> some View {
+        self
+            .padding(.vertical, 10)
+            .overlay(Rectangle().frame(height: 2).padding(.top, 35))
+            .foregroundColor(.redBurgundy)
+            .padding(10)
+    }
+}
