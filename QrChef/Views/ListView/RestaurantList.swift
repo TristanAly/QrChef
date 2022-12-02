@@ -14,23 +14,33 @@ struct RestaurantList: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading){
-                Text("Restaurants")
-                    .font(.title)
-                    .bold()
-                    .padding()
-                ScrollView{
-//                    if let recipes = recipeVM.manager {
+                HStack{
+                    Text("Book for dinner tonight")
+                        .font(.title)
+                        .bold()
+                        .padding()
+                    Spacer()
+                    NavigationLink{
+                        ProfilView()
+                    } label: {
+                        Image(systemName: "person.circle.fill")
+                            .font(.title)
+                    }
+                    .padding(8)
+                }
+                ScrollView(showsIndicators: false){
+                    VStack(spacing: 20){
                     ForEach(recipeVM.managers, id: \.restaurant) { restau in
                             NavigationLink{
                                 ManagerListView(recipeVM: recipeVM, manager: restau)
                             } label: {
-                                HStack{
-                                    RowRestaurantView(manager: restau)
+                                    HStack{
+                                        NewRowRestaurantView(manager: restau)
+                                    }
+                                    .foregroundColor(.black)
                                 }
                             }
-                            Divider()
-                        }
-//                    }
+                    }.padding()
                 }
             }
             .onAppear{
@@ -43,16 +53,7 @@ struct RestaurantList: View {
                 }
             }
 //            .navigationTitle("Liste des restaurants")
-            .toolbar {
-                NavigationLink{
-                    ProfilView()
-                } label: {
-                    Image(systemName: "person.circle.fill")
-                        .font(.title)
-                }
-                .padding(8)
-                .padding(.top, 30)
-            }
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

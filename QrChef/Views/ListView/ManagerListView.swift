@@ -20,7 +20,6 @@ struct ManagerListView: View {
                 Text(manager.name ?? "test")
                     .font(.headline)
             }.padding()
-            .padding()
             Picker("What is your favorite flavour?", selection: $selected) {
                 ForEach(Category.allCases, id: \.rawValue) { category in
                     Text(category.rawValue).tag(category)
