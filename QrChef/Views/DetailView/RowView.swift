@@ -14,10 +14,10 @@ struct RowView: View {
     var body: some View {
         
         HStack {
-            Image(systemName: "fork.knife")
+            Image(systemName: "carrot")
                 .resizable()
 //                .aspectRatio(contentMode: .fit)
-                .frame(width: 30, height: 50)
+                .frame(width: 40, height: 50)
                 .foregroundColor(.redBurgundy)
             Spacer()
             HStack{
