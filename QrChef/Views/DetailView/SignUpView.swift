@@ -8,74 +8,61 @@
 import SwiftUI
 
 struct SignUpView: View {
-    // Importation VM
-    // Variable Textfields
-    @State var username: String = ""
-    @State var email: String = ""
-    @State var password = ""
+    
+    @ObservedObject var loginVM : LoginViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        NavigationView {
-       
-            ZStack {
-                
-                VStack{
-                    Spacer()
-                    HStack {
-                        Image(systemName: "person")
+        
+        VStack{
+            Text("Create an account")
+                .foregroundColor(.redBurgundy)
+                .font(.title2)
+            Spacer()
+            Group{
+                HStack {
+                    Image(systemName: "person")
                         .foregroundColor(.secondary)
-                        TextField("username", text: $username)
-                    }
-                    .autocorrectionDisabled(true)
-                    .textInputAutocapitalization(.never)
-                    .frame(width: 300, height: 40)
-                    .cornerRadius(10)
-                    .underlineTextField()
-                    
-                    HStack {
-                        Image(systemName: "envelope.badge")
-                        .foregroundColor(.secondary)
-                        TextField("Email", text: $email)
-                    }
-                    .autocorrectionDisabled(true)
-                    .textCase(.lowercase)
-                    .textInputAutocapitalization(.never)
-                    .frame(width: 300, height: 40)
-                    .cornerRadius(10)
-                    .underlineTextField()
-                    
-                    HStack {
-                        Image(systemName: "key")
-                        .foregroundColor(.secondary)
-                        SecureField("password", text: $password)
-                    }
-                    .frame(width: 300, height: 40)
-                    .cornerRadius(10)
-                    .autocorrectionDisabled(true)
-                    .underlineTextField()
-                    
-                    
-                    
-                    Spacer()
-                    
-                    Button {
-                        // TODO: ACTION INSCRIPTION
-                        Task {
-                            
-                        }
-                    } label: {
-                        Text("insciption")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: 300, height: 45)
-                            .background(Color.redBurgundy)
-                            .cornerRadius(15.0)
-                    }
+                    TextField("username", text: $loginVM.username)
                 }
+                .textInputAutocapitalization(.never)
                 
-                .navigationTitle("Create an account")
-                .navigationBarTitleDisplayMode(.inline)
+                HStack {
+                    Image(systemName: "envelope.badge")
+                        .foregroundColor(.secondary)
+                    TextField("Email", text: $loginVM.email)
+                }
+                .textCase(.lowercase)
+                .textInputAutocapitalization(.never)
+                
+                HStack {
+                    Image(systemName: "key")
+                        .foregroundColor(.secondary)
+                    SecureField("password", text: $loginVM.password)
+                }
+            }
+            .frame(width: 300, height: 40)
+            .cornerRadius(10)
+            .autocorrectionDisabled(true)
+            .underlineTextField()
+            
+            Spacer()
+            
+            Button {
+                Task{
+                    try await loginVM.signUp(userName: loginVM.username, email: loginVM.email, password: loginVM.password)
+                }
+                Task{
+                    dismiss()
+                }
+            } label: {
+                Text("insciption")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width: 300, height: 45)
+                    .background(Color.redBurgundy)
+                    .cornerRadius(15.0)
             }
         }
     }
@@ -83,6 +70,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(loginVM: LoginViewModel())
     }
 }
