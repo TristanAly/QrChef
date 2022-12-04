@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewRowRestaurantView: View {
-    var manager: Manager
+    var restaurant: Restaurant
     var body: some View {
         VStack{
             Image("Restaurant")
@@ -17,16 +17,16 @@ struct NewRowRestaurantView: View {
             VStack{
                 HStack{
                     VStack(alignment: .leading){
-                        Text(manager.restaurant ?? "")
+                        Text(restaurant.name ?? "")
                             .font(.title)
-                        Text(manager.address ?? "")
+                        Text(restaurant.address ?? "")
                             .font(.subheadline)
                     }.padding(.horizontal)
                     Spacer()
                     VStack(alignment: .trailing){
-                        Text(manager.restaurant ?? "")
+                        Text(restaurant.name ?? "")
                             .font(.title)
-                        Text(manager.restaurant ?? "")
+                        Text(restaurant.address ?? "")
                             .font(.title)
                     }
                     .padding(.horizontal)
@@ -41,6 +41,6 @@ struct NewRowRestaurantView: View {
 
 struct NewRowRestaurantView_Previews: PreviewProvider {
     static var previews: some View {
-        NewRowRestaurantView(manager: Manager.example)
+        NewRowRestaurantView(restaurant: Restaurant.example)
     }
 }
