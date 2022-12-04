@@ -8,7 +8,7 @@ import SwiftUI
 
 struct RestaurantList: View {
     
-    @ObservedObject var restaurantVM: RestaurantViewModel
+    @StateObject private var restaurantVM = RestaurantViewModel()
     @State var isfavorite = false
     var body: some View {
         NavigationView {
@@ -52,6 +52,7 @@ struct RestaurantList: View {
 
 struct RestaurantList_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantList(restaurantVM: RestaurantViewModel())
+        RestaurantList()
+            .environmentObject(RestaurantViewModel())
     }
 }

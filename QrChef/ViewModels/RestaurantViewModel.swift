@@ -1,5 +1,5 @@
 //
-//  RestaurationViewModel.swift
+//  RestaurantViewModel.swift
 //  QrChef
 //
 //  Created by apprenant1 on 29/11/2022.
@@ -9,17 +9,20 @@ import Foundation
 import SwiftUI
 
 class RestaurantViewModel: ObservableObject {
-    @Published var ingredient = [Ingredient.example]
-    @Published var recipes = [Recipe.example]
-    @Published var managers = [Manager.example]
-    @Published var manager = Manager.example
     
     @Published var restaurants = [Restaurant.example]
     @Published var restaurant = Restaurant.example
     
+    @Published var ingredient = [Ingredient.example]
+    @Published var recipes = [Recipe.example]
+    
+    @Published var managers = [Manager.example]
+    @Published var manager = Manager.example
+    
+    
     let baseUrl = "http://localhost:3000/api"
     
-    
+    // MARK: RESTAURANT
     func getRestaurant() async throws -> [Restaurant] {
         
         guard let url = URL(string: "\(baseUrl)/restaurant")
@@ -39,8 +42,6 @@ class RestaurantViewModel: ObservableObject {
         print("Async decodedUser", restaurants)
         return restaurants
     }
-    
-    
     func getRestaurantByID(id: Int) async throws -> Restaurant {
         
         guard let url = URL(string: "\(baseUrl)/restaurant/\(id)")
@@ -60,7 +61,27 @@ class RestaurantViewModel: ObservableObject {
         print("Async decodedUser", restaurant)
         return restaurant
     }
-    // To GET Recipe information given its ID
+    
+    // MARK: Recipe
+    func getRecipes() async throws -> [Recipe] {
+        
+        guard let url = URL(string: "\(baseUrl)/recipes")
+        else { fatalError("Couldn't not find URL") }
+        print("1")
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        print("2")
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        print(data)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
+        print("3")
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        print("fin")
+        let recipes = try decoder.decode([Recipe].self, from: data)
+        print("Async decodedUser", recipes)
+        return recipes
+    }
     func getRecipeById(id: Int) async throws -> Recipe {
         
         guard let url = URL(string: "\(baseUrl)/recipes/\(id)")
@@ -81,27 +102,7 @@ class RestaurantViewModel: ObservableObject {
         return recipe
     }
     
-    // To GET an array with all Recipes
-    func getRecipes() async throws -> [Recipe] {
-        
-        guard let url = URL(string: "\(baseUrl)/recipes")
-        else { fatalError("Couldn't not find URL") }
-        print("1")
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        print("2")
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        print(data)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
-        print("3")
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        print("fin")
-        let recipes = try decoder.decode([Recipe].self, from: data)
-        print("Async decodedUser", recipes)
-        return recipes
-    }
-    
+    // MARK: Manager
     func getManager() async throws -> [Manager] {
         
         guard let url = URL(string: "\(baseUrl)/managers")
@@ -121,7 +122,6 @@ class RestaurantViewModel: ObservableObject {
         print("Async decodedUser", managers)
         return managers
     }
-    
     func getManagerByID(id: Int) async throws -> Manager {
         
         guard let url = URL(string: "\(baseUrl)/managers/\(id)")
@@ -142,6 +142,7 @@ class RestaurantViewModel: ObservableObject {
         return managers
     }
     
+    // MARK: Ingredients
     func getIngredient() async throws -> [Ingredient] {
         
         guard let url = URL(string: "\(baseUrl)/ingredients")
