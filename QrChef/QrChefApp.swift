@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct QrChefApp: App {
-    @StateObject private var vm = RestaurantViewModel()
+    @StateObject private var vm = LoginViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()

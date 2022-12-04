@@ -12,7 +12,6 @@ struct SignInResponse: Codable, Identifiable {
         var id: Int
         var username: String
         var email: String
-        var password: String
         var roles: [String]
         var accessToken: String
 }
