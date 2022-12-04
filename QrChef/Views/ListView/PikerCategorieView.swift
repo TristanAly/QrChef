@@ -13,13 +13,14 @@ struct PikerCategorieView: View {
     @State var selected: Category = .mainCourse
     var restaurant: Restaurant
     var body: some View {
-        VStack(alignment: .leading){
+        VStack{
             TopPikerCategorieView(restaurant: restaurant)
+//                .padding(.horizontal)
             Picker("What is your favorite flavour?", selection: $selected) {
                 ForEach(Category.allCases, id: \.rawValue) { category in
                     Text(category.rawValue).tag(category)
                 }
-            }.background(Color.accentColor.opacity(0.6))
+            }.background(Color.accentColor.opacity(0.9))
                 .pickerStyle(.segmented)
                 .cornerRadius(10)
                 .padding()

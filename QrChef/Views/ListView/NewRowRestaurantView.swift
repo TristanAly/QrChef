@@ -9,11 +9,19 @@ import SwiftUI
 
 struct NewRowRestaurantView: View {
     var restaurant: Restaurant
+    @Binding var isfavorite: Bool
     var body: some View {
         VStack{
-            Image("Restaurant")
-                .resizable()
-                .frame(width: 380, height: 150)
+            AsyncImage(url: URL(string: restaurant.image ?? "")) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 380, height: 130)
+            } placeholder: {
+                ProgressView()
+            }
+            .padding(.bottom)
+            Spacer()
             VStack{
                 HStack{
                     VStack(alignment: .leading){
@@ -23,24 +31,35 @@ struct NewRowRestaurantView: View {
                             .font(.subheadline)
                     }.padding(.horizontal)
                     Spacer()
-                    VStack(alignment: .trailing){
-                        Text(restaurant.name ?? "")
-                            .font(.title)
-                        Text(restaurant.address ?? "")
-                            .font(.title)
-                    }
-                    .padding(.horizontal)
+                    //                    VStack(alignment: .topTrailing){
+                    //                        Image(systemName: "bookmark")
+                    //                            .padding()
+                    //                            .padding(.bottom,20)
+                    //                    }
+                    //                    .padding(.horizontal)
                 }
+                .foregroundColor(Color("redBurgundy"))
             }
-            .frame(width: 380, height: 70)
-            .background(Rectangle().fill(.red).frame(width: 380, height: 100))
+            .frame(width: 380, height: 100)
+            .background(Rectangle().fill(.white).frame(width: 380, height: 95).overlay(
+                Rectangle().stroke(Color("redBurgundy"), lineWidth: 2)))
+            .overlay(
+                Button{
+                    isfavorite.toggle()
+            } label: {
+                Image(systemName: isfavorite ? "bookmark.fill" : "bookmark")
+                    .font(.title3)
+                    .foregroundColor(Color("redBurgundy"))
+                    .padding()
+            },alignment: .topTrailing
+            )
         }
         .cornerRadius(8)
     }
 }
 
-struct NewRowRestaurantView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewRowRestaurantView(restaurant: Restaurant.example)
-    }
-}
+//struct NewRowRestaurantView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewRowRestaurantView(restaurant: Restaurant.example, isfavorite: $false)
+//    }
+//}

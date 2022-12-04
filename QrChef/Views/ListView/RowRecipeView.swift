@@ -11,14 +11,6 @@ struct RowRecipesView: View {
     var recipe: Recipe
     var body: some View {
         HStack{
-//            AsyncImage(url: URL(string: recipe.image ?? "")) { image in
-//                image
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fill)
-//                    .frame(width: 70 , height: 70)
-//            } placeholder: {
-//                ProgressView()
-//            }
           
             VStack(alignment: .leading){
                 Text(recipe.name ?? "test")
@@ -42,8 +34,6 @@ struct RowRecipesView: View {
             } placeholder: {
                 ProgressView()
             }
-//            .frame(width: 95, height: 115)
-//            .cornerRadius(8)
             .padding(.horizontal)
         }
     }

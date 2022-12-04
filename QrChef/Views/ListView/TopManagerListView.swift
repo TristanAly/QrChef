@@ -18,14 +18,19 @@ struct TopPikerCategorieView: View {
             } placeholder: {
                 ProgressView()
             }
-                .frame(maxHeight: 250)
                 
             HStack{
                 VStack(alignment: .leading){
                     Text(restaurant.address ?? "test")
+                        .font(.title3)
+                        .bold()
+                        Text("Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif")
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(2)
                 }
-                .font(.headline)
-                .padding()
+                .font(.caption)
+                .padding(.horizontal)
+                .padding(.vertical,1)
              Spacer()
             }
             HStack{
@@ -39,7 +44,7 @@ struct TopPikerCategorieView: View {
                     .foregroundColor(.accentColor)
                
             }
-            .padding()
+            .padding(.horizontal)
         }
     }
 }
