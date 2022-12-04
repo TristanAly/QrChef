@@ -31,18 +31,11 @@ struct NewRowRestaurantView: View {
                             .font(.subheadline)
                     }.padding(.horizontal)
                     Spacer()
-                    //                    VStack(alignment: .topTrailing){
-                    //                        Image(systemName: "bookmark")
-                    //                            .padding()
-                    //                            .padding(.bottom,20)
-                    //                    }
-                    //                    .padding(.horizontal)
                 }
                 .foregroundColor(Color("redBurgundy"))
             }
             .frame(width: 380, height: 100)
-            .background(Rectangle().fill(.white).frame(width: 380, height: 95).overlay(
-                Rectangle().stroke(Color("redBurgundy"), lineWidth: 2)))
+            .background(Rectangle().fill(.white).frame(width: 380, height: 95))
             .overlay(
                 Button{
                     isfavorite.toggle()
@@ -53,7 +46,9 @@ struct NewRowRestaurantView: View {
                     .padding()
             },alignment: .topTrailing
             )
-        }
+        }.overlay(
+            Rectangle().stroke(Color("redBurgundy"), lineWidth: 2)
+                .shadow(radius: 5))
         .cornerRadius(8)
     }
 }

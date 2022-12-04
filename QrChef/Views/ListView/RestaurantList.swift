@@ -47,6 +47,7 @@ struct RestaurantList: View {
             }
         }
     }
+        .navigationBarHidden(true)
 }
 }
 
