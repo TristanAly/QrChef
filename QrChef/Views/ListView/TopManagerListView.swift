@@ -7,28 +7,45 @@
 
 import SwiftUI
 
-struct TopManagerListView: View {
-    var manager: Manager
+struct TopPikerCategorieView: View {
+    var restaurant: Restaurant
     var body: some View {
         VStack{
-//            AsyncImage(url: URL(string: manager.image ?? ""))
-            AsyncImage(url: URL(string: ""))
-                .frame(height: 150)
+            AsyncImage(url: URL(string: restaurant.image ?? "")) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+            } placeholder: {
+                ProgressView()
+            }
+                .frame(maxHeight: 250)
+                
             HStack{
                 VStack(alignment: .leading){
-                    Text(manager.address ?? "test")
-                        .font(.headline)
-                    Text(manager.name ?? "test")
-                        .font(.headline)
-                }.padding()
-                Spacer()
+                    Text(restaurant.address ?? "test")
+                }
+                .font(.headline)
+                .padding()
+             Spacer()
             }
+            HStack{
+                Text("Notre Menu")
+                    .font(.title2)
+                    .bold()
+                    
+                Spacer()
+                Image(systemName: "cart.circle")
+                    .font(.title)
+                    .foregroundColor(.accentColor)
+               
+            }
+            .padding()
         }
     }
 }
 
-struct TopManagerListView_Previews: PreviewProvider {
+struct TopPikerCategorieView_Previews: PreviewProvider {
     static var previews: some View {
-        TopManagerListView(manager: Manager.example)
+        TopPikerCategorieView(restaurant: Restaurant.example)
     }
 }
