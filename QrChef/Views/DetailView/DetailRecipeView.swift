@@ -25,7 +25,7 @@ struct DetailRecipeView: View {
                         AsyncImage(url: URL(string: recipe.image ?? "")) {
                             image in image
                                 .resizable()
-                              //  .scaledToFit()
+                                .scaledToFill()
                             
                         } placeholder: {
                             ProgressView()

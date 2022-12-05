@@ -54,7 +54,7 @@ enum Category: String, CaseIterable, Equatable, Codable {
 
 extension Recipe {
     static var example: Recipe {
-        Recipe(id: 1, name: "test", image: "", category: .mainCourse, priceRange: 12, description: "description", createdAt: "", updatedAt: "", restaurantId: 1,restaurant: Restaurant(id: 1, name: "", image: "", address: "",managerId: 1,manager: Manager(id: 1, name: "", image: "", userId: 1, user: User(id: 1, username: "", email: "", password: ""), restaurant: []), recipe: []),ingredients: [Ingredient(id: 1, name: "")] )
+        Recipe(id: 1, name: "test", image: "https://st3.depositphotos.com/5306236/16281/i/600/depositphotos_162813466-stock-photo-burrata-salad-with-tomato.jpg", category: .mainCourse, priceRange: 12, description: "description", createdAt: "", updatedAt: "", restaurantId: 1,restaurant: Restaurant(id: 1, name: "", image: "", address: "", description: "",managerId: 1,manager: Manager(id: 1, name: "", image: "", userId: 1, user: User(id: 1, username: "", email: "", password: ""), restaurant: []), recipe: []),ingredients: [Ingredient(id: 1, name: "")] )
     }
 }
 

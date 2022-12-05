@@ -13,7 +13,7 @@ struct TextFieldBurgundiViewModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .padding(.horizontal, 8)
+//            .padding(.horizontal, 8)
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
                     .strokeBorder(Color.redBurgundy, lineWidth: 1)

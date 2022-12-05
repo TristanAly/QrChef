@@ -11,9 +11,9 @@ import Foundation
 class LoginViewModel: ObservableObject {
     
     @Published var user: User?
-    @Published var username = ""
+    @Published var username = "Christine"
     @Published var email = ""
-    @Published var password = ""
+    @Published var password = "12345678"
     @Published var signin: SignInResponse?
     @Published var show: Bool = false
     @Published var showAlert: Bool = false

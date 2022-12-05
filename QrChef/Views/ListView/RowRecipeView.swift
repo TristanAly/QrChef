@@ -14,7 +14,8 @@ struct RowRecipesView: View {
           
             VStack(alignment: .leading){
                 Text(recipe.name ?? "test")
-                    .font(.title)
+                    .font(.title2)
+                    .lineLimit(1)
                 Text(recipe.description ?? "")
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
@@ -33,6 +34,7 @@ struct RowRecipesView: View {
                     .cornerRadius(8)
             } placeholder: {
                 ProgressView()
+                    .frame(width: 80 , height: 80)
             }
             .padding(.horizontal)
         }

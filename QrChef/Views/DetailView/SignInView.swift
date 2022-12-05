@@ -10,6 +10,7 @@ import SwiftUI
 struct SignInView: View {
     
     @ObservedObject var loginVM : LoginViewModel
+    @State var test = ""
     
     var body: some View {
         NavigationStack{
@@ -49,7 +50,12 @@ struct SignInView: View {
                     .applyBurgundiStyle()
                     .modifier(ShakeEffect(animatableData: CGFloat(
                         loginVM.invalidAttempts)))
-                    .padding(5)
+                    
+                    
+                    Text(test)
+                        .padding(.top)
+                        .frame(height: 15)
+                    
                     VStack{
                         Group{
                             Button (action: {
@@ -67,8 +73,11 @@ struct SignInView: View {
                                         
                                     } else {
                                         loginVM.showAlert = true
+                                       
                                         withAnimation(.default) {
                                             self.loginVM.invalidAttempts += 1
+                                            test = "Username or password are erroned"
+                                         
                                         }
                                     }
                                 }
@@ -76,12 +85,12 @@ struct SignInView: View {
                                 Text("Sign In")
                             }
                             NavigationLink{
-                                //MARK: Continue without an account
-                                RestaurantList()
+          //MARK: Without an account
+                                TabBarView()
                                 
                             } label: {
                                 Text("Continue without an account")
-                                
+                                   
                             }
                             
                         }.font(.headline)
@@ -90,6 +99,7 @@ struct SignInView: View {
                             .frame(width: 300, height: 45)
                             .background(Color.redBurgundy)
                             .cornerRadius(15.0)
+                            .padding()
                     }.padding(.vertical,30)
                     Spacer()
                     HStack {

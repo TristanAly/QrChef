@@ -19,11 +19,19 @@ struct QRCodeView: View {
                     VStack {
                         GroupBox(label: Text("Commande n° \(Command.example.id)")) {
                             VStack{
-                                Text("Table: n° \(Command.example.table ?? "123")").padding()
-                                Text("\(Command.example.nbperson) personnes")
-                                Text(String("Prix: \(Command.example.price) €"))
                                 Text("\(Command.example.date ?? Date.now, format: .dateTime.day().month().year()) à \(Command.example.hour ?? Date.now, format: .dateTime.hour().minute())").bold().padding()
-    //                            Text(Command.example.hour, format: .dateTime.hour().minute())
+                                HStack{
+                                    Text("Table: n° \(Command.example.table ?? "123")").padding()
+                                    Spacer()
+                                    Text("\(Command.example.nbperson) pers.")
+                                }
+                                
+                                HStack{
+                                    Spacer()
+                                    Text(String("Price: \(Command.example.price) €"))
+                                }
+                                
+                               
                             }.padding()
                         }
                         GroupBox {

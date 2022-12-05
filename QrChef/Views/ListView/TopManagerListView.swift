@@ -14,7 +14,9 @@ struct TopPikerCategorieView: View {
             AsyncImage(url: URL(string: restaurant.image ?? "")) { image in
                 image
                     .resizable()
+                    .frame(height: 160)
                     .scaledToFill()
+                    
             } placeholder: {
                 ProgressView()
             }
@@ -24,27 +26,16 @@ struct TopPikerCategorieView: View {
                     Text(restaurant.address ?? "test")
                         .font(.title3)
                         .bold()
-                        Text("Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif Descriptif")
+                    Text(restaurant.description ?? "description")
                         .multilineTextAlignment(.leading)
                         .lineLimit(2)
+                        .padding(.vertical,1)
                 }
-                .font(.caption)
+                .fontWeight(.light)
                 .padding(.horizontal)
                 .padding(.vertical,1)
              Spacer()
             }
-            HStack{
-                Text("Notre Menu")
-                    .font(.title2)
-                    .bold()
-                    
-                Spacer()
-                Image(systemName: "cart.circle")
-                    .font(.title)
-                    .foregroundColor(.accentColor)
-               
-            }
-            .padding(.horizontal)
         }
     }
 }

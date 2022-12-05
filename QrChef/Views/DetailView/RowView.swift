@@ -28,7 +28,6 @@ struct RowView: View {
                     .fontWeight(.regular)
                    .font(.system(size: 24))
                 Text(ingredient.name ?? "")
-                   .frame(width: 100)
                    .foregroundColor(didTap ? Color.redBurgundy : Color.black )
                    .strikethrough(didTap ? true : false, color: Color.redBurgundy)
                     .fontWeight(.regular)
