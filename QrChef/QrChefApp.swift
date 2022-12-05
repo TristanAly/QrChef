@@ -14,6 +14,7 @@ struct QrChefApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(vm)
+//            ScanQRCodeView(filter: .none).environmentObject(Prospects())
         }
     }
 }

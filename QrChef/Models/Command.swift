@@ -17,13 +17,28 @@ import Foundation
 //        "restaurantId": 1,
 //        "restaurant":
 //        "user":
+//struct Command: Identifiable, Codable {
+//    let id: Int
+//    let table: String?
+//    let nbperson: Double?
+//    let price: Int?
+//    let date: Date?
+//    let hour: Date?
+//    let restaurant: Restaurant?
+//    let user: User?
+//}
+
 struct Command: Identifiable, Codable {
-    let id: Int
-    let table: String?
-    let nbperson: Double?
-    let price: Int?
-    let date: Date? 
-    let hour: Date? 
-    let restaurant: Restaurant?
-    let user: User?
+    var id: Int
+    var table: String?
+    var nbperson: String
+    var price: Double
+    var date: Date?
+    var hour: Date?
+}
+
+extension Command {
+    static var example: Command {
+        Command(id: 0, table: "75", nbperson: "5", price: 00.1, date: Date.now, hour: Date.now)
+    }
 }
