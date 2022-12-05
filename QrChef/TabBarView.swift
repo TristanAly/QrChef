@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView{
-            RestaurantList(recipeVM: RestaurantViewModel())
+            RestaurantList()
                 .tabItem {
                     VStack{
                         Image(systemName: "fork.knife.circle.fill")

@@ -17,8 +17,16 @@
 		1710EBB7293906250001E107 /* RowRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBB6293906250001E107 /* RowRecipeView.swift */; };
 		1710EBB92939EE720001E107 /* NewRowRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBB82939EE720001E107 /* NewRowRestaurantView.swift */; };
 		1710EBBB293A06AC0001E107 /* TopManagerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBBA293A06AC0001E107 /* TopManagerListView.swift */; };
-		1722340D29364EB500FB6CAA /* RestaurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722340C29364EB500FB6CAA /* RestaurationViewModel.swift */; };
-		17379CFC2937581C005107A1 /* ManagerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17379CFB2937581C005107A1 /* ManagerListView.swift */; };
+		1710EBBD293A54CF0001E107 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBBC293A54CF0001E107 /* User.swift */; };
+		1710EBBF293A563C0001E107 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBBE293A563C0001E107 /* Restaurant.swift */; };
+		1710EBC1293A5AC90001E107 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBC0293A5AC90001E107 /* SignInResponse.swift */; };
+		1710EBC3293A5C980001E107 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBC2293A5C980001E107 /* Command.swift */; };
+		1722340D29364EB500FB6CAA /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722340C29364EB500FB6CAA /* RestaurantViewModel.swift */; };
+		17379CFC2937581C005107A1 /* PikerCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17379CFB2937581C005107A1 /* PikerCategorieView.swift */; };
+		17889B2C293D0252005161A3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B2B293D0252005161A3 /* LoginViewModel.swift */; };
+		17889B2F293D033C005161A3 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B2E293D033C005161A3 /* KeychainItem.swift */; };
+		17889B31293D0787005161A3 /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B30293D0786005161A3 /* ShakeEffect.swift */; };
+		17889B33293D0F91005161A3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B32293D0F91005161A3 /* LoginView.swift */; };
 		178E22132936377E00509AA2 /* QrChefApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E22122936377E00509AA2 /* QrChefApp.swift */; };
 		178E22152936377E00509AA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E22142936377E00509AA2 /* ContentView.swift */; };
 		178E22172936378000509AA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 178E22162936378000509AA2 /* Assets.xcassets */; };
@@ -28,7 +36,6 @@
 		17D330052936594E00A2403A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D330042936594E00A2403A /* Manager.swift */; };
 		17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3300629365E0C00A2403A /* DetailRecipeView.swift */; };
 		17D3300D2936647500A2403A /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3300C2936647500A2403A /* RecipeListView.swift */; };
-		7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923929365D9100C57CCD /* UserViewModel.swift */; };
 		7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923B293660B700C57CCD /* ButtonView.swift */; };
 		7B0C92402936888500C57CCD /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0C923F2936888500C57CCD /* RowView.swift */; };
 		7B202C2A2938E2F5000092EF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B202C292938E2F5000092EF /* SignInView.swift */; };
@@ -46,6 +53,11 @@
 		D948517E29378B1400886DD1 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D948517D29378B1400886DD1 /* OrderView.swift */; };
 		D9485180293792E500886DD1 /* RecipeOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D948517F293792E500886DD1 /* RecipeOrderView.swift */; };
 		D94851822937B0A400886DD1 /* ButtonOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94851812937B0A400886DD1 /* ButtonOrderView.swift */; };
+		DC9DD8EE293D620F006C8380 /* CommandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DD8ED293D620F006C8380 /* CommandViewModel.swift */; };
+		DC9DD8F1293D63D1006C8380 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DD8F0293D63D1006C8380 /* QRCodeView.swift */; };
+		DC9DD8F3293D63E8006C8380 /* GeneratorQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DD8F2293D63E8006C8380 /* GeneratorQRCode.swift */; };
+		DC9DD8F5293D6403006C8380 /* ScanQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DD8F4293D6403006C8380 /* ScanQRCodeView.swift */; };
+		DC9DD8F8293D65CA006C8380 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = DC9DD8F7293D65CA006C8380 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,8 +71,16 @@
 		1710EBB6293906250001E107 /* RowRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowRecipeView.swift; sourceTree = "<group>"; };
 		1710EBB82939EE720001E107 /* NewRowRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRowRestaurantView.swift; sourceTree = "<group>"; };
 		1710EBBA293A06AC0001E107 /* TopManagerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopManagerListView.swift; sourceTree = "<group>"; };
-		1722340C29364EB500FB6CAA /* RestaurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurationViewModel.swift; sourceTree = "<group>"; };
-		17379CFB2937581C005107A1 /* ManagerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerListView.swift; sourceTree = "<group>"; };
+		1710EBBC293A54CF0001E107 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1710EBBE293A563C0001E107 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		1710EBC0293A5AC90001E107 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
+		1710EBC2293A5C980001E107 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		1722340C29364EB500FB6CAA /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
+		17379CFB2937581C005107A1 /* PikerCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PikerCategorieView.swift; sourceTree = "<group>"; };
+		17889B2B293D0252005161A3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		17889B2E293D033C005161A3 /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
+		17889B30293D0786005161A3 /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
+		17889B32293D0F91005161A3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		178E220F2936377E00509AA2 /* QrChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		178E22122936377E00509AA2 /* QrChefApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrChefApp.swift; sourceTree = "<group>"; };
 		178E22142936377E00509AA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,7 +91,6 @@
 		17D330042936594E00A2403A /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		17D3300629365E0C00A2403A /* DetailRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeView.swift; sourceTree = "<group>"; };
 		17D3300C2936647500A2403A /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
-		7B0C923929365D9100C57CCD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		7B0C923B293660B700C57CCD /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		7B0C923F2936888500C57CCD /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		7B202C292938E2F5000092EF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -88,6 +107,10 @@
 		D948517D29378B1400886DD1 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		D948517F293792E500886DD1 /* RecipeOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeOrderView.swift; sourceTree = "<group>"; };
 		D94851812937B0A400886DD1 /* ButtonOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOrderView.swift; sourceTree = "<group>"; };
+		DC9DD8ED293D620F006C8380 /* CommandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewModel.swift; sourceTree = "<group>"; };
+		DC9DD8F0293D63D1006C8380 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		DC9DD8F2293D63E8006C8380 /* GeneratorQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorQRCode.swift; sourceTree = "<group>"; };
+		DC9DD8F4293D6403006C8380 /* ScanQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRCodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9DD8F8293D65CA006C8380 /* CodeScanner in Frameworks */,
 				7B5192712939F9F50039436B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				1710EBA62938F1880001E107 /* ListCategorieView.swift */,
-				17379CFB2937581C005107A1 /* ManagerListView.swift */,
+				17379CFB2937581C005107A1 /* PikerCategorieView.swift */,
 				1710EBBA293A06AC0001E107 /* TopManagerListView.swift */,
 				1710EB9A2938B36C0001E107 /* RestaurantList.swift */,
 				1710EBB82939EE720001E107 /* NewRowRestaurantView.swift */,
@@ -138,6 +162,14 @@
 				1710EBB22938FEA90001E107 /* FavoriteRestaurantView.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		17889B2D293D0264005161A3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				17889B32293D0F91005161A3 /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		178E22062936377E00509AA2 = {
@@ -182,7 +214,8 @@
 		178E222429364DCE00509AA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7B519282293A41210039436B /* ManagerView */,
+				DC9DD8EF293D621B006C8380 /* Command */,
+				17889B2D293D0264005161A3 /* Login */,
 				1710EBB12938FE910001E107 /* Favorites */,
 				1710EBAE2938FE4C0001E107 /* Booking */,
 				1710EBAD2938FDC10001E107 /* Profil */,
@@ -198,8 +231,11 @@
 		178E222529364DD900509AA2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				1722340C29364EB500FB6CAA /* RestaurationViewModel.swift */,
-				7B0C923929365D9100C57CCD /* UserViewModel.swift */,
+				1722340C29364EB500FB6CAA /* RestaurantViewModel.swift */,
+				17889B2B293D0252005161A3 /* LoginViewModel.swift */,
+				17889B30293D0786005161A3 /* ShakeEffect.swift */,
+				7B5192722939FA140039436B /* LottieView.swift */,
+				DC9DD8ED293D620F006C8380 /* CommandViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -207,9 +243,15 @@
 		178E222629364DE100509AA2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7B519278293A03DB0039436B /* fork.json */,
 				17D33000293658B600A2403A /* Recipe.swift */,
 				17D330042936594E00A2403A /* Manager.swift */,
 				17D330022936592800A2403A /* Ingredient.swift */,
+				1710EBBC293A54CF0001E107 /* User.swift */,
+				1710EBC2293A5C980001E107 /* Command.swift */,
+				17889B2E293D033C005161A3 /* KeychainItem.swift */,
+				1710EBC0293A5AC90001E107 /* SignInResponse.swift */,
+				1710EBBE293A563C0001E107 /* Restaurant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,8 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				7BF74C952938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift */,
-				7B5192722939FA140039436B /* LottieView.swift */,
-				7B519278293A03DB0039436B /* fork.json */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -275,6 +315,16 @@
 			path = OrderView;
 			sourceTree = "<group>";
 		};
+		DC9DD8EF293D621B006C8380 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				DC9DD8F0293D63D1006C8380 /* QRCodeView.swift */,
+				DC9DD8F2293D63E8006C8380 /* GeneratorQRCode.swift */,
+				DC9DD8F4293D6403006C8380 /* ScanQRCodeView.swift */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +343,7 @@
 			name = QrChef;
 			packageProductDependencies = (
 				7B5192702939F9F50039436B /* Lottie */,
+				DC9DD8F7293D65CA006C8380 /* CodeScanner */,
 			);
 			productName = QrChef;
 			productReference = 178E220F2936377E00509AA2 /* QrChef.app */;
@@ -324,6 +375,7 @@
 			mainGroup = 178E22062936377E00509AA2;
 			packageReferences = (
 				7B51926F2939F9F50039436B /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				DC9DD8F6293D65CA006C8380 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 178E22102936377E00509AA2 /* Products */;
 			projectDirPath = "";
@@ -352,41 +404,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1710EBC3293A5C980001E107 /* Command.swift in Sources */,
+				DC9DD8F5293D6403006C8380 /* ScanQRCodeView.swift in Sources */,
 				1710EB9B2938B36C0001E107 /* RestaurantList.swift in Sources */,
 				D94851732937566300886DD1 /* PreparationView.swift in Sources */,
 				17D33001293658B600A2403A /* Recipe.swift in Sources */,
 				D94851822937B0A400886DD1 /* ButtonOrderView.swift in Sources */,
 				D9485179293759E500886DD1 /* CommandesView.swift in Sources */,
 				1710EBB92939EE720001E107 /* NewRowRestaurantView.swift in Sources */,
+				1710EBC1293A5AC90001E107 /* SignInResponse.swift in Sources */,
 				D948517E29378B1400886DD1 /* OrderView.swift in Sources */,
 				7B0C92402936888500C57CCD /* RowView.swift in Sources */,
-				7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */,
 				17D3300D2936647500A2403A /* RecipeListView.swift in Sources */,
-				7B519284293A41360039436B /* ManagerView.swift in Sources */,
+				1710EBBF293A563C0001E107 /* Restaurant.swift in Sources */,
 				1710EB9D2938B6DF0001E107 /* RowRestaurantView.swift in Sources */,
 				1710EBAA2938FB8A0001E107 /* TabBarView.swift in Sources */,
 				1710EBAC2938FDB60001E107 /* ProfilView.swift in Sources */,
 				1710EBA72938F1880001E107 /* ListCategorieView.swift in Sources */,
 				D948517B293762C500886DD1 /* ButtonServView.swift in Sources */,
 				7B0C923C293660B700C57CCD /* ButtonView.swift in Sources */,
+				DC9DD8EE293D620F006C8380 /* CommandViewModel.swift in Sources */,
+				DC9DD8F3293D63E8006C8380 /* GeneratorQRCode.swift in Sources */,
 				17D330052936594E00A2403A /* Manager.swift in Sources */,
 				178E22152936377E00509AA2 /* ContentView.swift in Sources */,
 				7B5192732939FA140039436B /* LottieView.swift in Sources */,
 				D9485180293792E500886DD1 /* RecipeOrderView.swift in Sources */,
 				1710EBB02938FE610001E107 /* BookingView.swift in Sources */,
+				DC9DD8F1293D63D1006C8380 /* QRCodeView.swift in Sources */,
 				1710EBB32938FEA90001E107 /* FavoriteRestaurantView.swift in Sources */,
 				D94851772937567A00886DD1 /* ButtonColor.swift in Sources */,
 				7B202C2A2938E2F5000092EF /* SignInView.swift in Sources */,
+				1710EBBD293A54CF0001E107 /* User.swift in Sources */,
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
 				1710EBBB293A06AC0001E107 /* TopManagerListView.swift in Sources */,
-				7B519281293A18090039436B /* SplashScreen.swift in Sources */,
+				17889B2C293D0252005161A3 /* LoginViewModel.swift in Sources */,
 				7BF74C982938F9D300E442A3 /* SignUpView.swift in Sources */,
 				178E22132936377E00509AA2 /* QrChefApp.swift in Sources */,
 				17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */,
 				1710EBB7293906250001E107 /* RowRecipeView.swift in Sources */,
 				7BF74C962938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift in Sources */,
-				17379CFC2937581C005107A1 /* ManagerListView.swift in Sources */,
-				1722340D29364EB500FB6CAA /* RestaurationViewModel.swift in Sources */,
+				17379CFC2937581C005107A1 /* PikerCategorieView.swift in Sources */,
+				17889B2F293D033C005161A3 /* KeychainItem.swift in Sources */,
+				1722340D29364EB500FB6CAA /* RestaurantViewModel.swift in Sources */,
+				17889B33293D0F91005161A3 /* LoginView.swift in Sources */,
+				17889B31293D0787005161A3 /* ShakeEffect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,9 +576,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QrChef/Preview Content\"";
-				DEVELOPMENT_TEAM = 8YR2KQ4MQ5;
+				DEVELOPMENT_TEAM = T8P6LHC8JH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Used to scan barcodes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -529,7 +591,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tristan.QrChef;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cycy.QrChef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -542,12 +604,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QrChef/Preview Content\"";
-				DEVELOPMENT_TEAM = 8YR2KQ4MQ5;
+				DEVELOPMENT_TEAM = T8P6LHC8JH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Used to scan barcodes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -559,8 +623,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tristan.QrChef;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cycy.QrChef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -599,6 +664,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		DC9DD8F6293D65CA006C8380 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -606,6 +679,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B51926F2939F9F50039436B /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		DC9DD8F7293D65CA006C8380 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC9DD8F6293D65CA006C8380 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

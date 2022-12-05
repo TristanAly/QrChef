@@ -7,17 +7,23 @@
 
 import Foundation
 
+//"id": 1,
+//   "restaurantId": 1,
+//   "recipeId": 1,
+//   "updatedAt": "2022-12-02T15:32:34.172Z",
+//   "createdAt": "2022-12-02T15:32:34.172Z"
+
 struct Recipe: Identifiable, Codable {
     let id: Int
     let name: String?
     let image: String?
     let category: Category
-    let priceRange: String?
+    let priceRange: Int?
     let description: String?
     let createdAt: String
     let updatedAt: String
-    let managerID: Int?
-    var manager: Manager?
+    let restaurantId: Int?
+    var restaurant: Restaurant?
     var ingredients: [Ingredient]? //ingredients with "S"
     
 //        enum CodingKeys: String, CodingKey, Codable {
@@ -39,10 +45,16 @@ enum Category: String, CaseIterable, Equatable, Codable {
 
 }
 
+//struct RecipeRestaurant: Identifiable, Codable {
+//    let id: Int
+//    let restaurantId: Int?
+//    let recipeId: Int?
+//}
+
 
 extension Recipe {
     static var example: Recipe {
-        Recipe(id: 1, name: "Omlette", image: "https://images-ext-2.discordapp.net/external/nvBhuSSTW6HyBihdCwSGVJIehn3ice2NA1X-VCn7JTE/%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D774%26q%3D80/https/images.unsplash.com/photo-1588580261949-f17eacb905c9", category: .mainCourse , priceRange: "20€", description: "Pulled beef aux épices omlette", createdAt: "", updatedAt: "", managerID: 1, manager: Manager(id: 1, name: "Greg", email: "greg@", restaurant: "Cozy", address: "15 rue Lafaette", createdAt: "", updatedAt: "", recipe: []), ingredients: [Ingredient(id: 1, name: "butter"),Ingredient(id: 2, name: "water"), Ingredient(id: 3, name: "salt")])
+        Recipe(id: 1, name: "test", image: "", category: .mainCourse, priceRange: 12, description: "description", createdAt: "", updatedAt: "", restaurantId: 1,restaurant: Restaurant(id: 1, name: "", image: "", address: "",managerId: 1,manager: Manager(id: 1, name: "", image: "", userId: 1, user: User(id: 1, username: "", email: "", password: ""), restaurant: []), recipe: []),ingredients: [Ingredient(id: 1, name: "")] )
     }
 }
 

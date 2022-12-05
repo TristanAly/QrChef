@@ -10,9 +10,10 @@ import SwiftUI
 struct ListCategorieView: View {
     @ObservedObject var recipeVM : RestaurantViewModel
     var category : Category
+    
     var body: some View {
         List{
-            if let recipes = recipeVM.manager.recipe {
+            if let recipes = recipeVM.restaurant.recipe {
                 ForEach(recipes, id: \.id) { recipe in
                     if recipe.category == category {
                         NavigationLink{

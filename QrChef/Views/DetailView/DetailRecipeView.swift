@@ -12,7 +12,7 @@ struct DetailRecipeView: View {
     @ObservedObject var recipeVM: RestaurantViewModel
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             
             VStack(alignment: .center){
                 
@@ -70,7 +70,7 @@ struct DetailRecipeView: View {
             .onAppear{
                 Task {
                     do {
-                        recipe = try await recipeVM.getRecipe(id: recipe.id)
+                        recipe = try await recipeVM.getRecipeById(id: recipe.id)
                         print(recipe)
                     } catch let error {
                         print("CAUGHT ON MESSAGES : \(error)")
@@ -79,8 +79,8 @@ struct DetailRecipeView: View {
             }
            // .ignoresSafeArea()
 //            .navigationTitle("Menu")
-//            .navigationBarTitleDisplayMode(.inline)
-  }
+            .navigationBarTitleDisplayMode(.inline)
+//  }
     }
 }
 

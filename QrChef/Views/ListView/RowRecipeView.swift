@@ -11,14 +11,6 @@ struct RowRecipesView: View {
     var recipe: Recipe
     var body: some View {
         HStack{
-            AsyncImage(url: URL(string: recipe.image ?? "")) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 70 , height: 70)
-            } placeholder: {
-                ProgressView()
-            }
           
             VStack(alignment: .leading){
                 Text(recipe.name ?? "test")
@@ -26,14 +18,23 @@ struct RowRecipesView: View {
                 Text(recipe.description ?? "")
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
+                Text("\(recipe.priceRange ?? 2) €")
+                    .font(.callout)
+                    .bold()
                     
             }
-            
-            .padding()
+            .padding(.horizontal)
             Spacer()
-            Text(recipe.priceRange ?? "")
-                .padding(.ulpOfOne)
-            
+            AsyncImage(url: URL(string: recipe.image ?? "")) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 80 , height: 80)
+                    .cornerRadius(8)
+            } placeholder: {
+                ProgressView()
+            }
+            .padding(.horizontal)
         }
     }
 }

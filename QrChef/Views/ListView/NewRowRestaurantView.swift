@@ -8,39 +8,53 @@
 import SwiftUI
 
 struct NewRowRestaurantView: View {
-    var manager: Manager
+    var restaurant: Restaurant
+    @Binding var isfavorite: Bool
     var body: some View {
         VStack{
-            Image("Restaurant")
-                .resizable()
-                .frame(width: 380, height: 150)
+            AsyncImage(url: URL(string: restaurant.image ?? "")) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 380, height: 130)
+            } placeholder: {
+                ProgressView()
+            }
+            .padding(.bottom)
+            Spacer()
             VStack{
                 HStack{
                     VStack(alignment: .leading){
-                        Text(manager.restaurant ?? "")
+                        Text(restaurant.name ?? "")
                             .font(.title)
-                        Text(manager.address ?? "")
+                        Text(restaurant.address ?? "")
                             .font(.subheadline)
                     }.padding(.horizontal)
                     Spacer()
-                    VStack(alignment: .trailing){
-                        Text(manager.restaurant ?? "")
-                            .font(.title)
-                        Text(manager.restaurant ?? "")
-                            .font(.title)
-                    }
-                    .padding(.horizontal)
                 }
+                .foregroundColor(Color("redBurgundy"))
             }
-            .frame(width: 380, height: 70)
-            .background(Rectangle().fill(.red).frame(width: 380, height: 100))
-        }
+            .frame(width: 380, height: 100)
+            .background(Rectangle().fill(.white).frame(width: 380, height: 95))
+            .overlay(
+                Button{
+                    isfavorite.toggle()
+            } label: {
+                Image(systemName: isfavorite ? "bookmark.fill" : "bookmark")
+                    .font(.title3)
+                    .foregroundColor(Color("redBurgundy"))
+                    .padding()
+            },alignment: .topTrailing
+            )
+        }.overlay(
+            Rectangle().stroke(Color("redBurgundy"), lineWidth: 2)
+                .shadow(radius: 5))
         .cornerRadius(8)
     }
 }
 
-struct NewRowRestaurantView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewRowRestaurantView(manager: Manager.example)
-    }
-}
+//struct NewRowRestaurantView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewRowRestaurantView(restaurant: Restaurant.example, isfavorite: $false)
+//    }
+//}
