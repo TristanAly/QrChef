@@ -35,6 +35,8 @@
 		7B5192712939F9F50039436B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7B5192702939F9F50039436B /* Lottie */; };
 		7B5192732939FA140039436B /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5192722939FA140039436B /* LottieView.swift */; };
 		7B519279293A03DB0039436B /* fork.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B519278293A03DB0039436B /* fork.json */; };
+		7B519281293A18090039436B /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B519280293A18090039436B /* SplashScreen.swift */; };
+		7B519284293A41360039436B /* ManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B519283293A41360039436B /* ManagerView.swift */; };
 		7BF74C962938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF74C952938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift */; };
 		7BF74C982938F9D300E442A3 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF74C972938F9D300E442A3 /* SignUpView.swift */; };
 		D94851732937566300886DD1 /* PreparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94851722937566300886DD1 /* PreparationView.swift */; };
@@ -75,6 +77,8 @@
 		7B202C292938E2F5000092EF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		7B5192722939FA140039436B /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		7B519278293A03DB0039436B /* fork.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fork.json; sourceTree = "<group>"; };
+		7B519280293A18090039436B /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		7B519283293A41360039436B /* ManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerView.swift; sourceTree = "<group>"; };
 		7BF74C952938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBurgundiViewModifier.swift; sourceTree = "<group>"; };
 		7BF74C972938F9D300E442A3 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D94851722937566300886DD1 /* PreparationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationView.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		178E222429364DCE00509AA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7B519282293A41210039436B /* ManagerView */,
 				1710EBB12938FE910001E107 /* Favorites */,
 				1710EBAE2938FE4C0001E107 /* Booking */,
 				1710EBAD2938FDC10001E107 /* Profil */,
@@ -218,8 +223,17 @@
 				7B0C923F2936888500C57CCD /* RowView.swift */,
 				7B202C292938E2F5000092EF /* SignInView.swift */,
 				7BF74C972938F9D300E442A3 /* SignUpView.swift */,
+				7B519280293A18090039436B /* SplashScreen.swift */,
 			);
 			path = DetailView;
+			sourceTree = "<group>";
+		};
+		7B519282293A41210039436B /* ManagerView */ = {
+			isa = PBXGroup;
+			children = (
+				7B519283293A41360039436B /* ManagerView.swift */,
+			);
+			path = ManagerView;
 			sourceTree = "<group>";
 		};
 		7BF74C942938F20100E442A3 /* ViewModifier */ = {
@@ -348,6 +362,7 @@
 				7B0C92402936888500C57CCD /* RowView.swift in Sources */,
 				7B0C923A29365D9100C57CCD /* UserViewModel.swift in Sources */,
 				17D3300D2936647500A2403A /* RecipeListView.swift in Sources */,
+				7B519284293A41360039436B /* ManagerView.swift in Sources */,
 				1710EB9D2938B6DF0001E107 /* RowRestaurantView.swift in Sources */,
 				1710EBAA2938FB8A0001E107 /* TabBarView.swift in Sources */,
 				1710EBAC2938FDB60001E107 /* ProfilView.swift in Sources */,
@@ -364,6 +379,7 @@
 				7B202C2A2938E2F5000092EF /* SignInView.swift in Sources */,
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
 				1710EBBB293A06AC0001E107 /* TopManagerListView.swift in Sources */,
+				7B519281293A18090039436B /* SplashScreen.swift in Sources */,
 				7BF74C982938F9D300E442A3 /* SignUpView.swift in Sources */,
 				178E22132936377E00509AA2 /* QrChefApp.swift in Sources */,
 				17D3300729365E0C00A2403A /* DetailRecipeView.swift in Sources */,

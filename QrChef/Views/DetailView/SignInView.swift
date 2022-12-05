@@ -18,6 +18,7 @@ struct SignInView: View {
                 .foregroundColor(.white)
                 .frame(width: 395, height: 420)
                 .cornerRadius(20)
+                .shadow(color: .black, radius: 10)
             
             VStack(alignment: .center)  {
                 
@@ -25,6 +26,7 @@ struct SignInView: View {
                     .frame(width: 200, height: 200)
 
                 Text("Welcome to QRChef")
+                    .shadow(color: .white, radius: 3)
                     .foregroundColor(.redBurgundy)
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                 VStack{
@@ -37,6 +39,7 @@ struct SignInView: View {
                     .autocorrectionDisabled(true)
                     .textInputAutocapitalization(.never)
                     .applyBurgundiStyle()
+                    
                     
                     
                     HStack {
@@ -61,6 +64,8 @@ struct SignInView: View {
                         .frame(width: 300, height: 45)
                         .background(Color.redBurgundy)
                         .cornerRadius(15.0)
+                        
+
                 }
                 Button (action: {
                     //MARK: Continue without an account
@@ -72,11 +77,14 @@ struct SignInView: View {
                         .frame(width: 300, height: 45)
                         .background(Color.redBurgundy)
                         .cornerRadius(15.0)
+                        
                 }
                 Spacer()
                 HStack {
                     Text("Don't have an account ?")
                         .foregroundColor(.white)
+                        .shadow(color: .black, radius: 3)
+
                     Button {
                      //
                     } label: {
@@ -90,7 +98,7 @@ struct SignInView: View {
 //                .sheet(isPresented: ) {
 //                    SignUpView()
 //                }
-            } //.padding([.leading, .trailing], 27.5)
+            }
         }
         
     }
