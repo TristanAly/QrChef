@@ -19,6 +19,8 @@ class RestaurantViewModel: ObservableObject {
     @Published var managers = [Manager.example]
     @Published var manager = Manager.example
     
+    @Published var search = ""
+    
     
     let baseUrl = "http://localhost:3000/api"
     

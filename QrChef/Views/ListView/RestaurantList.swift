@@ -9,6 +9,7 @@ import SwiftUI
 struct RestaurantList: View {
     
     @StateObject private var restaurantVM = RestaurantViewModel()
+    @State var search = ""
     @State var isfavorite = false
     var body: some View {
         NavigationView {
@@ -19,13 +20,6 @@ struct RestaurantList: View {
                         .bold()
                         .padding()
                     Spacer()
-                    NavigationLink{
-                        ProfilView()
-                    } label: {
-                        Image(systemName: "person.circle.fill")
-                            .font(.title)
-                    }
-                    .padding(8)
                 }
                 VStack{
                     ScrollView{
@@ -38,17 +32,31 @@ struct RestaurantList: View {
                                 }
                                 .foregroundColor(.black)
                             }
-                    }.padding()
+                            .searchable(text: $search)
+                        }.padding()
+                    }
+                }.onAppear{
+                    Task{
+                        restaurantVM.restaurants = try await restaurantVM.getRestaurant()
+                    }
                 }
-            }.onAppear{
-                Task{
-                    restaurantVM.restaurants = try await restaurantVM.getRestaurant()
+                
+            }
+            .toolbar{
+                ToolbarItem {
+                    NavigationLink{
+                        ProfilView()
+                    } label: {
+                        Image(systemName: "person.circle.fill")
+                            .font(.title2)
+                    }
+                    .padding()
                 }
             }
+            
         }
-    }
         .navigationBarHidden(true)
-}
+    }
 }
 
 struct RestaurantList_Previews: PreviewProvider {
