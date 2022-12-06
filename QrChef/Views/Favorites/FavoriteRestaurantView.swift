@@ -8,15 +8,23 @@
 import SwiftUI
 
 struct FavoriteRestaurantView: View {
+    @ObservedObject var FavouriteVM: FavouriteViewModel
     var body: some View {
         List{
-            RowRestaurantView(restaurant: Restaurant.example)
+            ForEach(FavouriteVM.favourites) { favourite in
+                RowRestaurantView(favorite: favourite)
+            }
+        }.listStyle(.plain)
+        .onAppear{
+            Task {
+                FavouriteVM.favourites = try await FavouriteVM.getFavourites(token: KeychainItem.currentUserIdentifier)
+            }
         }
     }
 }
 
 struct FavoriteRestaurantView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteRestaurantView()
+        FavoriteRestaurantView(FavouriteVM: FavouriteViewModel())
     }
 }

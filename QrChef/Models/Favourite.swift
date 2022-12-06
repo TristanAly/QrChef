@@ -14,3 +14,9 @@ struct Favourite:Identifiable, Codable {
     let restaurant: Restaurant?
     let user: User?
 }
+
+extension Favourite {
+    static var example: Favourite {
+        Favourite(id: 1, userId: 1, restaurantId: 1, restaurant: Restaurant.example, user: User.example)
+    }
+}

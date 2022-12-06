@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct NewRowRestaurantView: View {
+    @StateObject var favoriteVM = FavouriteViewModel()
     var restaurant: Restaurant
+    var favorite: Favourite
     @Binding var isfavorite: Bool
     var body: some View {
         VStack{
@@ -41,6 +43,13 @@ struct NewRowRestaurantView: View {
             .overlay(
                 Button{
                     isfavorite.toggle()
+                    Task {
+                        if isfavorite == true {
+                            favoriteVM.favourite = try await favoriteVM.PostFavourite(token: KeychainItem.currentUserIdentifier, restaurantId: restaurant.id)
+                        } else {
+                            favoriteVM.favourite = try await favoriteVM.DeleteFavourite(token: KeychainItem.currentUserIdentifier, id: favorite.id)
+                        }
+                    }
                 } label: {
                     Image(systemName: isfavorite ? "bookmark.fill" : "bookmark")
                         .font(.title3)
@@ -57,6 +66,6 @@ struct NewRowRestaurantView: View {
 
 struct NewRowRestaurantView_Previews: PreviewProvider {
     static var previews: some View {
-        NewRowRestaurantView(restaurant: Restaurant.example, isfavorite: .constant(false))
+        NewRowRestaurantView(restaurant: Restaurant.example, favorite: Favourite.example, isfavorite: .constant(false)).environmentObject(FavouriteViewModel())
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 struct RestaurantList: View {
     
     @StateObject private var restaurantVM = RestaurantViewModel()
+    @StateObject private var favouriteVM = FavouriteViewModel()
     @State var isfavorite = false
     var body: some View {
         NavigationView {
@@ -21,7 +22,7 @@ struct RestaurantList: View {
                                 PikerCategorieView(recipeVM: restaurantVM, restaurant: restaurant)
                             } label: {
                                 HStack{
-                                    NewRowRestaurantView(restaurant: restaurant, isfavorite: $isfavorite)
+                                    NewRowRestaurantView(restaurant: restaurant, favorite: favouriteVM.favourite.id, isfavorite: $isfavorite)
                                 }
                                 .foregroundColor(.black)
                             }

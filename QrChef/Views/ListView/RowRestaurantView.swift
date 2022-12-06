@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct RowRestaurantView: View {
-    var restaurant: Restaurant
+    var favorite : Favourite
     var body: some View {
         HStack{
             VStack(alignment: .leading){
-                Text(restaurant.name ?? "no restaurant")
-                    .font(.title)
-                Text(restaurant.address ?? "test")
+                Text(favorite.restaurant?.name ?? "no restaurant")
+                    .font(.title2)
+                Text(favorite.restaurant?.address ?? "test")
             }
             .padding()
             Spacer()
-            AsyncImage(url: URL(string: restaurant.image ?? "")) { image in
+            AsyncImage(url: URL(string: favorite.restaurant?.image ?? "")) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -33,6 +33,6 @@ struct RowRestaurantView: View {
 
 struct RowRestaurantView_Previews: PreviewProvider {
     static var previews: some View {
-        RowRestaurantView(restaurant: Restaurant.example)
+        RowRestaurantView(favorite: Favourite.example)
     }
 }
