@@ -17,7 +17,7 @@ struct TabBarView: View {
                         Text("Restaurants")
                     }
                 }
-            FavoriteRestaurantView(FavouriteVM: FavouriteViewModel())
+            FavoriteRestaurantView(FavouriteVM: FavouriteViewModel(), RestaurantVM: RestaurantViewModel())
                 .tabItem {
                     VStack{
                         Image(systemName: "heart.circle.fill")

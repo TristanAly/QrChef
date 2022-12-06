@@ -15,7 +15,7 @@ class FavouriteViewModel: ObservableObject {
     let baseUrl = "http://localhost:3000/api"
     
     // To GET an array with all Commands
-    func getFavourites(token: String) async throws -> [Favourite] {
+    func getFavourites() async throws -> [Favourite] {
         
         guard let url = URL(string: "\(baseUrl)/favourite")
         else {
@@ -24,9 +24,11 @@ class FavouriteViewModel: ObservableObject {
         print("1")
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
+        let keychainItem = KeychainItem(service: "com.Cycy.QrChef", account: "accessToken")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        urlRequest.addValue(token, forHTTPHeaderField: "x-access-token")
+        urlRequest.addValue(try keychainItem.readItem(), forHTTPHeaderField: "x-access-token")
+        print(keychainItem)
         
         print("2")
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
@@ -176,16 +178,21 @@ class FavouriteViewModel: ObservableObject {
 //            throw URLError(.badServerResponse)
 //        }
 //    }
-    func DeleteFavourite(token: String, id: Int) async throws -> Favourite {
+    func deleteFavourite(id: Int) async throws -> Favourite {
         guard let url = URL(string: "\(baseUrl)/favourite/\(id)")
         else {
             fatalError("Missing URL")
         }
+
+        let keychainItem = KeychainItem(service: "com.Cycy.QrChef", account: "accessToken")
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "DELETE"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.addValue(try keychainItem.readItem(), forHTTPHeaderField: "x-access-token")
+        print(keychainItem)
 
         let (data, _) = try await URLSession.shared.data(for: urlRequest)
-        urlRequest.addValue(token, forHTTPHeaderField: "x-acesss-token")
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

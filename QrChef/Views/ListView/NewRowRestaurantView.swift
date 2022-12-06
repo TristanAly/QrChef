@@ -10,7 +10,7 @@ import SwiftUI
 struct NewRowRestaurantView: View {
     @ObservedObject var favoriteVM : FavouriteViewModel
     var restaurant: Restaurant
-    var isfavorite: Bool
+    @State var isfavorite: Bool
     var body: some View {
         VStack{
             AsyncImage(url: URL(string: restaurant.image ?? "")) { image in
@@ -41,17 +41,16 @@ struct NewRowRestaurantView: View {
             .background(Rectangle().fill(.white))
             .overlay(
                 Button{
-//                    isfavorite.toggle()
-//                        if isfavorite == true {
+                    isfavorite.toggle()
+                        if isfavorite == true {
                             Task {
                                 favoriteVM.favourite = try await favoriteVM.PostFavourite( restaurantId: restaurant.id)
-//                            }
+                            }
+                        } else {
+                            Task {
+                                favoriteVM.favourite = try await favoriteVM.deleteFavourite(id: favoriteVM.favourite.id)
                         }
-//                    else {
-//                            Task {
-//                                favoriteVM.favourite = try await favoriteVM.updateFavorite(token: KeychainItem.readItem(.init(service:"com.Cycy.QrChef", account:"accessToken"))(), id: favoriteVM.favourite.id)
-//                        }
-//                    }
+                    }
                 } label: {
                     Image(systemName: isfavorite ? "bookmark.fill" : "bookmark")
                         .font(.title3)

@@ -9,22 +9,32 @@ import SwiftUI
 
 struct FavoriteRestaurantView: View {
     @ObservedObject var FavouriteVM: FavouriteViewModel
+    @ObservedObject var RestaurantVM: RestaurantViewModel
     var body: some View {
-        List{
-            ForEach(FavouriteVM.favourites) { favourite in
-//                RowRestaurantView(restaurant: favourite)
-            }
-        }.listStyle(.plain)
-        .onAppear{
-            Task {
-                FavouriteVM.favourites = try await FavouriteVM.getFavourites(token: KeychainItem.currentUserIdentifier)
-            }
+        NavigationView {
+            List{
+                ForEach(FavouriteVM.favourites) { favourite in
+                    NavigationLink {
+                        
+                    } label : {
+                        RowRestaurantView(restaurant: RestaurantVM.restaurant)
+                    }
+                }
+            }.listStyle(.plain)
+                .onAppear{
+                    Task {
+                        FavouriteVM.favourites = try await FavouriteVM.getFavourites()
+                    }
+                    Task {
+                        RestaurantVM.restaurant = try await RestaurantVM.getRestaurantByID(id: FavouriteVM.favourite.restaurantId ?? 1)
+                    }
+                }.navigationTitle("My Favourite")
         }
     }
 }
 
 struct FavoriteRestaurantView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteRestaurantView(FavouriteVM: FavouriteViewModel())
+        FavoriteRestaurantView(FavouriteVM: FavouriteViewModel(), RestaurantVM: RestaurantViewModel())
     }
 }
