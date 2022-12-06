@@ -26,6 +26,7 @@
 		1710EBBF293A563C0001E107 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBBE293A563C0001E107 /* Restaurant.swift */; };
 		1710EBC1293A5AC90001E107 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBC0293A5AC90001E107 /* SignInResponse.swift */; };
 		1710EBC3293A5C980001E107 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710EBC2293A5C980001E107 /* Command.swift */; };
+		171AA2B8293F4EBC00A9B3FD /* Favourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171AA2B7293F4EBC00A9B3FD /* Favourite.swift */; };
 		1722340D29364EB500FB6CAA /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722340C29364EB500FB6CAA /* RestaurantViewModel.swift */; };
 		17379CFC2937581C005107A1 /* PikerCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17379CFB2937581C005107A1 /* PikerCategorieView.swift */; };
 		17889B2C293D0252005161A3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B2B293D0252005161A3 /* LoginViewModel.swift */; };
@@ -82,6 +83,7 @@
 		1710EBBE293A563C0001E107 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		1710EBC0293A5AC90001E107 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		1710EBC2293A5C980001E107 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		171AA2B7293F4EBC00A9B3FD /* Favourite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourite.swift; sourceTree = "<group>"; };
 		1722340C29364EB500FB6CAA /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
 		17379CFB2937581C005107A1 /* PikerCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PikerCategorieView.swift; sourceTree = "<group>"; };
 		17889B2B293D0252005161A3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				1710EBBC293A54CF0001E107 /* User.swift */,
 				1710EBC2293A5C980001E107 /* Command.swift */,
 				17889B2E293D033C005161A3 /* KeychainItem.swift */,
+				171AA2B7293F4EBC00A9B3FD /* Favourite.swift */,
 				1710EBC0293A5AC90001E107 /* SignInResponse.swift */,
 				1710EBBE293A563C0001E107 /* Restaurant.swift */,
 			);
@@ -406,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1710EBC3293A5C980001E107 /* Command.swift in Sources */,
+				171AA2B8293F4EBC00A9B3FD /* Favourite.swift in Sources */,
 				DC9DD8F5293D6403006C8380 /* ScanQRCodeView.swift in Sources */,
 				1710EB9B2938B36C0001E107 /* RestaurantList.swift in Sources */,
 				D94851732937566300886DD1 /* PreparationView.swift in Sources */,
