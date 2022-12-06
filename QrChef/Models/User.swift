@@ -14,3 +14,9 @@ struct User: Identifiable, Codable {
     let email: String
     let password: String
 }
+
+extension User {
+    static var example: User {
+        User(id: 1, username: "Chris", email: "fgdhdhbhd", password: "xfcgh")
+    }
+}

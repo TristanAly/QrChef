@@ -31,12 +31,14 @@ enum ErrorMessage: Error {
 }
 
 class CommandViewModel: ObservableObject {
+    
     @Published var command = [Command.example]
+    @Published var commands = Command.example
     
     let baseUrl = "http://localhost:3000/api"
     
     // To GET an array with all Commands
-    func getCommands(token: String) async throws -> [Command] {
+    func getCommands() async throws -> [Command] {
         
         guard let url = URL(string: "\(baseUrl)/commands")
         else {
@@ -47,7 +49,7 @@ class CommandViewModel: ObservableObject {
         urlRequest.httpMethod = "GET"
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        urlRequest.addValue(token, forHTTPHeaderField: "x-access-token")
+//        urlRequest.addValue(token, forHTTPHeaderField: "x-access-token")
         
         print("2")
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
@@ -61,6 +63,7 @@ class CommandViewModel: ObservableObject {
         print("fin")
         let commands = try decoder.decode([Command].self, from: data)
         print("Async decodedUser", commands)
+        
         return commands
     }
     
@@ -86,6 +89,42 @@ class CommandViewModel: ObservableObject {
         let commands = try decoder.decode(Command.self, from: data)
         print("Async decodedUser", commands)
         return commands
+    }
+    
+    // MARK: Post all Commands
+    func PostCommand(token: String, table: String, nbperson: Int, price: Double, date: Date,hour: Date,restaurantId: Int) async throws -> Command {
+        guard let url = URL(string: "\(baseUrl)/commands")
+        else {
+            fatalError("Missing URL")
+        }
+        let body: [String: Any] = ["table": table, "nbperson": nbperson, "price": price,
+                                   "date": date,
+                                   "hour": hour,
+                                   "restaurantId": restaurantId]
+        print("2")
+        // ENVOI DE LA REQUETE SUR LE SERVER
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.addValue(token, forHTTPHeaderField: "x-acesss-token")
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+        else {
+            throw ErrorMessage.badResponse
+        }
+        
+        let decoder = JSONDecoder()
+        do {
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let command = try decoder.decode(Command.self, from: data)
+            print("success created: (message)")
+            return command
+        } catch {
+            throw URLError(.badServerResponse)
+        }
     }
 }
 

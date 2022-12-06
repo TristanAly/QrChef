@@ -15,13 +15,15 @@ struct NewRowRestaurantView: View {
             AsyncImage(url: URL(string: restaurant.image ?? "")) { image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
                     .frame(width: 380, height: 130)
+                    .aspectRatio(contentMode: .fill)
+                    .cornerRadius(8)
+                
             } placeholder: {
                 ProgressView()
+                    .frame(width: 380, height: 130)
             }
-            .padding(.bottom)
-            Spacer()
+            
             VStack{
                 HStack{
                     VStack(alignment: .leading){
@@ -29,32 +31,32 @@ struct NewRowRestaurantView: View {
                             .font(.title)
                         Text(restaurant.address ?? "")
                             .font(.subheadline)
-                    }.padding(.horizontal)
+                    }.padding()
                     Spacer()
                 }
                 .foregroundColor(Color("redBurgundy"))
             }
-            .frame(width: 380, height: 100)
-            .background(Rectangle().fill(.white).frame(width: 380, height: 95))
+            //            .frame(width: 380, height: 100)
+            .background(Rectangle().fill(.white))
             .overlay(
                 Button{
                     isfavorite.toggle()
-            } label: {
-                Image(systemName: isfavorite ? "bookmark.fill" : "bookmark")
-                    .font(.title3)
-                    .foregroundColor(Color("redBurgundy"))
-                    .padding()
-            },alignment: .topTrailing
+                } label: {
+                    Image(systemName: isfavorite ? "bookmark.fill" : "bookmark")
+                        .font(.title3)
+                        .foregroundColor(Color("redBurgundy"))
+                        .padding()
+                },alignment: .topTrailing
             )
         }.overlay(
-            Rectangle().stroke(Color("redBurgundy"), lineWidth: 2)
-                .shadow(radius: 5))
-        .cornerRadius(8)
+            RoundedRectangle(cornerRadius: 8).stroke(Color("redBurgundy"), lineWidth: 2)
+                .shadow(radius: 5).frame(width: 380, height: 220))
+        .padding(10)
     }
 }
 
-//struct NewRowRestaurantView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewRowRestaurantView(restaurant: Restaurant.example, isfavorite: $false)
-//    }
-//}
+struct NewRowRestaurantView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewRowRestaurantView(restaurant: Restaurant.example, isfavorite: .constant(false))
+    }
+}

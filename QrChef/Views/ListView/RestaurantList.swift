@@ -9,21 +9,14 @@ import SwiftUI
 struct RestaurantList: View {
     
     @StateObject private var restaurantVM = RestaurantViewModel()
-    @State var search = ""
     @State var isfavorite = false
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading){
-                HStack{
-                    Text("Book for dinner tonight")
-                        .font(.title)
-                        .bold()
-                        .padding()
-                    Spacer()
-                }
+            VStack{
+                CustomSearchBar(restaurantVM: restaurantVM)
                 VStack{
                     ScrollView{
-                        ForEach(restaurantVM.restaurants, id: \.id) { restaurant in
+                        ForEach(restaurantVM .searchResults, id: \.id) { restaurant in
                             NavigationLink{
                                 PikerCategorieView(recipeVM: restaurantVM, restaurant: restaurant)
                             } label: {
@@ -32,7 +25,9 @@ struct RestaurantList: View {
                                 }
                                 .foregroundColor(.black)
                             }
-                            .searchable(text: $search)
+                            
+                            
+                            
                         }.padding()
                     }
                 }.onAppear{
@@ -40,23 +35,27 @@ struct RestaurantList: View {
                         restaurantVM.restaurants = try await restaurantVM.getRestaurant()
                     }
                 }
-                
-            }
-            .toolbar{
-                ToolbarItem {
-                    NavigationLink{
-                        ProfilView()
-                    } label: {
-                        Image(systemName: "person.circle.fill")
-                            .font(.title2)
+                .toolbar{
+                    ToolbarItem {
+                        NavigationLink{
+                            ProfilView(user: User.example)
+                        } label: {
+                            Image(systemName: "person.circle.fill")
+                                .font(.title2)
+                        }
+                        .padding()
                     }
-                    .padding()
+                    
                 }
             }
             
+            .navigationBarTitle("Réservation")
+            
         }
         .navigationBarHidden(true)
+        
     }
+    
 }
 
 struct RestaurantList_Previews: PreviewProvider {

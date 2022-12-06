@@ -20,7 +20,15 @@ class RestaurantViewModel: ObservableObject {
     @Published var manager = Manager.example
     
     @Published var search = ""
-    
+    var searchResults: [Restaurant] {
+        if search.isEmpty {
+                return restaurants
+            } else {
+                return restaurants.filter{ item in
+                    item.name!.contains(search)
+                }
+            }
+        }
     
     let baseUrl = "http://localhost:3000/api"
     

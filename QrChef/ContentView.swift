@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        LoginView(loginVM: LoginViewModel())
+//        LoginView(loginVM: LoginViewModel())
+//    ListCommand(vm: CommandViewModel())
+        PostCommand(vm: CommandViewModel())
     }
 }
 
