@@ -88,11 +88,11 @@ class FavouriteViewModel: ObservableObject {
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
         urlRequest.addValue(try keychainItem.readItem(), forHTTPHeaderField: "x-access-token")
 //        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-        print(urlRequest.allHTTPHeaderFields as Any)
+        print(keychainItem)
 //        //encode
         urlRequest.httpBody = try? JSONEncoder().encode(body)
         //launch ses
-        print(urlRequest)
+        print(3)
         let (data, _) = try await URLSession.shared.data(for: urlRequest)
         //decoder config
         print(data.description)
