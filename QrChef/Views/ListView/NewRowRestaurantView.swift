@@ -10,7 +10,7 @@ import SwiftUI
 struct NewRowRestaurantView: View {
     @ObservedObject var favoriteVM : FavouriteViewModel
     var restaurant: Restaurant
-    @Binding var isfavorite: Bool
+    var isfavorite: Bool
     var body: some View {
         VStack{
             AsyncImage(url: URL(string: restaurant.image ?? "")) { image in
@@ -41,15 +41,15 @@ struct NewRowRestaurantView: View {
             .background(Rectangle().fill(.white))
             .overlay(
                 Button{
-                    isfavorite.toggle()
-                   
+//                    isfavorite.toggle()
 //                        if isfavorite == true {
                             Task {
-                                favoriteVM.favourite = try await favoriteVM.PostFavourite(token: KeychainItem.readItem(.init(service:"com.Cycy.QrChef", account:"accessToken"))(), restaurantId: restaurant.id)
-                            }
-//                        } else {
+                                favoriteVM.favourite = try await favoriteVM.PostFavourite( restaurantId: restaurant.id)
+//                            }
+                        }
+//                    else {
 //                            Task {
-//                                favoriteVM.favourite = try await favoriteVM.DeleteFavourite(token: KeychainItem.readItem(.init(service:"com.Cycy.QrChef", account:"accessToken"))(), id: favoriteVM.favourite.id)
+//                                favoriteVM.favourite = try await favoriteVM.updateFavorite(token: KeychainItem.readItem(.init(service:"com.Cycy.QrChef", account:"accessToken"))(), id: favoriteVM.favourite.id)
 //                        }
 //                    }
                 } label: {
@@ -68,6 +68,8 @@ struct NewRowRestaurantView: View {
 
 struct NewRowRestaurantView_Previews: PreviewProvider {
     static var previews: some View {
-        NewRowRestaurantView(favoriteVM: FavouriteViewModel(), restaurant: Restaurant.example, isfavorite: .constant(false)).environmentObject(FavouriteViewModel())
+        NewRowRestaurantView(favoriteVM: FavouriteViewModel(), restaurant: Restaurant.example, isfavorite: false)
     }
 }
+
+//readItem(.init(service:"com.Cycy.QrChef", account:"accessToken"))()

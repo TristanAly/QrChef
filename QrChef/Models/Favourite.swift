@@ -9,15 +9,16 @@ import Foundation
 
 struct Favourite:Identifiable, Codable {
     let id: Int
-    let userId: Int
-    let restaurantId: Int
-    let restaurant: Restaurant?
-    let user: User?
+//    var islike: Bool?
+    let userId: Int?
+    let restaurantId: Int?
+//    let restaurant: Restaurant?
+//    let user: User?
 }
 
 extension Favourite {
     static var example: Favourite {
-        Favourite(id: 1, userId: 1, restaurantId: 1, restaurant: Restaurant.example, user: User.example)
+        Favourite(id: 1, userId: 1, restaurantId: 1)
     }
 }
 

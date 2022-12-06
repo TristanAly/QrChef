@@ -69,7 +69,7 @@ class FavouriteViewModel: ObservableObject {
     }
     
     // MARK: Post all Commands
-    func PostFavourite(token: String, restaurantId: Int) async throws -> Favourite {
+    func PostFavourite(restaurantId: Int) async throws -> Favourite {
         //url
         print("1")
         guard let url = URL(string: "\(baseUrl)/favourite")
@@ -82,15 +82,20 @@ class FavouriteViewModel: ObservableObject {
         urlRequest.httpMethod = "POST"
         //add http body+headers
         let body: [String: Int] = ["restaurantId": restaurantId]
+        let keychainItem = KeychainItem(service: "com.Cycy.QrChef", account: "accessToken")
+        urlRequest.httpMethod = "POST"
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        urlRequest.addValue(token, forHTTPHeaderField: "x-acesss-token")
-        //encode
+        urlRequest.addValue(try keychainItem.readItem(), forHTTPHeaderField: "x-access-token")
+//        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
+        print(urlRequest.allHTTPHeaderFields as Any)
+//        //encode
         urlRequest.httpBody = try? JSONEncoder().encode(body)
         //launch ses
-        print("3")
+        print(urlRequest)
         let (data, _) = try await URLSession.shared.data(for: urlRequest)
         //decoder config
+        print(data.description)
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         do{
@@ -105,6 +110,40 @@ class FavouriteViewModel: ObservableObject {
             print("5")
             throw URLError(.badServerResponse)
         }
+    }
+    func updateFavorite(token: String, id: Int, islike: Bool) async throws -> Favourite {
+        //url
+        guard let url = URL(string: "\(baseUrl)/favourite/\(id)")
+        else {throw ErrorMessage.badURL}
+        //create req
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PUT"
+        //add http body+headers
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.addValue(token, forHTTPHeaderField: "x-acesss-token")
+        //add params
+        let params: [String: Any] = [ "islike": islike,
+            "restaurantId": id
+        ]
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        //open sess
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        //res
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+        else {
+            throw ErrorMessage.badResponse
+        }
+        //decode res
+        let jsonDecoder = JSONDecoder()
+//        do {
+            let decoded = try jsonDecoder.decode(Favourite.self, from: data)
+            //get res in swift
+        print("success updated: \(decoded)")
+            return decoded
+//        } catch {
+//            throw ErrorMessage.decodingError
+//        }
     }
 //    func PostFavourite(token: String, restaurantId: Int) async throws -> Favourite {
 //        guard let url = URL(string: "\(baseUrl)/favourite")

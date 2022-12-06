@@ -22,7 +22,7 @@ struct RestaurantList: View {
                                 PikerCategorieView(recipeVM: restaurantVM, restaurant: restaurant)
                             } label: {
                                 HStack{
-                                    NewRowRestaurantView(favoriteVM: favouriteVM, restaurant: restaurant, isfavorite: $isfavorite)
+                                    NewRowRestaurantView(favoriteVM: favouriteVM, restaurant: restaurant, isfavorite: isfavorite)
                                 }
                                 .foregroundColor(.black)
                             }

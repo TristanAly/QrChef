@@ -12,7 +12,7 @@ struct FavoriteRestaurantView: View {
     var body: some View {
         List{
             ForEach(FavouriteVM.favourites) { favourite in
-                RowRestaurantView(favorite: favourite)
+//                RowRestaurantView(restaurant: favourite)
             }
         }.listStyle(.plain)
         .onAppear{
