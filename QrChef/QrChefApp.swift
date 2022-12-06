@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct QrChefApp: App {
-//    @StateObject private var vm = LoginViewModel()
-    @StateObject private var vm = CommandViewModel()
+    @StateObject private var vm = LoginViewModel()
+//    @StateObject private var vm = CommandViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()

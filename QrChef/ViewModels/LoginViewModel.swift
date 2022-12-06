@@ -11,9 +11,9 @@ import Foundation
 class LoginViewModel: ObservableObject {
     
     @Published var user: User?
-    @Published var username = "Christine"
+    @Published var username = "User1"
     @Published var email = ""
-    @Published var password = "12345678"
+    @Published var password = "User1"
     @Published var signin: SignInResponse?
     @Published var show: Bool = false
     @Published var showAlert: Bool = false
@@ -87,7 +87,7 @@ class LoginViewModel: ObservableObject {
             }
             
             print("success \(String(describing: response))")
-            let keychainItem = KeychainItem(service: "com.Tristan.QrChef", account: "accessToken")
+            let keychainItem = KeychainItem(service: "com.Cycy.QrChef", account: "accessToken")
             try keychainItem.saveItem(response!.accessToken)
             
             return response

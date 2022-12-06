@@ -20,3 +20,10 @@ extension Favourite {
         Favourite(id: 1, userId: 1, restaurantId: 1, restaurant: Restaurant.example, user: User.example)
     }
 }
+
+
+struct ResponseFavourite:Identifiable, Codable {
+    let id: Int
+    let userId: Int
+    let restaurantId: Int
+}
