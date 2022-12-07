@@ -15,7 +15,8 @@ struct PostCommand: View {
     @State var nbperson = "2"
     @State var price = "12.5"
     
-    @StateObject var vm : CommandViewModel
+    @EnvironmentObject var vm : CommandViewModel
+    @StateObject var restaurantVM: RestaurantViewModel
     var body: some View {
         VStack{
             DatePicker(selection: $date, in: ...Date.distantFuture, displayedComponents: .date) {
@@ -33,7 +34,8 @@ struct PostCommand: View {
                 .keyboardType(.decimalPad)
             Button {
                 Task{
-                    vm.commands = try await vm.PostCommand( table:table,nbperson: number(test: nbperson)  ,price: numberDouble(test: price), date: date, hour: hour, restaurantId: 1 )
+                    vm.commands = try await
+                    vm.PostCommand(table: table, nbperson: Int(nbperson)!, price: Double(price)!, date: dateFormatter.string(from: Date.now), hour: hourFormatter.string(from: Date.now), restaurantId: restaurantVM.restaurant.id)
                 }
             } label: {
                 Text("envoie bon de commande")
@@ -67,6 +69,6 @@ struct PostCommand: View {
 
 struct PostCommand_Previews: PreviewProvider {
     static var previews: some View {
-        PostCommand(vm: CommandViewModel())
+        PostCommand(restaurantVM: RestaurantViewModel()).environmentObject(CommandViewModel())
     }
 }

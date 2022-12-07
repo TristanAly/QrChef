@@ -12,45 +12,52 @@ struct ListCommand: View {
     @StateObject var vm = CommandViewModel()
     
     var body: some View {
-        VStack{
-            List{
-//                ForEach(vm.command, id: \.table) { command in
-//                    VStack{
-//                        HStack{
-//                            Text("Table n° \(command.table ?? "")")
-//                            Spacer()
-//
-//                            Text("\(command.nbperson ?? 0) pers.")
-//                        }
-//                        ForEach(command.recipes ?? [], id: \.id) { recipe in
-//                            HStack{
-//                                Text(recipe.name ?? "")
-//                                Spacer()
-//                                Text("\(recipe.priceRange ?? 0)")
-//                            }
-//
-//                        }
-//                    }
-//                }
-                VStack{
-                    HStack{
-                        Text("n° \(vm.commands.table ?? "")")
-                        Spacer()
-//                        Text("\(vm.commands.price ?? 0)")
-                    }
-                    ForEach(vm.commands.recipes ?? [], id: \.id) { recipe in
-                        HStack{
-                            Text(recipe.name ?? "")
-                            Spacer()
-                            Text("\(recipe.priceRange ?? 0)")
+        NavigationView {
+            VStack{
+                List{
+                    ForEach(vm.command, id: \.table) { command in
+                        NavigationLink {
+                            
+                        } label: {
+                            VStack{
+                                HStack{
+                                    Text("Table n° \(command.table ?? "")")
+                                    Spacer()
+                                    
+                                    Text("\(command.nbperson ?? 0) pers.")
+                                }
+                                ForEach(command.recipes ?? [], id: \.id) { recipe in
+                                    HStack{
+                                        Text(recipe.name ?? "")
+                                        Spacer()
+                                        Text("\(recipe.priceRange ?? 0)")
+                                    }
+                                    
+                                }
+                            }
                         }
+                        
                     }
+                    //                VStack{
+                    //                    HStack{
+                    //                        Text("n° \(vm.commands.table ?? "")")
+                    //                        Spacer()
+                    ////                        Text("\(vm.commands.price ?? 0)")
+                    //                    }
+                    //                    ForEach(vm.commands.recipes ?? [], id: \.id) { recipe in
+                    //                        HStack{
+                    //                            Text(recipe.name ?? "")
+                    //                            Spacer()
+                    //                            Text("\(recipe.priceRange ?? 0)")
+                    //                        }
+                    //                    }
+                    //                }
                 }
             }
-        }
-        .onAppear{
-            Task {
-                 vm.command = try await vm.getCommands()
+            .onAppear{
+                Task {
+                    vm.command = try await vm.getCommands()
+                }
             }
         }
     }

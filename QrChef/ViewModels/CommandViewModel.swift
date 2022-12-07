@@ -92,38 +92,48 @@ class CommandViewModel: ObservableObject {
     }
     
     // MARK: Post all Commands
-    func PostCommand(table: String, nbperson: Int, price: Double, date: Date,hour: Date,restaurantId: Int) async throws -> Command {
+    func PostCommand(table: String, nbperson: Int, price: Double, date: String, hour: String, restaurantId: Int) async throws -> Command {
+        print("1")
         guard let url = URL(string: "\(baseUrl)/commands")
         else {
             fatalError("Missing URL")
         }
-        let body: [String: Any] = ["table": table, "nbperson": nbperson, "price": price,
-                                   "date": date,
-                                   "hour": hour,
-                                   "restaurantId": restaurantId]
-        print("2")
+        let body: [String: String] = [
+                "table": table,
+                "nbperson": String(nbperson),
+                "price": String(price),
+                "date": date,
+                "hour": hour,
+                "restaurantId": String(restaurantId)
+        ]
+        print(body)
         // ENVOI DE LA REQUETE SUR LE SERVER
         var urlRequest = URLRequest(url: url)
         let keychainItem = KeychainItem(service: "com.Cycy.QrChef", account: "accessToken")
         urlRequest.httpMethod = "POST"
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        urlRequest.addValue(try keychainItem.readItem(), forHTTPHeaderField: "x-acesss-token")
-        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
+        urlRequest.addValue(try keychainItem.readItem(), forHTTPHeaderField: "x-access-token")
+        print(keychainItem)
+        urlRequest.httpBody = try? JSONEncoder().encode(body)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        
+        print(2)
         guard (response as? HTTPURLResponse)?.statusCode == 200
         else {
+            print(response)
+            print(ErrorMessage.badResponse)
             throw ErrorMessage.badResponse
         }
-        
+        print(3)
         let decoder = JSONDecoder()
         do {
+            print(4)
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let command = try decoder.decode(Command.self, from: data)
-            print("success created: (message)")
+            print("success created: \(command)")
             return command
         } catch {
+            print(5)
             throw URLError(.badServerResponse)
         }
     }

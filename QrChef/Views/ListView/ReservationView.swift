@@ -46,7 +46,7 @@ struct ReservationView: View {
             VStack(alignment: .center){
                 Button {
                     Task{
-                        vm.commands = try await vm.PostCommand( table:table,nbperson: nbperson  ,price: numberDouble(test: price), date: date, hour: hour, restaurantId: 1 )
+                        vm.commands = try await vm.PostCommand( table:table,nbperson: nbperson, price: numberDouble(test: price), date: date.description, hour: hour.description, restaurantId: 1 )
                     }
                 } label: {
                     Text("Reservez")
