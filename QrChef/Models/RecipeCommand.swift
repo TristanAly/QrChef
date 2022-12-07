@@ -11,4 +11,5 @@ struct RecipeCommand: Identifiable, Codable{
     let id: Int
     let commandId: Int
     let recipeId: Int
+    let recipes: [Recipe]?
 }

@@ -65,7 +65,7 @@ struct DetailRecipeView: View {
                     
                 }
                 
-                ButtonView(restaurantVM: recipeVM, recipeId: recipe.id, commandId: commandVM.commands.id)
+                ButtonView(restaurantVM: recipeVM, commandVM: CommandViewModel(), recipeId: recipe.id, commandId: commandVM.commands.id)
                    // .padding(15)
             }
             .onAppear{

@@ -18,6 +18,8 @@ class RestaurantViewModel: ObservableObject {
     
     @Published var managers = [Manager.example]
     @Published var manager = Manager.example
+    @Published var recipeCommand = RecipeCommand(id: 1, commandId: 1, recipeId: 1, recipes: [])
+    
     
     @Published var search = ""
     var searchResults: [Restaurant] {
@@ -180,7 +182,7 @@ class RestaurantViewModel: ObservableObject {
         else {
             fatalError("Missing URL")
         }
-        let body: [String: Int] = [ "recipeId": recipeId,"commandId": commandId]
+        let body: [String: Int] = ["recipeId": recipeId,"commandId": commandId]
         print(body)
         // ENVOI DE LA REQUETE SUR LE SERVER
         var urlRequest = URLRequest(url: url)

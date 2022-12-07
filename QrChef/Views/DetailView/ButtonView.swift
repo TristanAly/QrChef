@@ -11,6 +11,7 @@ struct ButtonView: View {
     @State var count: Int = 1
     @State var price: Int = 7
     @ObservedObject var restaurantVM: RestaurantViewModel
+    @ObservedObject var commandVM: CommandViewModel
     @State var recipeId: Int
     @State var commandId: Int
     var body: some View {
@@ -55,7 +56,7 @@ struct ButtonView: View {
             
             Button{
                 Task{
-                    try await restaurantVM.PostRecipe(recipeId: recipeId, commandId: commandId)
+                    restaurantVM.recipeCommand = try await restaurantVM.PostRecipe(recipeId: recipeId, commandId: commandId)
                 }
             } label: {
                 Text("Ajouter pour \(price) €")
@@ -87,6 +88,6 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(restaurantVM: RestaurantViewModel(), recipeId: 1, commandId: 1)
+        ButtonView(restaurantVM: RestaurantViewModel(), commandVM: CommandViewModel(), recipeId: 1, commandId: 1)
     }
 }

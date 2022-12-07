@@ -18,11 +18,11 @@ struct SignInView: View {
             ZStack {
                 Color.redBurgundy
                     .ignoresSafeArea()
-                RoundedRectangle(cornerRadius: 30, style: .continuous)
-                    .foregroundColor(.white)
-                    .frame(width: 395, height: 420)
-                    .cornerRadius(20)
-                
+//                RoundedRectangle(cornerRadius: 30, style: .continuous)
+//                    .foregroundColor(.white)
+//                    .frame(width: 395, height: 420)
+//                    .cornerRadius(20)
+                    
                 VStack(alignment: .center)  {
                     
                     LottieView(lottieFile: "fork")
@@ -121,9 +121,14 @@ struct SignInView: View {
                     .sheet(isPresented: $loginVM.showSheet ) {
                         SignUpView(loginVM: loginVM)
                     }
-                }
+                }.background(RoundedRectangle(cornerRadius: 30)
+                        .foregroundColor(.white)
+                        .frame(width: 395, height: 420)
+                        .cornerRadius(20)
+                )
             }
             .navigationBarTitleDisplayMode(.inline)
+            .ignoresSafeArea(.keyboard)
         }
     }
 }

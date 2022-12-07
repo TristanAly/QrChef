@@ -44,7 +44,7 @@ struct Command: Identifiable, Codable {
 
 extension Command {
     static var example: Command {
-        Command(id: 1, table: "12", nbperson: 1, price: 20.00, date: dateFormatter.string(from: Date.now), hour: hourFormatter.string(from: Date.now), userId: 1, restaurantId: 1, ingredientCommandId: 1, restaurant: Restaurant.example, user: User.example, recipes: [Recipe.example], ingredients: [Ingredient.example])
+        Command(id: 1, table: "12", nbperson: 1, price: 20.50, date: dateFormatter.string(from: Date.now), hour: hourFormatter.string(from: Date.now), userId: 1, restaurantId: 1, ingredientCommandId: 1, restaurant: Restaurant.example, user: User.example, recipes: [Recipe.example], ingredients: [Ingredient.example])
     }
 }
 
@@ -59,7 +59,7 @@ let hourFormatter: DateFormatter = {
 
 let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.timeStyle = .long
+    formatter.dateStyle = .short
     formatter.locale = Locale(identifier: "FR-fr")
 //    formatter.dateFormat = "HH':'mm'L'"
 //    formatter.timeZone = TimeZone(secondsFromGMT: 0)
