@@ -9,16 +9,17 @@ import SwiftUI
 
 struct ProfilView: View {
     
-   var user: User
+    @StateObject var userVM = UserViewModel()
    @State var arraytest = ["gdgdggd","gfgfdhq", "fggdhfdgh"]
     
     var body: some View {
         VStack(alignment: .leading){
             HStack{
+                
                 Circle()
                     .frame(width: 170, height: 170)
                 
-                Text(user.username)
+                Text(userVM.user.username)
                     .font(.title)
                     .bold()
                     .padding()
@@ -34,11 +35,17 @@ struct ProfilView: View {
                 }
             }
         }.padding()
+            .onAppear{
+                Task{
+                    userVM.user = try await userVM.getUser()
+                }
+            }
     }
 }
 
 struct ProfilView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilView(user: User.example)
+        ProfilView()
+            .environmentObject(UserViewModel())
     }
 }

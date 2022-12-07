@@ -11,7 +11,6 @@ struct RestaurantList: View {
     @StateObject private var restaurantVM = RestaurantViewModel()
     @StateObject private var favouriteVM = FavouriteViewModel()
     @State var isfavorite = false
-    var tabletest : Table
     var body: some View {
         NavigationView {
             VStack{
@@ -20,7 +19,7 @@ struct RestaurantList: View {
                     ScrollView{
                         ForEach(restaurantVM .searchResults, id: \.id) { restaurant in
                             NavigationLink{
-                                PikerCategorieView(recipeVM: restaurantVM,table: tabletest, restaurant: restaurant)
+                                PikerCategorieView(recipeVM: restaurantVM,restaurant: restaurant)
                             } label: {
                                 HStack{
                                     NewRowRestaurantView(favoriteVM: favouriteVM, restaurant: restaurant, isfavorite: isfavorite)
@@ -40,7 +39,7 @@ struct RestaurantList: View {
                 .toolbar{
                     ToolbarItem {
                         NavigationLink{
-                            ProfilView(user: User.example)
+                            ProfilView()
                         } label: {
                             Image(systemName: "person.circle.fill")
                                 .font(.title2)
@@ -62,7 +61,7 @@ struct RestaurantList: View {
 
 struct RestaurantList_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantList(isfavorite: false, tabletest: tableArray[0])
+        RestaurantList(isfavorite: false)
             .environmentObject(RestaurantViewModel())
     }
 }

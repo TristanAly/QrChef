@@ -32,6 +32,7 @@
 		1770E365293FC07800CDD6D4 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770E364293FC07800CDD6D4 /* ReservationView.swift */; };
 		1770E367293FC2A100CDD6D4 /* ButtonReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770E366293FC2A100CDD6D4 /* ButtonReservationView.swift */; };
 		1770E369293FD77200CDD6D4 /* TableReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770E368293FD77200CDD6D4 /* TableReservationView.swift */; };
+		178444892940AE3B0035AC7E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178444882940AE3B0035AC7E /* UserViewModel.swift */; };
 		17889B2C293D0252005161A3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B2B293D0252005161A3 /* LoginViewModel.swift */; };
 		17889B2F293D033C005161A3 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B2E293D033C005161A3 /* KeychainItem.swift */; };
 		17889B31293D0787005161A3 /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B30293D0786005161A3 /* ShakeEffect.swift */; };
@@ -93,6 +94,7 @@
 		1770E364293FC07800CDD6D4 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		1770E366293FC2A100CDD6D4 /* ButtonReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReservationView.swift; sourceTree = "<group>"; };
 		1770E368293FD77200CDD6D4 /* TableReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReservationView.swift; sourceTree = "<group>"; };
+		178444882940AE3B0035AC7E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		17889B2B293D0252005161A3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		17889B2E293D033C005161A3 /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		17889B30293D0786005161A3 /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				1722340C29364EB500FB6CAA /* RestaurantViewModel.swift */,
 				17889B2B293D0252005161A3 /* LoginViewModel.swift */,
+				178444882940AE3B0035AC7E /* UserViewModel.swift */,
 				17889B30293D0786005161A3 /* ShakeEffect.swift */,
 				7B5192722939FA140039436B /* LottieView.swift */,
 				DC9DD8ED293D620F006C8380 /* CommandViewModel.swift */,
@@ -445,6 +448,7 @@
 				1708C1BE293E1E610062BCB1 /* BtnCourses.swift in Sources */,
 				DC9DD8F3293D63E8006C8380 /* GeneratorQRCode.swift in Sources */,
 				17D330052936594E00A2403A /* Manager.swift in Sources */,
+				178444892940AE3B0035AC7E /* UserViewModel.swift in Sources */,
 				178E22152936377E00509AA2 /* ContentView.swift in Sources */,
 				1708C1C4293E38A60062BCB1 /* ListCommand.swift in Sources */,
 				7B5192732939FA140039436B /* LottieView.swift in Sources */,

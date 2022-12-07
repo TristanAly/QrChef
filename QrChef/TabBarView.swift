@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView{
-            RestaurantList(tabletest: Table(id: 1, table: "", hour: ""))
+            RestaurantList()
                 .tabItem {
                     VStack{
                         Image(systemName: "fork.knife.circle.fill")
@@ -24,7 +24,7 @@ struct TabBarView: View {
                         Text("Favourite")
                     }
                 }
-           BookingView()
+            ProfilView()
                 .tabItem {
                     VStack{
                         Image(systemName: "calendar.circle.fill")

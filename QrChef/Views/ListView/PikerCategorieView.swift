@@ -14,7 +14,7 @@ struct PikerCategorieView: View {
     @State var test = false
     @State var reservation = false
 
-    var table : Table
+   
     var restaurant: Restaurant
     var body: some View {
         VStack{
@@ -77,6 +77,6 @@ struct PikerCategorieView: View {
 
 struct PikerCategorieView_Previews: PreviewProvider {
     static var previews: some View {
-        PikerCategorieView(recipeVM: RestaurantViewModel(), table: tableArray[0], restaurant: Restaurant.example)
+        PikerCategorieView(recipeVM: RestaurantViewModel(), restaurant: Restaurant.example)
     }
 }
