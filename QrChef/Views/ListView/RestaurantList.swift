@@ -36,18 +36,6 @@ struct RestaurantList: View {
                         restaurantVM.restaurants = try await restaurantVM.getRestaurant()
                     }
                 }
-                .toolbar{
-                    ToolbarItem {
-                        NavigationLink{
-                            ProfilView()
-                        } label: {
-                            Image(systemName: "person.circle.fill")
-                                .font(.title2)
-                        }
-                        .padding()
-                    }
-                    
-                }
             }
             
             .navigationBarTitle("Réservation")

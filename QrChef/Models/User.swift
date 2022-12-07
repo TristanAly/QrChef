@@ -17,6 +17,6 @@ struct User: Identifiable, Codable {
 
 extension User {
     static var example: User {
-        User(id: 1, username: "Chris", email: "fgdhdhbhd", password: "xfcgh")
+        User(id: 1, username: "Christine", email: "fgdhdhbhd", password: "xfcgh")
     }
 }

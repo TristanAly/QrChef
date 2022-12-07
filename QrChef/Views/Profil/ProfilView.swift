@@ -14,20 +14,17 @@ struct ProfilView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            ForEach(userVM.user, id: \.id) { user in
                 HStack{
-                    
+                    // ajout UIImage picker
                     Circle()
                         .frame(width: 170, height: 170)
                     
-                    Text(user.username)
+                    Text(userVM.user.username)
                         .font(.title)
                         .bold()
                         .padding()
                     Spacer()
-                }
-            }
-            Text("Mes bons de commande")
+                }            Text("Mes bons de commande")
                 .font(.title2)
                 .padding()
             List{
