@@ -31,7 +31,7 @@
 		17379CFC2937581C005107A1 /* PikerCategorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17379CFB2937581C005107A1 /* PikerCategorieView.swift */; };
 		1770E365293FC07800CDD6D4 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770E364293FC07800CDD6D4 /* ReservationView.swift */; };
 		1770E367293FC2A100CDD6D4 /* ButtonReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770E366293FC2A100CDD6D4 /* ButtonReservationView.swift */; };
-		1770E369293FD77200CDD6D4 /* TableRservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770E368293FD77200CDD6D4 /* TableRservationView.swift */; };
+		1770E369293FD77200CDD6D4 /* TableReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770E368293FD77200CDD6D4 /* TableReservationView.swift */; };
 		17889B2C293D0252005161A3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B2B293D0252005161A3 /* LoginViewModel.swift */; };
 		17889B2F293D033C005161A3 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B2E293D033C005161A3 /* KeychainItem.swift */; };
 		17889B31293D0787005161A3 /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B30293D0786005161A3 /* ShakeEffect.swift */; };
@@ -92,7 +92,7 @@
 		17379CFB2937581C005107A1 /* PikerCategorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PikerCategorieView.swift; sourceTree = "<group>"; };
 		1770E364293FC07800CDD6D4 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		1770E366293FC2A100CDD6D4 /* ButtonReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReservationView.swift; sourceTree = "<group>"; };
-		1770E368293FD77200CDD6D4 /* TableRservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRservationView.swift; sourceTree = "<group>"; };
+		1770E368293FD77200CDD6D4 /* TableReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReservationView.swift; sourceTree = "<group>"; };
 		17889B2B293D0252005161A3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		17889B2E293D033C005161A3 /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		17889B30293D0786005161A3 /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 				1710EBA62938F1880001E107 /* ListCategorieView.swift */,
 				17379CFB2937581C005107A1 /* PikerCategorieView.swift */,
 				1770E364293FC07800CDD6D4 /* ReservationView.swift */,
-				1770E368293FD77200CDD6D4 /* TableRservationView.swift */,
+				1770E368293FD77200CDD6D4 /* TableReservationView.swift */,
 				1770E366293FC2A100CDD6D4 /* ButtonReservationView.swift */,
 				1708C1BD293E1E610062BCB1 /* BtnCourses.swift */,
 				1710EBBA293A06AC0001E107 /* TopManagerListView.swift */,
@@ -466,7 +466,7 @@
 				1710EBB7293906250001E107 /* RowRecipeView.swift in Sources */,
 				1708C1C2293E2C8A0062BCB1 /* PostCommand.swift in Sources */,
 				7BF74C962938F23B00E442A3 /* TextFieldBurgundiViewModifier.swift in Sources */,
-				1770E369293FD77200CDD6D4 /* TableRservationView.swift in Sources */,
+				1770E369293FD77200CDD6D4 /* TableReservationView.swift in Sources */,
 				17379CFC2937581C005107A1 /* PikerCategorieView.swift in Sources */,
 				17889B2F293D033C005161A3 /* KeychainItem.swift in Sources */,
 				1722340D29364EB500FB6CAA /* RestaurantViewModel.swift in Sources */,

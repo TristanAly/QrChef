@@ -41,11 +41,6 @@ struct PostCommand: View {
                 Text("envoie bon de commande")
             }
             .buttonStyle(.borderedProminent)
-            
-            VStack{
-                Text(vm.commands.date ?? "")
-                Text(vm.commands.hour ?? "")
-            }
 
         }
         
