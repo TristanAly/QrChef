@@ -44,7 +44,7 @@ struct PikerCategorieView: View {
                     EmptyView()
                 }
             }else {
-                ReservationView(vm: CommandViewModel(), tabletest: table)
+               ReservationView(restaurantVM: recipeVM)
             }
         }
                 .onAppear{
