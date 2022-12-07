@@ -14,18 +14,19 @@ struct ProfilView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            HStack{
-                
-                Circle()
-                    .frame(width: 170, height: 170)
-                
-                Text(userVM.user.username)
-                    .font(.title)
-                    .bold()
-                    .padding()
-                Spacer()
+            ForEach(userVM.user, id: \.id) { user in
+                HStack{
+                    
+                    Circle()
+                        .frame(width: 170, height: 170)
+                    
+                    Text(user.username)
+                        .font(.title)
+                        .bold()
+                        .padding()
+                    Spacer()
+                }
             }
-            
             Text("Mes bons de commande")
                 .font(.title2)
                 .padding()
