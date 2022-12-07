@@ -18,7 +18,7 @@ struct LoginView: View {
         case .page2:
             SignInView(loginVM: loginVM)
         case .page3:
-            EmptyView()
+           Text("hello")
         }
     }
 }

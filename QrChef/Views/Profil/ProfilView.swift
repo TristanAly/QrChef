@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfilView: View {
     
     @StateObject var userVM = UserViewModel()
-   @State var arraytest = ["gdgdggd","gfgfdhq", "fggdhfdgh"]
+    @State var arraytest = ["gdgdggd","gfgfdhq", "fggdhfdgh"]
     
     var body: some View {
         VStack(alignment: .leading){
@@ -24,7 +24,8 @@ struct ProfilView: View {
                         .bold()
                         .padding()
                     Spacer()
-                }            Text("Mes bons de commande")
+                }
+            Text("Mes bons de commande")
                 .font(.title2)
                 .padding()
             List{

@@ -87,28 +87,29 @@ class LoginViewModel: ObservableObject {
             print("4")
             let response = try decoder.decode(SignInResponse?.self, from: data)
             
-            DispatchQueue.main.async {
-                self.verifyToken(token: response!.accessToken,username: response!.username)
-            }
+//                        DispatchQueue.main.async {
+//                            self.verifyToken(token: response!.accessToken,username: response!.username)
+//                        }
             
             print("success \(String(describing: response))")
             let keychainItem = KeychainItem(service: "com.Cycy.QrChef", account: "accessToken")
             try keychainItem.saveItem(response!.accessToken)
             
             return response
-        } catch {
-            DispatchQueue.main.async {
-                self.show = false
-            }
+//                    } catch {
+//                        DispatchQueue.main.async {
+//                            self.show = false
+//                        }
+//                    }
+//                    return signin ?? nil
         }
-        return signin ?? nil
-    }
-    
-    //MARK: VerifyToken
-    func verifyToken(token: String, username: String) {
-        if token != Optional(nilLiteral: ()) && username == username {
-            self.show = true
-            print("view Message")
-        }
+        
+        //MARK: VerifyToken
+//            func verifyToken(token: String, username: String) {
+//                if token != Optional(nilLiteral: ()) && username == username {
+//                    self.show = true
+//                    print("view Message")
+//                }
+//            }
     }
 }

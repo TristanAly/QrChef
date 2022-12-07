@@ -11,6 +11,7 @@ struct SignInView: View {
     
     @ObservedObject var loginVM : LoginViewModel
     @State var test = ""
+//    @ObservedObject var userVM
     
     var body: some View {
         NavigationStack{
@@ -64,21 +65,22 @@ struct SignInView: View {
                                     loginVM.signin = try await loginVM.signIn(username: loginVM.username ,password: loginVM.password)
                                     
                                     print("\(String(describing: loginVM.signin?.accessToken))")
+                                    print("test")
                                     
-                                    if loginVM.show {
+                                    if (loginVM.signin?.roles == ["ROLE_RESTO"]) {
+                                        loginVM.newPage = .page3
+                                        print("page 3!!")
+                                    } else if loginVM.signin?.roles == ["ROLE_USER"] {
                                         loginVM.showAlert = false
                                         print("New View success!!")
                                         self.loginVM.invalidAttempts = 0
                                         loginVM.newPage = .page1
-                                    } else if loginVM.show && ((loginVM.signin?.roles == ["ROLE_RESTO"])) {
-                                        loginVM.newPage = .page3
                                     } else {
                                         loginVM.showAlert = true
                                        
                                         withAnimation(.default) {
                                             self.loginVM.invalidAttempts += 1
                                             test = "Username or password are erroned"
-                                         
                                         }
                                     }
                                 }

@@ -27,8 +27,8 @@ struct TabBarView: View {
             ProfilView()
                 .tabItem {
                     VStack{
-                        Image(systemName: "calendar.circle.fill")
-                        Text("Booking")
+                        Image(systemName: "person.circle.fill")
+                        Text("Profil")
                     }
                 }
         }
