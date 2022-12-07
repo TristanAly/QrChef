@@ -22,21 +22,25 @@ struct QRCodeView: View {
                 GroupBox(label: Text("Commande n° \(commandVM.commands.id)")) {
                     VStack{
                         Text("\(commandVM.commands.date!) à \(commandVM.commands.hour!)")
+                            .padding()
                         HStack{
                             Text("Table: n° \(commandVM.commands.table!)")
                             Spacer()
                             Text("\(commandVM.commands.nbperson!) pers.")
                         }
+                        VStack{
                         HStack{
                             Text("Burrata")
                             Spacer()
                             Text("8€")
                         }
+                        
                         HStack{
                             Text("Burger")
                             Spacer()
                             Text("12.50€")
                         }
+                        }.padding()
                         HStack{
                             Spacer()
                             Text(String("Price: \(commandVM.commands.price!) €"))
