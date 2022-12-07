@@ -10,11 +10,10 @@ import Foundation
 class FavouriteViewModel: ObservableObject {
     @Published var favourites = [Favourite.example]
     @Published var favourite = Favourite.example
-    @Published var responseFavourite = ResponseFavourite(id: 1, userId: 1, restaurantId: 1)
     
     let baseUrl = "http://localhost:3000/api"
     
-    // To GET an array with all Commands
+    // MARK: Get all Favourites
     func getFavourites() async throws -> [Favourite] {
         
         guard let url = URL(string: "\(baseUrl)/favourite")
@@ -70,7 +69,7 @@ class FavouriteViewModel: ObservableObject {
         return favourites
     }
     
-    // MARK: Post all Commands
+    // MARK: Post all Favourites
     func PostFavourite(restaurantId: Int) async throws -> Favourite {
         //url
         print("1")
@@ -147,37 +146,8 @@ class FavouriteViewModel: ObservableObject {
 //            throw ErrorMessage.decodingError
 //        }
     }
-//    func PostFavourite(token: String, restaurantId: Int) async throws -> Favourite {
-//        guard let url = URL(string: "\(baseUrl)/favourite")
-//        else {
-//            fatalError("Missing URL")
-//        }
-//        let body: [String: Int] = ["restaurantId": restaurantId]
-//        print("post")
-//        // ENVOI DE LA REQUETE SUR LE SERVER
-//        var urlRequest = URLRequest(url: url)
-//        urlRequest.httpMethod = "POST"
-//        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-//        urlRequest.addValue(token, forHTTPHeaderField: "x-acesss-token")
-//        urlRequest.httpBody = try? JSONEncoder().encode(body)
-//        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-//        print("post 2")
-//        guard (response as? HTTPURLResponse)?.statusCode == 200
-//        else {
-//            throw ErrorMessage.badResponse
-//        }
-//        print("post 3")
-//        let decoder = JSONDecoder()
-//        do {
-//            decoder.keyDecodingStrategy = .convertFromSnakeCase
-//            let favourite = try decoder.decode(Favourite.self, from: data)
-//            print("success created: (message)")
-//            return favourite
-//        } catch {
-//            throw URLError(.badServerResponse)
-//        }
-//    }
+
+    // MARK: Delete all Favourites
     func deleteFavourite(id: Int) async throws -> Favourite {
         guard let url = URL(string: "\(baseUrl)/favourite/\(id)")
         else {
@@ -201,33 +171,5 @@ class FavouriteViewModel: ObservableObject {
         print("success deleted: \(favorite)")
         return favorite
     }
-//    func DeleteFavourite(token: String, id: Int) async throws -> Favourite {
-//        guard let url = URL(string: "\(baseUrl)/favourite/\(id)")
-//        else {
-//            fatalError("Missing URL")
-//        }
-//        print("2")
-//        // ENVOI DE LA REQUETE SUR LE SERVER
-//        var urlRequest = URLRequest(url: url)
-//        urlRequest.httpMethod = "DELETE"
-//        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-//        urlRequest.addValue(token, forHTTPHeaderField: "x-acesss-token")
-//        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-//
-//        guard (response as? HTTPURLResponse)?.statusCode == 200
-//        else {
-//            throw ErrorMessage.badResponse
-//        }
-//
-//        let decoder = JSONDecoder()
-//        do {
-//            decoder.keyDecodingStrategy = .convertFromSnakeCase
-//            let favourite = try decoder.decode(Favourite.self, from: data)
-//            print("success created: (message)")
-//            return favourite
-//        } catch {
-//            throw URLError(.badServerResponse)
-//        }
-//    }
+
 }

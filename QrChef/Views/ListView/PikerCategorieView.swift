@@ -12,12 +12,16 @@ struct PikerCategorieView: View {
     @ObservedObject var recipeVM: RestaurantViewModel
     @State var selected: Category = .mainCourse
     @State var test = false
+    @State var reservation = false
 
+    var table : Table
     var restaurant: Restaurant
     var body: some View {
-            VStack{
-                TopPikerCategorieView(restaurant: restaurant)
-                //                .padding(.horizontal)
+        VStack{
+            TopPikerCategorieView(restaurant: restaurant)
+            //                .padding(.horizontal)
+            ButtonReservationView(reservation: $reservation)
+            if reservation {
                 Picker("What is your favorite flavour?", selection: $selected) {
                     ForEach(Category.allCases, id: \.rawValue) { category in
                         Text(category.rawValue).tag(category)
@@ -39,18 +43,20 @@ struct PikerCategorieView: View {
                 default:
                     EmptyView()
                 }
+            }else {
+                ReservationView(vm: CommandViewModel(), tabletest: table)
             }
-            .onAppear{
-                Task {
-                    do {
-                        recipeVM.restaurant = try await recipeVM.getRestaurantByID(id: restaurant.id)
-                    } catch let error {
-                        print("CAUGHT ON MESSAGES : \(error)")
+        }
+                .onAppear{
+                    Task {
+                        do {
+                            recipeVM.restaurant = try await recipeVM.getRestaurantByID(id: restaurant.id)
+                        } catch let error {
+                            print("CAUGHT ON MESSAGES : \(error)")
+                        }
                     }
                 }
-            
-                
-        }
+        
             .toolbar{
                 ToolbarItem {
                     Button {
@@ -71,6 +77,6 @@ struct PikerCategorieView: View {
 
 struct PikerCategorieView_Previews: PreviewProvider {
     static var previews: some View {
-        PikerCategorieView(recipeVM: RestaurantViewModel(), restaurant: Restaurant.example)
+        PikerCategorieView(recipeVM: RestaurantViewModel(), table: tableArray[0], restaurant: Restaurant.example)
     }
 }

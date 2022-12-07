@@ -22,9 +22,3 @@ extension Favourite {
     }
 }
 
-
-struct ResponseFavourite:Identifiable, Codable {
-    let id: Int
-    let userId: Int
-    let restaurantId: Int
-}

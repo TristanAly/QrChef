@@ -34,8 +34,9 @@ struct ListCommand: View {
 //                }
                 VStack{
                     HStack{
-                        Text(vm.commands.table ?? "")
-                        Text("\(vm.commands.price ?? 0)")
+                        Text("n° \(vm.commands.table ?? "")")
+                        Spacer()
+//                        Text("\(vm.commands.price ?? 0)")
                     }
                     ForEach(vm.commands.recipes ?? [], id: \.id) { recipe in
                         HStack{

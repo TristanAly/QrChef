@@ -33,7 +33,7 @@ struct PostCommand: View {
                 .keyboardType(.decimalPad)
             Button {
                 Task{
-                    vm.commands = try await vm.PostCommand(token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwMjUwMjI0LCJleHAiOjE2NzAzMzY2MjR9.agV5EBG8h59U2z3g3hkvonaibWLGhnOQZXNPwc15_ME", table:table,nbperson: number(test: nbperson)  ,price: numberDouble(test: price), date: date, hour: hour, restaurantId: 1 )
+                    vm.commands = try await vm.PostCommand( table:table,nbperson: number(test: nbperson)  ,price: numberDouble(test: price), date: date, hour: hour, restaurantId: 1 )
                 }
             } label: {
                 Text("envoie bon de commande")

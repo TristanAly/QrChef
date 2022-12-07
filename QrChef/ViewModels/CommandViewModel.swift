@@ -92,7 +92,7 @@ class CommandViewModel: ObservableObject {
     }
     
     // MARK: Post all Commands
-    func PostCommand(token: String, table: String, nbperson: Int, price: Double, date: Date,hour: Date,restaurantId: Int) async throws -> Command {
+    func PostCommand(table: String, nbperson: Int, price: Double, date: Date,hour: Date,restaurantId: Int) async throws -> Command {
         guard let url = URL(string: "\(baseUrl)/commands")
         else {
             fatalError("Missing URL")
@@ -104,10 +104,11 @@ class CommandViewModel: ObservableObject {
         print("2")
         // ENVOI DE LA REQUETE SUR LE SERVER
         var urlRequest = URLRequest(url: url)
+        let keychainItem = KeychainItem(service: "com.Cycy.QrChef", account: "accessToken")
         urlRequest.httpMethod = "POST"
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        urlRequest.addValue(token, forHTTPHeaderField: "x-acesss-token")
+        urlRequest.addValue(try keychainItem.readItem(), forHTTPHeaderField: "x-acesss-token")
         urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         

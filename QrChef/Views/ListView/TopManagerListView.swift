@@ -14,11 +14,14 @@ struct TopPikerCategorieView: View {
             AsyncImage(url: URL(string: restaurant.image ?? "")) { image in
                 image
                     .resizable()
-                    .frame(height: 160)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 170)
                     .scaledToFill()
                     
             } placeholder: {
                 ProgressView()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 160)
             }
                 
             HStack{

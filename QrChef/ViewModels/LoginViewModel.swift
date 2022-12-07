@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum Page {
+    case page1
+    case page2
+    case page3
+}
 
 class LoginViewModel: ObservableObject {
     
@@ -18,7 +23,7 @@ class LoginViewModel: ObservableObject {
     @Published var show: Bool = false
     @Published var showAlert: Bool = false
     @Published var invalidAttempts = 0
-    @Published var newPage: Bool = false
+    @Published var newPage: Page = .page2
     @Published var showSheet: Bool = false
    
     

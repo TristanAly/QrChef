@@ -69,8 +69,9 @@ struct SignInView: View {
                                         loginVM.showAlert = false
                                         print("New View success!!")
                                         self.loginVM.invalidAttempts = 0
-                                        loginVM.newPage = true
-                                        
+                                        loginVM.newPage = .page1
+                                    } else if loginVM.show && ((loginVM.signin?.roles == ["ROLE_RESTO"])) {
+                                        loginVM.newPage = .page3
                                     } else {
                                         loginVM.showAlert = true
                                        

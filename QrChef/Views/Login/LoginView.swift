@@ -13,10 +13,12 @@ struct LoginView: View {
     
     var body: some View {
         switch loginVM.newPage {
-        case true:
+        case .page1:
             TabBarView()
-        case false:
+        case .page2:
             SignInView(loginVM: loginVM)
+        case .page3:
+            EmptyView()
         }
     }
 }
