@@ -10,9 +10,9 @@ import CodeScanner
 
 struct ScanQRCodeView: View {
     let filter: FilterType
-       @ObservedObject var prospects: Prospects
+    @ObservedObject var prospects: Prospects
     @ObservedObject var commandVM: CommandViewModel
-       @State private var isShowingScanner = false
+    @State private var isShowingScanner = false
     var body: some View {
         NavigationView {
             VStack{
@@ -39,53 +39,53 @@ struct ScanQRCodeView: View {
             }.sheet(isPresented: $isShowingScanner) {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: handleScan)
             }
-//            .toolbar {
-//                Button {
-//                    var prospect = Command(id: 0, nbperson: Command.example.nbperson, price: 0.01)
-//                    prospect.id = Command.example.id
-//                    prospect.table = Command.example.table
-//                    prospect.nbperson = Command.example.nbperson
-//                    prospects.people.append(prospect)
-//                } label: {
-//                    Label("Scan", systemImage: "qrcode.viewfinder")
-//                }
-//            }
+            //            .toolbar {
+            //                Button {
+            //                    var prospect = Command(id: 0, nbperson: Command.example.nbperson, price: 0.01)
+            //                    prospect.id = Command.example.id
+            //                    prospect.table = Command.example.table
+            //                    prospect.nbperson = Command.example.nbperson
+            //                    prospects.people.append(prospect)
+            //                } label: {
+            //                    Label("Scan", systemImage: "qrcode.viewfinder")
+            //                }
+            //            }
         }
     }
-        var filteredProspects: [CommandScan] {
-            switch filter {
-            case .none:
-                return prospects.people
-            }
+    var filteredProspects: [CommandScan] {
+        switch filter {
+        case .none:
+            return prospects.people
         }
-        func handleScan(result: Result<ScanResult, ScanError>) {
-            isShowingScanner = false
-            switch result {
-            case .success(let result):
-                let details = result.string.components(separatedBy: "\n")
-                guard details.count == 4 else { return }
-                
-                let person = CommandScan()
-                
-//                person.id = details[0]
-                person.nbperson = details[0]
-                person.userId = details[1]
-                person.date = details[2]
-                person.hour = details[3]
-                
+    }
+    func handleScan(result: Result<ScanResult, ScanError>) {
+        isShowingScanner = false
+        switch result {
+        case .success(let result):
+            let details = result.string.components(separatedBy: "\n")
+            guard details.count == 4 else { return }
             
-                prospects.people.append(person)
-            case .failure(let error):
-                print("Scanning failed: \(error.localizedDescription)")
-            }
+            let person = CommandScan()
+            
+            //                person.id = details[0]
+            person.nbperson = details[0]
+            person.userId = details[1]
+            person.date = details[2]
+            person.hour = details[3]
+            
+            
+            prospects.people.append(person)
+        case .failure(let error):
+            print("Scanning failed: \(error.localizedDescription)")
         }
-
+    }
+    
 }
 
 struct ScanQRCodeView_Previews: PreviewProvider {
     static var previews: some View {
         ScanQRCodeView(filter: FilterType.none, prospects: Prospects(), commandVM: CommandViewModel())
-//            .environmentObject(Prospects())
+        //            .environmentObject(Prospects())
     }
 }
 

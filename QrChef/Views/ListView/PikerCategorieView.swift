@@ -61,7 +61,7 @@ struct PikerCategorieView: View {
             .toolbar{
                 ToolbarItem {
                     NavigationLink{
-                        QRCodeView(document: FilesDocuments(message: "Commande n° \(commandVM.commands.id)\n avec \(commandVM.commands.nbperson!)\n \(String(describing: commandVM.commands.userId))\n \(String(describing: commandVM.commands.date)) à \(String(describing: commandVM.commands.hour))"), commandVM: commandVM,recipeVM: recipeVM)
+                        QRCodeView(document: FilesDocuments(message: "Commande n° \(commandVM.commands.id)\n avec \(commandVM.commands.nbperson!)\n \(String(describing: commandVM.commands.userId))\n \(String(describing: commandVM.commands.date)) à \(String(describing: commandVM.commands.hour))"), commandVM: commandVM, recipeVM: recipeVM)
                     } label: {
                         VStack{
                             Image(systemName: "newspaper.circle.fill")

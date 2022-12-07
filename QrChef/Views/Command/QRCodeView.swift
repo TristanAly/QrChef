@@ -37,8 +37,6 @@ struct QRCodeView: View {
                             Spacer()
                             Text("12.50€")
                         }
-                        
-                        
                         HStack{
                             Spacer()
                             Text(String("Price: \(commandVM.commands.price!) €"))
@@ -57,7 +55,7 @@ struct QRCodeView: View {
                             Text("Save")
                         })
                         Spacer()
-                        NavigationLink(destination: GeneratorQRCode(document: FilesDocuments(message: "Commande n° \(commandVM.commands.id)\n avec \(commandVM.commands.nbperson!) pers.\n Burrata        8€\n Burger         12.50€\n \(String(describing: commandVM.commands.userId))\n \(String(describing: commandVM.commands.date)) à \(String(describing: commandVM.commands.hour))"))) {
+                        NavigationLink(destination: GeneratorQRCode(document: FilesDocuments(message: "Commande n° \(commandVM.commands.id)\n avec \(commandVM.commands.nbperson!)\n \(String(describing: commandVM.commands.userId))\n \(String(describing: commandVM.commands.date)) à \(String(describing: commandVM.commands.hour))"))) {
                             Text("Generate QRCode")
                         }
                         Spacer()
