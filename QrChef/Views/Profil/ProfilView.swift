@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfilView: View {
     
-    var user: User
+   var user: User
+   @State var arraytest = ["gdgdggd","gfgfdhq", "fggdhfdgh"]
     
     var body: some View {
         VStack(alignment: .leading){
@@ -27,7 +28,11 @@ struct ProfilView: View {
             Text("Mes bons de commande")
                 .font(.title2)
                 .padding()
-//                forEach(
+            List{
+                ForEach(arraytest, id: \.self) { test in
+                    Text(test)
+                }
+            }
         }.padding()
     }
 }
