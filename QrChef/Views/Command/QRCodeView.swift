@@ -5,73 +5,80 @@
 ////  Created by Cynthia on 05/12/2022.
 ////
 //
-//import SwiftUI
-//
-//struct QRCodeView: View {
-//    @State var document: FilesDocuments
-//        @EnvironmentObject var commandVM: CommandViewModel
-//        @State private var isGenerating: Bool = false
-//        @State private var isExporting: Bool = false
-//        
-//        var body: some View {
-//            NavigationView{
-//                VStack {
-//                    VStack {
-//                        GroupBox(label: Text("Commande n° \(Command.example.id)")) {
-//                            VStack{
-//                                Text("\(Command.example.date ?? Date.now, format: .dateTime.day().month().year()) à \(Command.example.hour ?? Date.now, format: .dateTime.hour().minute())").bold().padding()
-//                                HStack{
-//                                    Text("Table: n° \(Command.example.table ?? "123")").padding()
-//                                    Spacer()
-//                                    Text("\(Command.example.nbperson) pers.")
+import SwiftUI
+
+struct QRCodeView: View {
+    @State var document: FilesDocuments
+    @EnvironmentObject var commandVM: CommandViewModel
+    @StateObject var recipeVM: RestaurantViewModel
+    @State private var isGenerating: Bool = false
+    @State private var isExporting: Bool = false
+        
+        var body: some View {
+            NavigationView{
+                VStack {
+                    VStack {
+                        GroupBox(label: Text("Commande n° \(commandVM.commands.id)")) {
+                            VStack{
+                                Text("\(commandVM.commands.date!) à \(commandVM.commands.hour!)")
+                                HStack{
+                                    Text("Table: n° \(commandVM.commands.table!)")
+                                    Spacer()
+                                    Text("\(commandVM.commands.nbperson!) pers.")
+                                }
+//                                ForEach(commandVM.commands.recipes) { recipe in
+//                                    HStack{
+//                                        Text(recipe.recipes.name)
+//                                        Spacer()
+//                                        Text(recipe.recipes.price)
+//                                    }
 //                                }
-//                                
-//                                HStack{
-//                                    Spacer()
-////                                    Text(String("Price: \(Command.example.price) €"))
-//                                }
-//                                
-//                               
-//                            }.padding()
-//                        }
-//                        GroupBox {
-//                            HStack {
-//                                Spacer()
-//                                Button(action:
-//                                        {
-//                                    isExporting = true
-//                                }, label: {
-//                                    Text("Save")
-//                                })
-//                                Spacer()
-//                                NavigationLink(destination: GeneratorQRCode(document: FilesDocuments(message:  "\(String(describing: Command.example.table))\n\(String(describing: Command.example.nbperson))"))) {
-//                                    Text("Generate QRCode")
-//                                }
-//                                Spacer()
-//                            }
-//                        }
-//                    }
-//                    .padding()
-//                    .fileExporter(
-//                        isPresented: $isExporting,
-//                        document: document,
-//                        contentType: .plainText,
-//                        defaultFilename: document.message
-//                    ) { result in
-//                        if case .success = result {
-//                            print ("success")
-//                        } else {
-//                            print ("Fail")
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//
-//}
-//
-//struct QRCodeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        QRCodeView(document: FilesDocuments(message: "Ticket de caisse"))
-//    }
-//}
+                                HStack{
+                                    Spacer()
+                                    Text(String("Price: \(commandVM.commands.price!) €"))
+                                }
+                                
+                               
+                            }.padding()
+                        }
+                        GroupBox {
+                            HStack {
+                                Spacer()
+                                Button(action:
+                                        {
+                                    isExporting = true
+                                }, label: {
+                                    Text("Save")
+                                })
+                                Spacer()
+                                NavigationLink(destination: GeneratorQRCode(document: FilesDocuments(message: "Commande n° \(commandVM.commands.id)\n avec \(commandVM.commands.nbperson!)\n \(String(describing: commandVM.commands.userId))\n \(String(describing: commandVM.commands.date)) à \(String(describing: commandVM.commands.hour))"))) {
+                                    Text("Generate QRCode")
+                                }
+                                Spacer()
+                            }
+                        }
+                    }
+                    .padding()
+                    .fileExporter(
+                        isPresented: $isExporting,
+                        document: document,
+                        contentType: .plainText,
+                        defaultFilename: document.message
+                    ) { result in
+                        if case .success = result {
+                            print ("success")
+                        } else {
+                            print ("Fail")
+                        }
+                    }
+                }
+            }
+        }
+
+}
+
+struct QRCodeView_Previews: PreviewProvider {
+    static var previews: some View {
+        QRCodeView(document: FilesDocuments(message: "Ticket de caisse"), recipeVM: RestaurantViewModel()).environmentObject(CommandViewModel())
+    }
+}

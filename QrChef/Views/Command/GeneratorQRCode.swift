@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GeneratorQRCode: View {
     @State var document: FilesDocuments
-    //    @State var document: FilesDocuments = FilesDocuments(message: "")
         var body : some View{
             VStack{
                 Text("Bon de commande").font(.title).padding()

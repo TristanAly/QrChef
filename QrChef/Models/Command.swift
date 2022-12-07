@@ -61,7 +61,7 @@ let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.timeStyle = .long
     formatter.locale = Locale(identifier: "FR-fr")
-    formatter.dateFormat = "HH':'mm'L'"
-    formatter.timeZone = TimeZone(secondsFromGMT: 0)
+//    formatter.dateFormat = "HH':'mm'L'"
+//    formatter.timeZone = TimeZone(secondsFromGMT: 0)
     return formatter
 }()
