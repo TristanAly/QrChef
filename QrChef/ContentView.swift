@@ -12,6 +12,7 @@ struct ContentView: View {
         LoginView(loginVM: LoginViewModel())
 //    ListCommand(vm: CommandViewModel())
 //        PostCommand(restaurantVM: RestaurantViewModel()).environmentObject(CommandViewModel())
+//        ScanQRCodeView(filter: .none, prospects: Prospects(), commandVM: CommandViewModel())
         
     }
 }

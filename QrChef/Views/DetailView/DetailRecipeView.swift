@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailRecipeView: View {
     @State var recipe: Recipe
     @ObservedObject var recipeVM: RestaurantViewModel
+    @StateObject var commandVM = CommandViewModel()
     
     var body: some View {
 //        NavigationView {
@@ -64,7 +65,7 @@ struct DetailRecipeView: View {
                     
                 }
                 
-                ButtonView()
+                ButtonView(restaurantVM: recipeVM, recipeId: recipe.id, commandId: commandVM.commands.id)
                    // .padding(15)
             }
             .onAppear{
@@ -87,5 +88,6 @@ struct DetailRecipeView: View {
 struct DetailRecipeView_Previews: PreviewProvider {
     static var previews: some View {
         DetailRecipeView(recipe: Recipe.example, recipeVM: RestaurantViewModel())
+            .environmentObject(CommandViewModel())
     }
 }

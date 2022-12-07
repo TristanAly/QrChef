@@ -10,6 +10,9 @@ import SwiftUI
 struct ButtonView: View {
     @State var count: Int = 1
     @State var price: Int = 7
+    @ObservedObject var restaurantVM: RestaurantViewModel
+    @State var recipeId: Int
+    @State var commandId: Int
     var body: some View {
         VStack {
             HStack(spacing: 20){
@@ -51,7 +54,9 @@ struct ButtonView: View {
             }
             
             Button{
-               
+                Task{
+                    try await restaurantVM.PostRecipe(recipeId: recipeId, commandId: commandId)
+                }
             } label: {
                 Text("Ajouter pour \(price) €")
                     .fontWeight(.bold)
@@ -82,6 +87,6 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView()
+        ButtonView(restaurantVM: RestaurantViewModel(), recipeId: 1, commandId: 1)
     }
 }

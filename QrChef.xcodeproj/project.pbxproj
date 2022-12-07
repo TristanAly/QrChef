@@ -33,6 +33,7 @@
 		1770E367293FC2A100CDD6D4 /* ButtonReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770E366293FC2A100CDD6D4 /* ButtonReservationView.swift */; };
 		1770E369293FD77200CDD6D4 /* TableReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1770E368293FD77200CDD6D4 /* TableReservationView.swift */; };
 		178444892940AE3B0035AC7E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178444882940AE3B0035AC7E /* UserViewModel.swift */; };
+		1784448B2940D2550035AC7E /* RecipeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784448A2940D2550035AC7E /* RecipeCommand.swift */; };
 		17889B2C293D0252005161A3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B2B293D0252005161A3 /* LoginViewModel.swift */; };
 		17889B2F293D033C005161A3 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B2E293D033C005161A3 /* KeychainItem.swift */; };
 		17889B31293D0787005161A3 /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17889B30293D0786005161A3 /* ShakeEffect.swift */; };
@@ -95,6 +96,7 @@
 		1770E366293FC2A100CDD6D4 /* ButtonReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReservationView.swift; sourceTree = "<group>"; };
 		1770E368293FD77200CDD6D4 /* TableReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReservationView.swift; sourceTree = "<group>"; };
 		178444882940AE3B0035AC7E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		1784448A2940D2550035AC7E /* RecipeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCommand.swift; sourceTree = "<group>"; };
 		17889B2B293D0252005161A3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		17889B2E293D033C005161A3 /* KeychainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		17889B30293D0786005161A3 /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
@@ -190,6 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				17889B32293D0F91005161A3 /* LoginView.swift */,
+				7B202C292938E2F5000092EF /* SignInView.swift */,
+				7BF74C972938F9D300E442A3 /* SignUpView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -273,6 +277,7 @@
 				1710EBBC293A54CF0001E107 /* User.swift */,
 				1710EBC2293A5C980001E107 /* Command.swift */,
 				17889B2E293D033C005161A3 /* KeychainItem.swift */,
+				1784448A2940D2550035AC7E /* RecipeCommand.swift */,
 				171AA2B7293F4EBC00A9B3FD /* Favourite.swift */,
 				1710EBC0293A5AC90001E107 /* SignInResponse.swift */,
 				1710EBBE293A563C0001E107 /* Restaurant.swift */,
@@ -287,8 +292,6 @@
 				7B0C923B293660B700C57CCD /* ButtonView.swift */,
 				17D3300629365E0C00A2403A /* DetailRecipeView.swift */,
 				7B0C923F2936888500C57CCD /* RowView.swift */,
-				7B202C292938E2F5000092EF /* SignInView.swift */,
-				7BF74C972938F9D300E442A3 /* SignUpView.swift */,
 				7B519280293A18090039436B /* SplashScreen.swift */,
 			);
 			path = DetailView;
@@ -462,6 +465,7 @@
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
 				1708C1C0293E28590062BCB1 /* CommandTestView.swift in Sources */,
 				1710EBBB293A06AC0001E107 /* TopManagerListView.swift in Sources */,
+				1784448B2940D2550035AC7E /* RecipeCommand.swift in Sources */,
 				DC09F047293F511700D0FBA1 /* FavouriteViewModel.swift in Sources */,
 				17889B2C293D0252005161A3 /* LoginViewModel.swift in Sources */,
 				7BF74C982938F9D300E442A3 /* SignUpView.swift in Sources */,
@@ -605,7 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QrChef/Preview Content\"";
-				DEVELOPMENT_TEAM = T8P6LHC8JH;
+				DEVELOPMENT_TEAM = 8YR2KQ4MQ5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to scan barcodes";
@@ -620,7 +624,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Cycy.QrChef;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tristan.QrChef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -637,7 +641,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QrChef/Preview Content\"";
-				DEVELOPMENT_TEAM = T8P6LHC8JH;
+				DEVELOPMENT_TEAM = 8YR2KQ4MQ5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to scan barcodes";
@@ -652,7 +656,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Cycy.QrChef;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tristan.QrChef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

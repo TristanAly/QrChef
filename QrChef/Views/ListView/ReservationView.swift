@@ -24,9 +24,7 @@ struct ReservationView: View {
     
     @State var show = false
     var body: some View {
-        VStack{
-            Text("Your reservation")
-                .font(.title)
+//        VStack{
             Form{
                 Section{
                     DatePicker(selection: $date, in: ...Date.distantFuture, displayedComponents: .date) {
@@ -62,7 +60,7 @@ struct ReservationView: View {
                     Text("Reservez")
                 }
                 .buttonStyle(.borderedProminent)
-            }
+//            }
         }
     }
 }

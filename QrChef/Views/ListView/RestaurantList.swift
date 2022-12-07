@@ -19,7 +19,7 @@ struct RestaurantList: View {
                     ScrollView{
                         ForEach(restaurantVM .searchResults, id: \.id) { restaurant in
                             NavigationLink{
-                                PikerCategorieView(recipeVM: restaurantVM,restaurant: restaurant)
+                                PikerCategorieView(commandVM: CommandViewModel(), recipeVM: restaurantVM,restaurant: restaurant)
                             } label: {
                                 HStack{
                                     NewRowRestaurantView(favoriteVM: favouriteVM, restaurant: restaurant, isfavorite: isfavorite)

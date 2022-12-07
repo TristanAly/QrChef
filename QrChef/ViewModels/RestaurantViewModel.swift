@@ -173,4 +173,43 @@ class RestaurantViewModel: ObservableObject {
         return ingredient
     }
     
+    // MARK: Recipes at Command
+    func PostRecipe(recipeId: Int,commandId: Int) async throws -> RecipeCommand {
+        print("1")
+        guard let url = URL(string: "\(baseUrl)/recipeCommand")
+        else {
+            fatalError("Missing URL")
+        }
+        let body: [String: Int] = [ "recipeId": recipeId,"commandId": commandId]
+        print(body)
+        // ENVOI DE LA REQUETE SUR LE SERVER
+        var urlRequest = URLRequest(url: url)
+        let keychainItem = KeychainItem(service: "com.Cycy.QrChef", account: "accessToken")
+        urlRequest.httpMethod = "POST"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.addValue(try keychainItem.readItem(), forHTTPHeaderField: "x-access-token")
+        print(keychainItem)
+        urlRequest.httpBody = try? JSONEncoder().encode(body)
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        print(2)
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+        else {
+            print(response)
+            print(ErrorMessage.badResponse)
+            throw ErrorMessage.badResponse
+        }
+        print(3)
+        let decoder = JSONDecoder()
+        do {
+            print(4)
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let recipeCommand = try decoder.decode(RecipeCommand.self, from: data)
+            print("success created: \(recipeCommand)")
+            return recipeCommand
+        } catch {
+            print(5)
+            throw URLError(.badServerResponse)
+        }
+    }
 }

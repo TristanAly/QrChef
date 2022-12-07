@@ -9,13 +9,13 @@ import SwiftUI
 
 struct QRCodeView: View {
     @State var document: FilesDocuments
-    @EnvironmentObject var commandVM: CommandViewModel
+    @ObservedObject var commandVM: CommandViewModel
     @StateObject var recipeVM: RestaurantViewModel
     @State private var isGenerating: Bool = false
     @State private var isExporting: Bool = false
     
     var body: some View {
-        NavigationView{
+//        NavigationView{
             VStack {
                 VStack {
                     GroupBox(label: Text("Commande n° \(commandVM.commands.id)")) {
@@ -73,13 +73,16 @@ struct QRCodeView: View {
                     }
                 }
             }
-        }
+//        }
     }
     
 }
 
 struct QRCodeView_Previews: PreviewProvider {
     static var previews: some View {
-        QRCodeView(document: FilesDocuments(message: "Ticket de caisse"), recipeVM: RestaurantViewModel()).environmentObject(CommandViewModel())
+        QRCodeView(document: FilesDocuments(message: "Ticket de caisse"), commandVM: CommandViewModel(), recipeVM: RestaurantViewModel())
+            .environmentObject(CommandViewModel())
     }
 }
+
+

@@ -179,10 +179,10 @@ struct FilesDocuments: FileDocument {
 }
 
 @MainActor class Prospects: ObservableObject {
-    @Published var people: [Command]
+    @Published var people: [CommandScan]
 
     init() {
-        self.people = [Command.example]
+        self.people = [CommandScan]()
     }
 }
 

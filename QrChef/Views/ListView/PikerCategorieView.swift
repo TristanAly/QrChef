@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PikerCategorieView: View {
     
+    @ObservedObject var commandVM: CommandViewModel
     @ObservedObject var recipeVM: RestaurantViewModel
     @State var selected: Category = .mainCourse
     @State var test = false
@@ -59,12 +60,12 @@ struct PikerCategorieView: View {
         
             .toolbar{
                 ToolbarItem {
-                    Button {
-                        test.toggle()
+                    NavigationLink{
+                        QRCodeView(document: FilesDocuments(message: "Commande n° \(commandVM.commands.id)\n avec \(commandVM.commands.nbperson!)\n \(String(describing: commandVM.commands.userId))\n \(String(describing: commandVM.commands.date)) à \(String(describing: commandVM.commands.hour))"), commandVM: commandVM,recipeVM: recipeVM)
                     } label: {
                         VStack{
-                            Image(systemName: test ? "newspaper.circle" : "newspaper.circle.fill")
-                            Text(test ? "Cart vide" : "Cart plein")
+                            Image(systemName: "newspaper.circle.fill")
+                            Text("Cart")
                         }
                         .padding(.top,2)
                     }
@@ -77,6 +78,6 @@ struct PikerCategorieView: View {
 
 struct PikerCategorieView_Previews: PreviewProvider {
     static var previews: some View {
-        PikerCategorieView(recipeVM: RestaurantViewModel(), restaurant: Restaurant.example)
+        PikerCategorieView(commandVM: CommandViewModel(), recipeVM: RestaurantViewModel(), restaurant: Restaurant.example)
     }
 }
