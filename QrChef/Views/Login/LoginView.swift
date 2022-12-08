@@ -18,6 +18,7 @@ struct LoginView: View {
         case .page2:
             SignInView(loginVM: loginVM)
         case .page3:
+//            Text("")
             ScanQRCodeView(filter: .none, prospects: Prospects(), commandVM: CommandViewModel())
         }
     }

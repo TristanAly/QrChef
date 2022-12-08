@@ -62,6 +62,9 @@
 		D9485180293792E500886DD1 /* RecipeOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D948517F293792E500886DD1 /* RecipeOrderView.swift */; };
 		D94851822937B0A400886DD1 /* ButtonOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94851812937B0A400886DD1 /* ButtonOrderView.swift */; };
 		DC09F047293F511700D0FBA1 /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC09F046293F511700D0FBA1 /* FavouriteViewModel.swift */; };
+		DC89A4F92941367700BF78C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A4F82941367700BF78C1 /* AppDelegate.swift */; };
+		DC89A4FB294136A500BF78C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A4FA294136A500BF78C1 /* SceneDelegate.swift */; };
+		DC89A4FD2941371A00BF78C1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A4FC2941371A00BF78C1 /* ImagePicker.swift */; };
 		DC9DD8EE293D620F006C8380 /* CommandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DD8ED293D620F006C8380 /* CommandViewModel.swift */; };
 		DC9DD8F1293D63D1006C8380 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DD8F0293D63D1006C8380 /* QRCodeView.swift */; };
 		DC9DD8F3293D63E8006C8380 /* GeneratorQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9DD8F2293D63E8006C8380 /* GeneratorQRCode.swift */; };
@@ -126,6 +129,9 @@
 		D948517F293792E500886DD1 /* RecipeOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeOrderView.swift; sourceTree = "<group>"; };
 		D94851812937B0A400886DD1 /* ButtonOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOrderView.swift; sourceTree = "<group>"; };
 		DC09F046293F511700D0FBA1 /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
+		DC89A4F82941367700BF78C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC89A4FA294136A500BF78C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DC89A4FC2941371A00BF78C1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		DC9DD8ED293D620F006C8380 /* CommandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandViewModel.swift; sourceTree = "<group>"; };
 		DC9DD8F0293D63D1006C8380 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		DC9DD8F2293D63E8006C8380 /* GeneratorQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorQRCode.swift; sourceTree = "<group>"; };
@@ -320,6 +326,9 @@
 			isa = PBXGroup;
 			children = (
 				D94851762937567A00886DD1 /* ButtonColor.swift */,
+				DC89A4F82941367700BF78C1 /* AppDelegate.swift */,
+				DC89A4FA294136A500BF78C1 /* SceneDelegate.swift */,
+				DC89A4FC2941371A00BF78C1 /* ImagePicker.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -443,6 +452,7 @@
 				1710EB9D2938B6DF0001E107 /* RowRestaurantView.swift in Sources */,
 				1770E367293FC2A100CDD6D4 /* ButtonReservationView.swift in Sources */,
 				1710EBAA2938FB8A0001E107 /* TabBarView.swift in Sources */,
+				DC89A4FD2941371A00BF78C1 /* ImagePicker.swift in Sources */,
 				1710EBAC2938FDB60001E107 /* ProfilView.swift in Sources */,
 				1710EBA72938F1880001E107 /* ListCategorieView.swift in Sources */,
 				D948517B293762C500886DD1 /* ButtonServView.swift in Sources */,
@@ -458,8 +468,10 @@
 				D9485180293792E500886DD1 /* RecipeOrderView.swift in Sources */,
 				1710EBB02938FE610001E107 /* BookingView.swift in Sources */,
 				DC9DD8F1293D63D1006C8380 /* QRCodeView.swift in Sources */,
+				DC89A4F92941367700BF78C1 /* AppDelegate.swift in Sources */,
 				1710EBB32938FEA90001E107 /* FavoriteRestaurantView.swift in Sources */,
 				D94851772937567A00886DD1 /* ButtonColor.swift in Sources */,
+				DC89A4FB294136A500BF78C1 /* SceneDelegate.swift in Sources */,
 				7B202C2A2938E2F5000092EF /* SignInView.swift in Sources */,
 				1710EBBD293A54CF0001E107 /* User.swift in Sources */,
 				17D330032936592800A2403A /* Ingredient.swift in Sources */,
@@ -609,7 +621,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QrChef/Preview Content\"";
-				DEVELOPMENT_TEAM = 8YR2KQ4MQ5;
+				DEVELOPMENT_TEAM = T8P6LHC8JH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to scan barcodes";
@@ -624,7 +636,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tristan.QrChef;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cycy.QrChef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -641,7 +653,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QrChef/Preview Content\"";
-				DEVELOPMENT_TEAM = 8YR2KQ4MQ5;
+				DEVELOPMENT_TEAM = T8P6LHC8JH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to scan barcodes";
@@ -656,7 +668,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tristan.QrChef;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Cycy.QrChef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

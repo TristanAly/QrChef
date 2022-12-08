@@ -24,7 +24,7 @@ struct TabBarView: View {
                         Text("Favourite")
                     }
                 }
-            ProfilView()
+            ProfilView(document: FilesDocuments(message: ""))
                 .tabItem {
                     VStack{
                         Image(systemName: "person.circle.fill")
